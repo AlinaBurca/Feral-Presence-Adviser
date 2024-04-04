@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css?family=Coiny");
+
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Coiny";
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Coiny";
+
+  --c1--1--: #99796b;
+}
+.dark-mode {
+}
+img {
+  max-width: 100%;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+
+.row {
+  display: flex;
+}
+
+.flex {
+  flex-wrap: wrap;
+  gap: clamp(2em, 5vw, 5em);
+}
+
+.flex > * {
+  flex: 1 1 25em;
+}
+
+.column {
+  display: grid;
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+header {
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  padding: 1.5em 0;
+}
+
+nav {
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+nav a:hover {
+}
+
+.logo {
+  width: 80px;
+  height: 60px;
+}
+
+/* .zone {
+  cursor: pointer;
+  color: #fff;
+  font-size: 2em;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  transition: all 0.3s linear;
+}
+
+.zone:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+
+/***********************************************************************
+   *  Nav Bar
+   **********************************************************************/
+/* header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+} */
+
+/* .logo {
+  font-size: 2em;
+  color: white;
+  user-select: none;
+  margin-left: 50px;
+} */
+/* 
+.navigation a {
+  font-family: "Coiny";
+  color: #99796b;
+  text-decoration: none;
+  font-weight: 800;
+  margin-left: 40px;
+  font-size: 1.3rem;
+}
+
+.nav--button {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #99796b;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #99796b;
+  font-weight: 500;
+  margin-left: 40px;
+  margin-right: 50px;
+} 
+.title1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #99796b;
+  padding: 0rem 10rem;
+}
+
+.title1 h1 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-size: 4rem;
+}
+button {
+  padding: 1rem 3rem;
+  font: size 1rem;
+  font-family: Coiny;
+  border: none;
+  color: #99796b;
+  background: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+button:hover {
+  background: black;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-nav {
+    font-size: 0.5em;
+    padding: 0;
+  }
+}
+
+.push {
+  margin-left: auto;
+}
+
+li {
+  padding: 20px;
+}
+
+a {
+  color: #f5f5f6;
+  text-decoration: none;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/***********************************************************************
+   *  Cover
+   **********************************************************************/
+/*.container {
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #83b7a5;
+  background: url("./img/cover.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cover {
+  width: 30rem;
+}
+
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 20px;
+}
+
+.box {
+  background-color: #444;
+  padding: 130px;
+  margin: 20px;
+}
+
+.box > img {
+  width: 100%;
+}
+
+.box:hover {
+  -webkit-transform: rotate(-7deg);
+  -moz-transform: rotate(-7deg);
+  -o-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+}
+
+.box > img {
+  width: 100%;
+  height: auto;
+}
+
+
+footer {
+  text-align: center;
+  background-color: #444;
+}
+*/
