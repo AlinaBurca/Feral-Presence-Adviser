@@ -43,8 +43,86 @@
         <h1 class="second-title">Adviser</h1>
         <button class="btn" id="reportBtn">Report pet</button>
       </div>
+      <div class="cover"></div>
     </div>
 
+    <!--Report form-->
+    <div class="container2">
+      <div class="report">
+        <div class="container-form">
+          <div class="title">Enter pet's information</div>
+          <form action="#">
+            <div class="status-details">
+              <input type="radio" name="status" id="dot-1" />
+              <input type="radio" name="status" id="dot-2" />
+              <span class="status-title">Pet status:</span>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="status">Lost</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="status">Found/Stray</span>
+                </label>
+              </div>
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Pet name</span>
+                  <input type="text" placeholder="Enter pet name" required />
+                </div>
+                <div class="input-box">
+                  <span class="details">Circumstance</span>
+                  <input
+                    type="text"
+                    placeholder="Enter the circumstance"
+                    required
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Pet type</span>
+                  <input type="text" placeholder="Enter pet type" required />
+                </div>
+                <div class="input-box">
+                  <span class="details">Phone number</span>
+                  <input
+                    type="text"
+                    placeholder="Enter phone number"
+                    required
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Address last seen</span>
+                  <input type="text" placeholder="Enter the adress" required />
+                </div>
+                <div class="input-box">
+                  <span class="details">Email</span>
+                  <input type="text" placeholder="Enter your email" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="another-details">
+              <div class="input-box">
+                <span class="details"
+                  >Other information ( eg. leaving the shelter, risk of rabies
+                  or violent behaviour )</span
+                >
+                <input type="text" placeholder="Enter other details" required />
+              </div>
+            </div>
+
+            <div class="button">
+              <input type="submit" value="Register" />
+            </div>
+          </form>
+        </div>
+
+        <div class="image-form">
+          <img src="./img/dog2.png" />
+        </div>
+      </div>
+    </div>
     <footer class="zone yellow">Footer</footer>
   </body>
 </html>
