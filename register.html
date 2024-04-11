@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style_register.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Coiny"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Register page</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navigation">
+        <div class="nav-logo">
+          <img src="./img/logo.png" />
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="link active">Home</a></li>
+            <li><a href="#" class="link">Lost Pets</a></li>
+            <li><a href="#" class="link">Found Pets</a></li>
+            <li><a href="#" class="link">About us</a></li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <a href="login.html"
+            ><button class="btn" id="loginBtn">Sign In</button></a
+          >
+          <a href="register.html"
+            ><button class="btn" id="registerBtn">Sign Up</button></a
+          >
+        </div>
+        <div class="nav-menu-btn">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+    </header>
+    <div class="sub-navbar">
+      <section class="form">
+        <div class="login-container">
+          <p class="title">Welcome</p>
+          <div class="between_title_and_forms"></div>
+          <p class="welcome-message">
+            Nice to see you! Register and let's get started.
+          </p>
+
+          <form class="login-form">
+            <div class="form-control">
+              <input type="text" placeholder="Username" />
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="form-control">
+              <input type="password" placeholder="Password" />
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="form-control">
+              <input type="password" placeholder="Confirm Password" />
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="form-control">
+              <input type="email" placeholder="Email adress" />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="form-control">
+              <input type="phone" placeholder="Phone number" />
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="form-control">
+              <input type="adress" placeholder="Adress" />
+              <i class="fas fa-address-card"></i>
+            </div>
+          </form>
+          <button class="submit">Register</button>
+        </div>
+      </section>
+      <section class="image">
+        <img src="./images/img.svg" alt="" />
+      </section>
+    </div>
+  </body>
+</html>
