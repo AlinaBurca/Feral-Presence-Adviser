@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./filter.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Coiny"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Lost/Found pets</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navigation">
+        <div class="nav-logo">
+          <img src="./img/logo.png" />
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="link active">Home</a></li>
+            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+            <li><a href="#" class="link">About us</a></li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn" id="loginBtn">Sign In</button>
+          <button class="btn" id="registerBtn">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+    </header>
+    <div class="main--section">
+      <div class="section1">
+        <div class="filter--form">
+          <p>Filter lost and found pets</p>
+          <form action="">
+            <div class="status-details">
+              <span class="status-title">Pet status:</span>
+              <div class="types">
+                <div class="type">
+                  <input type="radio" name="status" id="dot-1" />
+                  <label for="dot-1">
+                    <span class="status">Lost</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="dot-2" />
+                  <label for="dot-2">
+                    <span class="status">Found/Stray</span>
+                  </label>
+                </div>
+
+                <div class="type">
+                  <input type="radio" name="status" id="dot-3" />
+                  <label for="dot-3">
+                    <span class="status">Reunited</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-box1">
+              <span class="input-title">Pet name or ID:</span>
+              <input
+                class="form-field"
+                type="text"
+                placeholder="Enter pet name or ID"
+                required
+              />
+            </div>
+            <div class="input-box2">
+              <span class="input-title">Location:</span>
+              <span class="details">City, Zip or Address</span>
+              <input
+                class="form-field"
+                type="text"
+                placeholder="Enter City, Zip or Address"
+                required
+              />
+            </div>
+
+            <div class="slidecontainer">
+              <span class="input-title">Distance:</span>
+              <span id="demo"></span>
+              <span>miles</span>
+              <input
+                type="range"
+                min="1"
+                max="50"
+                value="50"
+                class="slider"
+                id="myRange"
+              />
+            </div>
+            <div class="input-box3">
+              <span class="input-title">Species:</span>
+              <div class="input-box3 types">
+                <div class="type">
+                  <input type="radio" name="status" id="type1" />
+                  <label for="type1">
+                    <span class="status">All Species</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type2" />
+                  <label for="type2">
+                    <span class="status">Dog</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type3" />
+                  <label for="type3">
+                    <span class="status">Cat</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type4" />
+                  <label for="type4">
+                    <span class="status">Bird</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type5" />
+                  <label for="type5">
+                    <span class="status">Reptile</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type6" />
+                  <label for="type6">
+                    <span class="status">Horse</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type7" />
+                  <label for="typ71">
+                    <span class="status">Ferret</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type8" />
+                  <label for="type8">
+                    <span class="status">Rabbit</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="type9" />
+                  <label for="type9">
+                    <span class="status">Other</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="input-box4">
+              <span class="input-title">Gender:</span>
+              <div class="types">
+                <div class="type">
+                  <input type="radio" name="status" id="gender1" />
+                  <label for="gender1">
+                    <span class="status">All</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="gender2" />
+                  <label for="gender2">
+                    <span class="status">Female</span>
+                  </label>
+                </div>
+
+                <div class="type">
+                  <input type="radio" name="status" id="gender3" />
+                  <label for="gender3">
+                    <span class="status">Male</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="gender4" />
+                  <label for="gender4">
+                    <span class="status">Unknown</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-box4">
+              <span class="input-title">Within Past:</span>
+              <div class="types">
+                <div class="type">
+                  <input type="radio" name="status" id="time1" />
+                  <label for="time1">
+                    <span class="status">1 Month</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="time2" />
+                  <label for="time2">
+                    <span class="status">3 Months</span>
+                  </label>
+                </div>
+
+                <div class="type">
+                  <input type="radio" name="status" id="time3" />
+                  <label for="time3">
+                    <span class="status">6 Months</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input type="radio" name="status" id="time4" />
+                  <label for="time4">
+                    <span class="status">1 Year</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="button--container">
+          <button class="filter-btn">Find</button>
+        </div>
+      </div>
+      <!--section1 end-->
+      <div class="section2">
+        <div class="section2--title">
+          <h2>Lost & Found Pets Database</h2>
+          <h4>Find Lost & Found Dogs, Cats & Other Pets in your area.</h4>
+        </div>
+
+        <div class="card">
+          <img class="card--image" src="./img/lost_cat1.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Lola</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_dog1.jpeg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Roxi</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_dog2.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Max</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_dog3.jpeg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Benny</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123457</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 10 days ago, </strong
+                ><strong>Updated 3 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Salcamilor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_cat2.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Mina</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_dog4.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Dixie</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_ferret.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Zeus</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_rabbit.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Pipo</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right"><p>ID: 123456</p></div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+      </div>
+      <div class="section3">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.1864110982433!2d27.57214627520643!3d47.17378671776671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb6227e846bd%3A0x193e4b6864504e2c!2sFacultatea%20de%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1712921013744!5m2!1sro!2sro"
+          width="300"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+    <!--Main section end-->
+
+    <footer>
+      <div class="footer--section1">
+        <div class="footer-content">
+          <li><a href="">Home</a></li>
+        </div>
+        <div class="footer-content">
+          <li><a href="">About</a></li>
+        </div>
+        <div class="footer-content">
+          <li><a href="">FAQ</a></li>
+        </div>
+        <div class="footer-content">
+          <li><a href="">Team</a></li>
+        </div>
+      </div>
+      <hr />
+      <div class="footer--section2">
+        <h5>© Copyright. All rights reserved.</h5>
+      </div>
+    </footer>
+  </body>
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
+  </script>
+</html>
