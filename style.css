@@ -32,7 +32,7 @@
 .nav-menu ul li .link {
   text-decoration: none;
   font-weight: 31.25rem;
-  font-family: Coiny;
+  font-family: 'Ponytail', sans-serif;  
   padding-bottom: 1, 56rem;
   margin: 0px 1.56rem;
   font-size: 1.25rem;
@@ -52,7 +52,7 @@
   height: 2.5rem;
   font-weight: 31.25rem;
   background: rgba(255, 255, 255, 0.4);
-  font-family: Coiny;
+  font-family: 'Ponytail', sans-serif;  
   border: none;
   border-radius: 1.87rem;
   cursor: pointer;
