@@ -232,7 +232,7 @@ form .input-title {
   width: 55%;
   height: 80vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -242,6 +242,10 @@ form .input-title {
 .section2--title {
   text-align: center;
   color: #545454;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 70%;
 }
 
 .card {
@@ -336,53 +340,8 @@ form .input-title {
   width: 100%;
   height: 100%;
 }
-
-/**********************************
-FOOTER
-**********************************/
-footer {
-  text-align: center;
-  margin-top: 2rem;
-}
-.footer--section1 {
-  padding: 1rem;
-  background-color: #fdcd4b;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
-  font-size: 1rem;
-  font-family: "Coiny";
-  color: black;
-}
-footer li,
-a {
-  text-decoration: none;
-  list-style: none;
-}
-footer li {
-  margin-left: 2.5rem;
-}
-footer a {
-  color: black;
-  padding: 0.5rem;
-  margin: 0 -0.25rem;
-  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-footer a:hover {
-  color: #fff;
-}
-
-.footer--section2 {
-  padding-bottom: 0.8rem;
-  padding-top: 0.8rem;
-  background-color: #fdcd4b;
-  color: black;
-}
-hr {
-  color: white;
+.search-menu-bar {
+  display: none;
 }
 /************************************
 RESPONSIVE
@@ -395,8 +354,8 @@ RESPONSIVE
     font-family: Coiny;
     padding-bottom: 1.56rem;
     margin: 0px 0.93rem;
-    font-size: 1.25rem;
-    color: #5e4236;
+    font-size: 1rem;
+    color: black;
   }
 
   .nav-logo img {
@@ -407,27 +366,31 @@ RESPONSIVE
     margin-left: -3rem;
   }
 
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
+  .nav-button .btn {
+    color: black;
+    margin-top: 2rem;
+    width: 7rem;
+    height: 2.2rem;
+    background: rgba(255, 255, 255, 0.4);
     font-family: Coiny;
     border: none;
-    color: #5e4236;
-    background: beige;
+    border-radius: 1.87rem;
     cursor: pointer;
-    border-radius: 3.12rem;
+    transition: 0.3s ease;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 900px) {
+  .section1 {
+    display: none;
+  }
+  .section3 {
+    display: none;
+  }
+  .section2 {
+    width: 100%;
+  }
   .nav-logo img {
     width: auto;
     height: 4.5rem;
@@ -435,220 +398,67 @@ RESPONSIVE
     margin-top: 1rem;
     margin-left: -2rem;
   }
+  .nav-menu {
+    display: none;
+  }
+  .search-menu-bar {
+    display: block !important;
+    position: fixed;
+    z-index: 99;
+    background: #fff;
+    box-shadow: 0 -2px 70px #0000001f;
+    border-radius: 10px;
+    bottom: 1.2rem;
+    width: 92%;
+    left: 50%;
 
-  .nav-menu ul li .link {
-    text-decoration: none;
-    font-weight: 12.5rem;
-    color: #5e4236;
-    font-family: Coiny;
-    padding-bottom: 1.56rem;
-    margin: 0px 0.62rem;
-    font-size: 1.1rem;
+    transform: translate(-50%);
+  }
+  .search-menu-bar ul {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212529;
+  }
+
+  .search-menu-bar ul li {
+    width: 33%;
+    text-align: center;
+    margin-top: 1px;
+    border-right: 1px solid #f7f7f7;
+  }
+  .search-menu-bar ul li button {
+    width: 100%;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #9a9a9a;
+    border: none;
+    background-color: transparent;
+    margin: auto;
+    padding: 14px 0;
+  }
+  .search-menu-bar img {
+    width: 16px;
+    margin-right: 6px;
+    margin-bottom: -2.5px;
   }
 
   .nav-button .btn {
+    color: black;
     margin-top: 2rem;
-    width: 6.87rem;
-    height: 2.18rem;
-    font-weight: 43.75rem;
+    width: 6rem;
+    height: 2.2rem;
     background: rgba(255, 255, 255, 0.4);
-    color: #5e4236;
     font-family: Coiny;
     border: none;
     border-radius: 1.87rem;
     cursor: pointer;
     transition: 0.3s ease;
-    font-size: 1.1rem;
-  }
-
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 3.12rem;
-  }
-  /***Pt containr2***/
-  form .user-details .input-box {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-
-  form .status-details .category {
-    width: 100%;
-  }
-
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-}
-
-@media only screen and (max-width: 786px) {
-  .nav-button {
-    display: none;
-  }
-  .nav-menu.responsive {
-    top: 6.25rem;
-  }
-  .nav-menu {
-    position: absolute;
-    top: -800px;
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    width: 100%;
-    height: 90vh;
-    backdrop-filter: blur(20px);
-    transition: 0.3s;
-  }
-  .nav-menu ul {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-menu-btn {
-    display: block;
-  }
-  .nav-menu-btn i {
-    font-size: 1.56rem;
-    color: #fff;
-    padding: 0.62rem;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .nav-menu-btn i:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 3.12rem;
-  }
-  /******Pt container2*******/
-  .container2 {
-    max-width: 100%;
-  }
-  .container2 .report {
-    flex-direction: column;
-  }
-  .report .container-form {
-    order: 2;
-    max-width: 90%;
-  }
-  .report .image-form {
-    margin-left: 1rem;
-    order: 1;
-  }
-
-  form .user-details .input-box {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-
-  form .status-details .category {
-    width: 100%;
-  }
-
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-}
-@media only screen and (max-width: 540px) {
-  .input-box p {
-    padding: 0;
-    margin-left: 0;
-    margin-bottom: 0.375rem;
-    font-size: 0.75rem;
-  }
-
-  .input-field {
-    margin-left: 0;
-    width: 100%;
-    font-size: 0.75rem;
-  }
-
-  .submit {
-    width: auto;
-    margin-left: 0;
-    margin-top: 1rem;
-    padding: 0.5rem;
-  }
-  .wrapper {
-    min-height: 100vh;
-  }
-
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 50px;
-  }
-  /******Pt container2*******/
-  .container2 {
-    max-width: 100%;
-  }
-  .container2 .report {
-    flex-direction: column;
-  }
-  .report .container-form {
-    order: 2;
-    max-width: 90%;
-  }
-  .report .image-form {
-    margin-left: 1rem;
-    order: 1;
-  }
-
-  form .user-details .input-box {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-
-  form .status-details .category {
-    width: 100%;
-  }
-
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
+    font-size: 1rem;
   }
 }

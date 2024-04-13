@@ -420,6 +420,9 @@ hr {
   color: white;
 }
 
+/*****************************************
+RESPONSIVE
+******************************************/
 @media only screen and (max-width: 1032px) {
   .nav-menu ul li .link {
     text-decoration: none;
