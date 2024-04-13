@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +42,7 @@ body {
   .nav-menu ul li .link {
     text-decoration: none;
     font-weight: 31.25rem;
-    font-family: 'Ponytail', sans-serif;  
+    font-family: 'Ponytail', sans-serif;                                      
     padding-bottom: 1, 56rem;
     margin: 0px 1.56rem;
     font-size: 1.25rem;
@@ -61,7 +62,7 @@ body {
     height: 2.5rem;
     font-weight: 31.25rem;
     background: rgba(255, 255, 255, 0.4);
-    font-family: 'Ponytail', sans-serif;  
+    font-family: 'Ponytail', sans-serif;
     border: none;
     border-radius: 1.87rem;
     cursor: pointer;
@@ -75,132 +76,131 @@ body {
   .nav-menu-btn {
     display: none;
   }
-  /**************
-  */
-.sub-navbar{
-    display: grid;
-    grid-template-columns: 0.7fr 1fr;
-    flex-grow: 1;
+  .banner img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    margin-top:3.4rem;
 }
-section {
+
+/***Text***/
+.content-section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .about-content h1 {
+    font-size: 2em;
+    font-family: Coiny;
+    color: #000000;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  
+  .about-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.2em;
+    text-align: justify;
+  }
+/************************/
+
+
+/***Container2****/
+.container2 {
+    margin-top: 5.5rem;
     display: flex;
-    justify-content: center;
+    gap: 1.25rem;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-section.image {
-    background: url(./img/login.png) no-repeat;
-    background-size: 100% 102%;
-}
-
-.image img {
-    width: 50%;
+    min-height: 100vh;
+  }
+  .container2 .our-mission
+  {
     max-width: 50%;
-}
-
-.login-container {
-    max-width: 28.12rem;
-   /* padding: 24px;*/
-    display: flex;
+    display:flex;
     flex-direction: column;
-    align-items: center;
-}
-.forger-password-messages {
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #F7DCBC;
+    border-radius: 45px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .container2 .our-mission h1 {
+    font-size: 2rem;
+    font-family: Coiny;
+    color: #000000;
+    margin-bottom: 0.5em;
     text-align: center;
-    font-size: 1.1em;
-    line-height: 2.33rem;
-    margin-bottom: 1.87rem;
-    color: #696969;
+  }
+  
+  .container2 .our-mission p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    text-align: justify;
+  }
+.report-pet
+ {
+  flex: 1;
 }
-.forger-password-messages:hover
+.out-mission
 {
- color:#0D7EBA;
- cursor: pointer;
-
+    flex:2;
 }
 
-.title {
-    text-transform: uppercase;
-    font-family: 'Coiny';
-    font-size: 2.8rem;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 0.062rem;
-    margin-top:5rem;
+.report-pet img {
+  width: 100%;
+  padding: 2rem;
+  height: auto;
 }
 
-.login-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-
-}
-
-.form-control {
-    width: 100%;
-    position: relative;
-    margin-bottom: 1.25rem;
-}
-
-input,
-button {
+.btn-pet {
+    color: black;
+    margin-top: 2rem;
+    width: 16rem;
+    height: 4.5rem;
+    font-weight: 31.25rem;
+    background: rgba(255, 255, 255, 0.4);
+    font-family: Coiny;
     border: none;
-    outline: none;
     border-radius: 1.87rem;
-    font-size: 1.1em;
-}
-
-input {
-    width: 100%;
-    background: #e6e6e6;
-    color: #333;
-    letter-spacing: 0.031rem;
-    padding: 0.87rem 4rem;
-}
-
-input ~ i {
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    transition: color   0.4s;
-}
-
-input:focus ~ i {
-    color: #0D7EBA;
-}
-.between_form_and_submit {
-    width: 18.75rem;
-    height: 0.125rem;
-    margin: 1.5rem; 
-}
-.welcome-message {
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.75rem;
-    margin-bottom: 1.25rem;
-    color: #696969;
-}
-
-button.submit {
-    color: #fff;
-    padding: 0.87rem 4rem;
-    margin: 0.05rem auto;
-    text-transform: uppercase;
-    letter-spacing: 0.125rem;
-    font-weight: bold;
-    background-image: linear-gradient(to right, #6BBBBD, #0D7EBA);
     cursor: pointer;
-    transition: opacity 0.4s;
-}
+    transition: 0.3s ease;
+    font-size: 1.25rem;
+  }
+  .btn-pet:hover {
+    background: black;
+    color: white;
+  }
 
-button.submit:hover {
-    opacity: 0.9;
-}
+/******************/
+
 
 /* ----  Responsiveness   ----  */
+@media (max-width: 1200px) {
+    .container2 {
+        max-width: 100%;
+        flex-direction: column;
+
+      }
+    
+      .container2 .our-mission {
+        order: 2;
+        max-width: 90%;
+      }
+      .container2 .report-pet{
+        margin-left: 1rem;
+        order: 1;
+      }
+}
+
+
 @media (max-width: 900px) {
     .nav-button {
         display: none;
@@ -250,12 +250,27 @@ button.submit:hover {
 
     body {
         display: flex;
+        
     }
 
-    .image {
-        display: none;
-    }
+    .container2 {
+        max-width: 100%;
+        flex-direction: column;
+
+      }
+    
+      .container2 .our-mission {
+        order: 2;
+        max-width: 90%;
+      }
+      .container2 .report-pet{
+        margin-left: 1rem;
+        order: 1;
+      }
+    
 }
+
+
 
 
 
