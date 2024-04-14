@@ -1,0 +1,156 @@
+.navigation {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 80px;
+  line-height: 100px;
+  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
+  z-index: 100;
+}
+.nav-logo img {
+  width: auto;
+  height: 4.5rem;
+  margin-top:0.2rem;
+  user-select: none;
+  margin-left: -2rem;
+  position: absolute;
+}
+.nav-menu ul {
+  display: flex;
+}
+.nav-menu ul li {
+  list-style-type: none;
+}
+.nav-menu ul li .link {
+  text-decoration: none;
+  font-weight: 31.25rem;
+  font-family: "Ponytail", sans-serif;
+  padding-bottom: 0.8rem;
+  margin: 0px 1.56rem;
+  font-size: 1.25rem;
+  color: black;
+}
+.link:hover,
+.active {
+  border-bottom: 0.12rem solid rgb(199, 199, 175);
+}
+.nav-button {
+  margin-bottom: 2.2rem;
+  margin-right: 2rem;
+}
+.nav-button .btn {
+  text-decoration: none;
+  color: black;
+  margin-top: 2rem;
+  padding: 0.5rem 1.2rem;
+  font-weight: 31.25rem;
+  background: rgba(255, 255, 255, 0.4);
+  font-family: "Ponytail", sans-serif;
+  border: none;
+  border-radius: 1.87rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1.25rem;
+}
+.btn:hover {
+  background: #0d7eba;
+  color: white;
+}
+#registerBtn {
+  margin-left: 0.93rem;
+}
+.nav-menu-btn {
+  display: none;
+}
+
+/*****************************************
+RESPONSIVE
+******************************************/
+@media only screen and (max-width: 1032px) {
+  .nav-menu ul li .link {
+    padding-bottom: 0.9rem;
+    margin: 0px 0.93rem;
+    font-size: 1.15rem;
+  }
+
+ .nav-button{
+  margin-right: 1rem;
+ }
+  .nav-button .btn {
+  
+    padding: 0.3rem 1rem;
+   
+  }
+
+  .nav-logo img {
+    margin-top: 1rem;
+    height: 4rem;
+  }
+
+ 
+}
+
+@media only screen and (max-width: 900px) {
+  .nav-logo img {
+    height: 3.5rem;
+    margin-top: 1.3rem;
+    margin-left: -2rem;
+  }
+
+  .nav-menu ul li .link {
+    margin: 0px 0.9rem;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+  }
+
+  .nav-button .btn {
+  
+    font-size: 0.9rem;
+  }
+
+  
+
+}
+
+@media only screen and (max-width: 786px) {
+  .nav-button {
+    display: none;
+  }
+  .nav-menu.responsive {
+    top: 6.25rem;
+  }
+  .nav-menu {
+    position: absolute;
+    top: -800px;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 90vh;
+    backdrop-filter: blur(20px);
+    transition: 0.3s;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-menu-btn {
+    display: block;
+  }
+  .nav-menu-btn i {
+    font-size: 1.56rem;
+    color: #fff;
+    padding: 0.62rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .nav-menu-btn i:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+
+}

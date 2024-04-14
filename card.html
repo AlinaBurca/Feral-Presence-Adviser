@@ -6,36 +6,115 @@
     <title>Card</title>
 
     <link rel="stylesheet" href="./card.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Coiny"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
       <nav class="navigation">
         <div class="nav-logo">
-          <img src="./img/logo.png" />
+          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
         </div>
         <div class="nav-menu">
           <ul>
-            <li><a href="index.html" class="link active">Home</a></li>
-            <li><a href="#" class="link">Lost Pets</a></li>
-            <li><a href="#" class="link">Found Pets</a></li>
-            <li><a href="#" class="link">About us</a></li>
+            <li><a href="index.html" class="link">Home</a></li>
+            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+            <li><a href="statistics.html" class="link">Statistics</a></li>
+            <li><a href="about.html" class="link">About us</a></li>
+            <li><a href="help.html" class="link">Help</a></li>
           </ul>
         </div>
         <div class="nav-button">
-          <a href="login.html"
-            ><button class="btn" id="loginBtn">Sign In</button></a
-          >
-          <a href="register.html"
-            ><button class="btn" id="registerBtn">Sign Up</button></a
-          >
+          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <a href="register.html" class="btn" id="registerBtn">Sign Up</a>
         </div>
         <div class="nav-menu-btn">
           <i class="bx bx-menu"></i>
         </div>
       </nav>
     </header>
-    <div class="title--container">
-      <h2>Roxi - Lost dog in Iasi, Romania, 700207</h2>
+    <div class="main--section">
+      <div class="title--container">
+        <h2>Roxi - Lost dog in Iasi, Romania, 700207</h2>
+      </div>
+      <div class="section--details">
+        <div class="container1">
+          <div class="card">
+            <img class="card--image" alt="pet-img" src="./img/lost_dog1.jpeg" />
+            <div class="card--body">
+              <img
+                class="warning-icon"
+                alt="warning-icon"
+                src="./img/warning.png"
+              />
+              <h3>ID: 123456</h3>
+            </div>
+          </div>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.503273093092!2d27.5859538!3d47.14799689999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafba3a571e589%3A0xf02efa6e69512fd3!2sAleea%20Rozelor%2C%20Ia%C8%99i!5e0!3m2!1sro!2sro!4v1712997282108!5m2!1sro!2sro"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="details-row">
+            <div class="label-name"><h4>ID:</h4></div>
+            <div class="label-text"><h4>123456</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Pet name:</h4></div>
+            <div class="label-text"><h4>Roxi</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Status:</h4></div>
+            <div class="label-text"><h4 class="status">Lost</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Species:</h4></div>
+            <div class="label-text"><h4>Dog</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Date last seen:</h4></div>
+            <div class="label-text"><h4>10 April, 2024</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Location last seen:</h4></div>
+            <div class="label-text"><h4>Str Aleea Rozelor, Iasi</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Risk of rabies:</h4></div>
+            <div class="label-text"><h4>No</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Risk of violence:</h4></div>
+            <div class="label-text"><h4>Medium</h4></div>
+          </div>
+          <div class="details-row">
+            <div class="label-name"><h4>Description:</h4></div>
+            <div class="label-text">
+              <h4>
+                A big dog, brown fur, may exhibit aggressive behavior towards
+                strangers.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

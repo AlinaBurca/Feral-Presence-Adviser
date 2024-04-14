@@ -1,0 +1,135 @@
+@import url("navbar.css");
+@import url("footer.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.title-section {
+  margin-top: 5.8rem;
+  text-align: center;
+  color: #0d7eba;
+  font-family: "Coiny";
+  background-color: #e1f1f1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.title-section h1 {
+  margin-bottom: 20px;
+}
+
+.title-section p {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.main--section {
+  margin: 0 2rem 0 2rem;
+}
+.section1 {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.section2 {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.chart-img img {
+  height: 320px;
+  width: auto;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.box {
+  width: 4.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #0d7eba;
+  font-family: "Coiny";
+  color: #0d7eba;
+  font-weight: 700;
+  font-size: 18px;
+}
+.text {
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+  font-family: "Coiny";
+  font-size: 16px;
+}
+
+/***************************************
+RESPONSIVE
+***************************************/
+
+
+
+
+@media only screen and (max-width: 786px) {
+ 
+
+  .title-section {
+    margin-top: 6rem;
+  }
+
+  .title-section h1 {
+    margin-bottom: 20px;
+  }
+
+  .title-section p {
+    font-size: 1rem;
+  }
+
+  .chart-img img {
+    height: 300px;
+  }
+
+  .box {
+    width: 3.5rem;
+    height: 2rem;
+    font-size: 12px;
+  }
+  .text {
+    font-size: 12px;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .box {
+    width: 2.5rem;
+    height: 1.5rem;
+    font-size: 10px;
+  }
+
+  .text {
+    font-size: 10px;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .chart-img img {
+    height: 200px;
+  }
+}

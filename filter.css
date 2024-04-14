@@ -5,6 +5,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Mochiy+Pop+P+One&family=Signika+Negative:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("navbar.css");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,71 +17,7 @@ body {
   background: url("./img/filter_cover.png") no-repeat;
   background-size: cover;
 }
-.navigation {
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
-  z-index: 100;
-}
-.nav-logo img {
-  width: auto;
-  height: 6rem;
-  user-select: none;
-  margin-top: 0rem;
-  margin-left: -3.5rem;
-  position: absolute;
-}
-.nav-menu ul {
-  display: flex;
-}
-.nav-menu ul li {
-  list-style-type: none;
-}
-.nav-menu ul li .link {
-  text-decoration: none;
-  font-weight: 31.25rem;
-  font-family: 'Ponytail', sans-serif; 
-  padding-bottom: 1, 56rem;
-  margin: 0px 1.56rem;
-  font-size: 1.25rem;
-  color: black;
-}
-.link:hover,
-.active {
-  border-bottom: 0.12rem solid rgb(199, 199, 175);
-}
-.nav-button {
-  margin-bottom: 2rem;
-}
-.nav-button .btn {
-  color: black;
-  margin-top: 2rem;
-  width: 8.2rem;
-  height: 2.5rem;
-  font-weight: 31.25rem;
-  background: rgba(255, 255, 255, 0.4);
-  font-family: 'Ponytail', sans-serif; 
-  border: none;
-  border-radius: 1.87rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1.25rem;
-}
-.btn:hover {
-  background: black;
-  color: white;
-}
-#registerBtn {
-  margin-left: 0.93rem;
-}
-.nav-menu-btn {
-  display: none;
-}
+
 /***************************************************
 MAIN SECTION
 ***************************************************/
@@ -101,6 +39,7 @@ body {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 /************************************************
 FILTER FORM
@@ -222,11 +161,12 @@ form .input-title {
   margin: 1rem;
 }
 .filter-btn {
+  text-decoration: none;
   justify-self: center;
-  width: 10rem;
-  height: 2.5rem;
+  padding: 0.6rem 2rem;
   border-radius: 20px;
   background-color: #0d7eba;
+  color: white;
 }
 .section2 {
   width: 55%;
@@ -311,6 +251,7 @@ form .input-title {
   background-color: #0d7eba;
   text-align: center;
   border-radius: 10px;
+  color: white;
 }
 .card--details {
   padding: 0.4rem;
@@ -319,7 +260,8 @@ form .input-title {
   flex-direction: column;
 }
 
-.card--body button {
+.card--body a {
+  text-decoration: none;
   margin-top: 0.6rem;
   align-self: center;
   padding: 0.6rem;
@@ -349,35 +291,17 @@ RESPONSIVE
 
 @media only screen and (max-width: 1032px) {
   .nav-menu ul li .link {
-    text-decoration: none;
-    font-weight: 31.25rem;
-    font-family: Coiny;
     padding-bottom: 1.56rem;
     margin: 0px 0.93rem;
-    font-size: 1rem;
-    color: black;
-  }
-
-  .nav-logo img {
-    width: auto;
-    height: 6rem;
-    user-select: none;
-    margin-top: 0rem;
-    margin-left: -3rem;
+    font-size: 1.15rem;
   }
 
   .nav-button .btn {
-    color: black;
-    margin-top: 2rem;
-    width: 7rem;
-    height: 2.2rem;
-    background: rgba(255, 255, 255, 0.4);
-    font-family: Coiny;
-    border: none;
-    border-radius: 1.87rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-size: 1rem;
+    width: 5.5rem;
+  }
+
+  .nav-logo img {
+    margin-left: -3rem;
   }
 }
 
@@ -392,12 +316,11 @@ RESPONSIVE
     width: 100%;
   }
   .nav-logo img {
-    width: auto;
     height: 4.5rem;
-    user-select: none;
     margin-top: 1rem;
     margin-left: -2rem;
   }
+
   .nav-menu {
     display: none;
   }
@@ -411,7 +334,7 @@ RESPONSIVE
     bottom: 1.2rem;
     width: 92%;
     left: 50%;
-
+    padding: 15px 0;
     transform: translate(-50%);
   }
   .search-menu-bar ul {
@@ -429,7 +352,8 @@ RESPONSIVE
     margin-top: 1px;
     border-right: 1px solid #f7f7f7;
   }
-  .search-menu-bar ul li button {
+  .search-menu-bar ul li a {
+    text-decoration: none;
     width: 100%;
     font-family: Work Sans;
     font-style: normal;
@@ -440,7 +364,7 @@ RESPONSIVE
     border: none;
     background-color: transparent;
     margin: auto;
-    padding: 14px 0;
+   
   }
   .search-menu-bar img {
     width: 16px;
@@ -449,16 +373,22 @@ RESPONSIVE
   }
 
   .nav-button .btn {
-    color: black;
-    margin-top: 2rem;
-    width: 6rem;
-    height: 2.2rem;
-    background: rgba(255, 255, 255, 0.4);
-    font-family: Coiny;
-    border: none;
-    border-radius: 1.87rem;
-    cursor: pointer;
-    transition: 0.3s ease;
+    width: 5rem;
+    height: 2.5rem;
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .nav-button .btn {
+    width: 4rem;
+    height: 2.2rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-logo img {
+    height: 3.5rem;
+    margin-top: 2rem;
+    margin-left: -2rem;
   }
 }

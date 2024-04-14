@@ -1,347 +1,243 @@
+@import url("navbar.css");
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.navigation {
-  position: absolute;
-  top: 0;
+/*************************
+  MAIN SECTION
+  **************************/
+
+.main--section {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
-  z-index: 100;
-}
-.nav-logo img {
-  width: auto;
-  height: 6rem;
-  user-select: none;
-  margin-top: 0rem;
-  margin-left: -3.5rem;
-  position: absolute;
-}
-.nav-menu ul {
-  display: flex;
-}
-.nav-menu ul li {
-  list-style-type: none;
-}
-.nav-menu ul li .link {
-  text-decoration: none;
-  font-weight: 31.25rem;
-  font-family: Coiny;
-  padding-bottom: 1, 56rem;
-  margin: 0px 1.56rem;
-  font-size: 1.25rem;
-  color: black;
-}
-.link:hover,
-.active {
-  border-bottom: 0.12rem solid rgb(199, 199, 175);
-}
-.nav-button {
-  margin-bottom: 2rem;
-}
-.nav-button .btn {
-  color: black;
-  margin-top: 2rem;
-  width: 8.2rem;
-  height: 2.5rem;
-  font-weight: 31.25rem;
-  background: rgba(255, 255, 255, 0.4);
-  font-family: Coiny;
-  border: none;
-  border-radius: 1.87rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1.25rem;
-}
-.btn:hover {
-  background: black;
-  color: white;
-}
-#registerBtn {
-  margin-left: 0.93rem;
-}
-.nav-menu-btn {
-  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title--container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  text-align: center;
   margin-top: 8rem;
+  font-size: 20px;
+  color: #545454;
+}
+
+.section--details {
+  width: 90%;
+  height: 70vh;
+
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  margin: 40px;
+  height: 400px;
+  background-color: grey;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background: url("./img/card_cover.png") no-repeat;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: translate3D(0, -1px, 0) scale(1.03);
+}
+.card--image {
+  margin-top: 1rem;
+  width: 85%;
+  height: 65%;
+  border-radius: 30px;
+  border-color: white;
+  border-style: solid;
+}
+
+.card--body {
+  background-color: white;
+  width: 85%;
+  color: black;
+  margin-top: 0.5rem;
+  height: 25%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.warning-icon {
+  width: auto;
+  height: 30px;
+}
+
+.container2 {
+  display: flex;
+  margin-left: 1rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 55%;
+  border: 1px solid #ffffff;
+  box-shadow: 0 2px 50px #00000008;
+  border-radius: 10px;
+}
+.details-row {
+  width: 100%;
+  display: flex;
+
+  font-size: 1.5rem;
+}
+.details-row .label-name {
+  width: 50%;
+  text-align: right;
+
+  padding: 1rem;
+  color: #0d7eba;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.details-row .label-text {
+  width: 50%;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  color: #545454;
+  border-bottom: 1px solid #f8f8f8;
+  font-size: 1.2rem;
+}
+.status {
+  font-size: 15px;
+  color: white;
+  padding: 0.5rem;
+  background-color: #0d7eba;
+  text-align: center;
+  border-radius: 10px;
+  width: 4rem;
+}
+.map iframe {
+  height: 15rem;
+  border-radius: 10px;
 }
 
 /***************************************
 RESPONSIVE
 ***************************************/
 @media only screen and (max-width: 1032px) {
-  .nav-menu ul li .link {
-    text-decoration: none;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    padding-bottom: 1.56rem;
-    margin: 0px 0.93rem;
-    font-size: 1.25rem;
-    color: #5e4236;
+ 
+
+  .card {
+    width: 250px;
+    height: 350px;
   }
 
-  .nav-logo img {
-    width: auto;
-    height: 6rem;
-    user-select: none;
-    margin-top: 0rem;
-    margin-left: -3rem;
+  .details-row {
+    font-size: 1.2rem;
   }
 
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
+  .details-row .label-text {
+    font-size: 1rem;
   }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 3.12rem;
+  .status {
+    font-size: 12px;
+    width: 3.8rem;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .nav-logo img {
+ 
+
+  .section--details {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .container1 {
+    width: 100%;
+  }
+
+  .card {
+    width: 400px;
+
+    height: 500px;
+  }
+
+  .card--body {
+    font-size: 20px;
+  }
+
+  .warning-icon {
     width: auto;
-    height: 4.5rem;
-    user-select: none;
-    margin-top: 1rem;
-    margin-left: -2rem;
+    height: 40px;
   }
 
-  .nav-menu ul li .link {
-    text-decoration: none;
-    font-weight: 12.5rem;
-    color: #5e4236;
-    font-family: Coiny;
-    padding-bottom: 1.56rem;
-    margin: 0px 0.62rem;
-    font-size: 1.1rem;
-  }
-
-  .nav-button .btn {
+  .container2 {
+    width: 95%;
     margin-top: 2rem;
-    width: 6.87rem;
-    height: 2.18rem;
-    font-weight: 43.75rem;
-    background: rgba(255, 255, 255, 0.4);
-    color: #5e4236;
-    font-family: Coiny;
-    border: none;
-    border-radius: 1.87rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-size: 1.1rem;
   }
-
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 3.12rem;
-  }
-  /***Pt containr2***/
-  form .user-details .input-box {
-    margin-bottom: 15px;
+  .details-row {
     width: 100%;
+    font-size: 1.5rem;
   }
 
-  form .status-details .category {
-    width: 100%;
+  .details-row .label-text {
+    font-size: 1.2rem;
   }
 
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
+  .status {
+    font-size: 15px;
+
+    width: 4rem;
+  }
+  .map iframe {
+    height: 15rem;
+    border-radius: 10px;
   }
 }
 
-@media only screen and (max-width: 786px) {
-  .nav-button {
-    display: none;
-  }
-  .nav-menu.responsive {
-    top: 6.25rem;
-  }
-  .nav-menu {
-    position: absolute;
-    top: -800px;
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    width: 100%;
-    height: 90vh;
-    backdrop-filter: blur(20px);
-    transition: 0.3s;
-  }
-  .nav-menu ul {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-menu-btn {
-    display: block;
-  }
-  .nav-menu-btn i {
-    font-size: 1.56rem;
-    color: #fff;
-    padding: 0.62rem;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .nav-menu-btn i:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
 
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 3.12rem;
-  }
-  /******Pt container2*******/
-  .container2 {
-    max-width: 100%;
-  }
-  .container2 .report {
-    flex-direction: column;
-  }
-  .report .container-form {
-    order: 2;
-    max-width: 90%;
-  }
-  .report .image-form {
-    margin-left: 1rem;
-    order: 1;
-  }
-
-  form .user-details .input-box {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-
-  form .status-details .category {
-    width: 100%;
-  }
-
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-}
 @media only screen and (max-width: 540px) {
-  .input-box p {
-    padding: 0;
-    margin-left: 0;
-    margin-bottom: 0.375rem;
-    font-size: 0.75rem;
+  .card {
+    width: 300px;
+
+    height: 400px;
   }
 
-  .input-field {
-    margin-left: 0;
-    width: 100%;
-    font-size: 0.75rem;
+  .details-row {
+    font-size: 1.2rem;
   }
 
-  .submit {
+  .details-row .label-text {
+    font-size: 1rem;
+  }
+
+  .status {
+    font-size: 13px;
+
+    width: 3rem;
+  }
+
+  .title--container {
+    font-size: 15px;
+  }
+
+  .card--body {
+    font-size: 15px;
+  }
+
+  .warning-icon {
     width: auto;
-    margin-left: 0;
-    margin-top: 1rem;
-    padding: 0.5rem;
-  }
-  .wrapper {
-    min-height: 100vh;
-  }
-
-  .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
-  }
-
-  .title1 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    font-weight: 31.25rem;
-    font-family: Coiny;
-    border: none;
-    color: #5e4236;
-    background: beige;
-    cursor: pointer;
-    border-radius: 50px;
-  }
-  /******Pt container2*******/
-  .container2 {
-    max-width: 100%;
-  }
-  .container2 .report {
-    flex-direction: column;
-  }
-  .report .container-form {
-    order: 2;
-    max-width: 90%;
-  }
-  .report .image-form {
-    margin-left: 1rem;
-    order: 1;
-  }
-
-  form .user-details .input-box {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-
-  form .status-details .category {
-    width: 100%;
-  }
-
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
+    height: 30px;
   }
 }

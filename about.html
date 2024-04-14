@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="xidthdevice-width, initial-scale=1.0" />
@@ -20,37 +20,34 @@
     <header>
       <nav class="navigation">
         <div class="nav-logo">
-          <img src="./img/logo.png" />
+          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
         </div>
         <div class="nav-menu">
           <ul>
-            <li><a href="index.html" class="link active">Home</a></li>
+            <li><a href="index.html" class="link">Home</a></li>
             <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
-            <li><a href="about.html" class="link">About us</a></li>
-            <li><a href="#" class="link">Help</a></li>
+            <li><a href="statistics.html" class="link">Statistics</a></li>
+            <li><a href="about.html" class="link active">About us</a></li>
+            <li><a href="help.html" class="link">Help</a></li>
           </ul>
         </div>
         <div class="nav-button">
-          <a href="login.html"
-            ><button class="btn" id="loginBtn">Sign In</button></a
-          >
-          <a href="register.html"
-            ><button class="btn" id="registerBtn">Sign Up</button></a
-          >
+          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <a href="register.html" class="btn" id="registerBtn">Sign Up</a>
         </div>
         <div class="nav-menu-btn">
           <i class="bx bx-menu"></i>
         </div>
       </nav>
     </header>
-    <section class="banner">
+    <div class="banner">
       <img src="./img/banner.png" alt="Banner Image" />
-    </section>
+    </div>
 
     <section class="content-section">
       <div class="about-content">
         <!-- About PawMaw content goes here -->
-        <h1>ABOUT FERAL PRESENCE ADVISER</h1>
+        <h2>ABOUT FERAL PRESENCE ADVISER</h2>
         <p>Welcome to FePA!</p>
         <p>
           Fepa is a dedicated service designed to streamline the process of
@@ -82,14 +79,30 @@
         </p>
         <h1>You can reach out to us at via:</h1>
         <p>Email using info@FePA.com and sales@FePA.com</p>
-        <a href="login.html"
-          ><button class="btn-pet" id="reportPet">Report Pet</button></a
-        >
+        <a href="login.html" class="btn-pet" id="reportPet">Report Pet</a>
       </div>
 
-      <div class="report-per">
-        <img src="./img/right.png" />
+      <div class="report-pet">
+        <img alt="dog-img" src="./img/right.png" />
       </div>
     </div>
+    <!--Footer section-->
+    <footer>
+      <div class="footer--section1">
+        <div class="footer-content">
+          <a href="">Home</a>
+        </div>
+        <div class="footer-content">
+          <a href="">About us</a>
+        </div>
+        <div class="footer-content">
+          <a href="">Help</a>
+        </div>
+      </div>
+      <hr />
+      <div class="footer--section2">
+        <h5>© Copyright. All rights reserved.</h5>
+      </div>
+    </footer>
   </body>
 </html>

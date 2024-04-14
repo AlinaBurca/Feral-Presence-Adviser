@@ -13,30 +13,32 @@
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <title>Lost/Found pets</title>
   </head>
   <body>
     <header>
       <nav class="navigation">
         <div class="nav-logo">
-          <img src="./img/logo.png" />
+          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
         </div>
         <div class="nav-menu">
           <ul>
-            <li><a href="index.html" class="link active">Home</a></li>
-            <li><a href="#" class="link">Lost/Found Pets</a></li>
+            <li><a href="index.html" class="link">Home</a></li>
+            <li>
+              <a href="filter.html" class="link active">Lost/Found Pets</a>
+            </li>
+            <li><a href="statistics.html" class="link">Statistics</a></li>
             <li><a href="about.html" class="link">About us</a></li>
-            <li><a href="#" class="link">Help</a></li>
+            <li><a href="help.html" class="link">Help</a></li>
           </ul>
         </div>
-        <
         <div class="nav-button">
-          <a href="login.html"
-            ><button class="btn" id="loginBtn">Sign In</button></a
-          >
-          <a href="register.html"
-            ><button class="btn" id="registerBtn">Sign Up</button></a
-          >
+          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <a href="register.html" class="btn" id="registerBtn">Sign Up</a>
         </div>
         <div class="nav-menu-btn">
           <i class="bx bx-menu"></i>
@@ -47,7 +49,7 @@
       <div class="section1">
         <div class="filter--form">
           <p>Filter lost and found pets</p>
-          <form action="">
+          <form action="#">
             <div class="status-details">
               <span class="status-title">Pet status:</span>
               <div class="types">
@@ -147,7 +149,7 @@
                 </div>
                 <div class="type">
                   <input type="radio" name="status" id="type7" />
-                  <label for="typ71">
+                  <label for="type7">
                     <span class="status">Ferret</span>
                   </label>
                 </div>
@@ -230,7 +232,7 @@
         </div>
 
         <div class="button--container">
-          <button class="filter-btn">Find</button>
+          <a href="" class="filter-btn">Find</a>
         </div>
       </div>
       <!--section1 end-->
@@ -241,7 +243,7 @@
         </div>
 
         <div class="card">
-          <img class="card--image" src="./img/lost_cat1.jpg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_cat1.jpg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -259,11 +261,11 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_dog1.jpeg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_dog1.jpeg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -281,11 +283,11 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_dog2.jpg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_dog2.jpg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -303,11 +305,11 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_dog3.jpeg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_dog3.jpeg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -325,11 +327,11 @@
 
               <span>Str Aleea Salcamilor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_cat2.jpg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_cat2.jpg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -347,11 +349,11 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_dog4.jpg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_dog4.jpg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -369,11 +371,11 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_ferret.jpg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_ferret.jpg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -391,11 +393,11 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
         <div class="card">
-          <img class="card--image" src="./img/lost_rabbit.jpg" />
+          <img alt="pet-img" class="card--image" src="./img/lost_rabbit.jpg" />
           <div class="card--body">
             <div class="general-info">
               <div class="left">
@@ -413,7 +415,7 @@
 
               <span>Str Aleea Rozelor, Iasi</span>
             </div>
-            <button>View Details</button>
+            <a href="card.html">View Details</a>
           </div>
         </div>
       </div>
@@ -433,26 +435,26 @@
     <div class="search-menu-bar">
       <ul>
         <li>
-          <button><img src="./img/map.png" alt="map icon" />View Map</button>
+          <a href=""><img alt="map-icon" src="./img/map.png" />View Map</a>
         </li>
         <li>
-          <button>
+          <a href="">
             <img src="./img/filter.png" alt="filter icon" />Filter
-          </button>
+          </a>
         </li>
         <li>
-          <button><img src="./img/menu.png" alt="menu icon" />Menu</button>
+          <a href=""><img src="./img/menu.png" alt="menu icon" />Menu</a>
         </li>
       </ul>
     </div>
-  </body>
-  <script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value;
+    <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
 
-    slider.oninput = function () {
-      output.innerHTML = this.value;
-    };
-  </script>
+      slider.oninput = function () {
+        output.innerHTML = this.value;
+      };
+    </script>
+  </body>
 </html>
