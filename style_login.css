@@ -87,11 +87,12 @@ div.image {
 }
 
 input,
-button {
+.submit {
   border: none;
   outline: none;
   border-radius: 1.87rem;
   font-size: 1.1em;
+  text-decoration: none;
 }
 
 input {
@@ -127,7 +128,7 @@ input:focus ~ i {
   color: #696969;
 }
 
-button.submit {
+.submit {
   color: #fff;
   padding: 0.87rem 4rem;
   margin: 0.05rem auto;
@@ -139,7 +140,7 @@ button.submit {
   transition: opacity 0.4s;
 }
 
-button.submit:hover {
+.submit:hover {
   opacity: 0.9;
 }
 
