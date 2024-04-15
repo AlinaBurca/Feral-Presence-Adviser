@@ -1,159 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./dashboard.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Coiny"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <title>Lost/Found pets</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navigation">
-            <div class="nav-logo">
-                <img src="./img/logo.png" />
-            </div>
-            <div class="nav-menu">
-                <ul>
-                    <li><a href="index.html" class="link active">Home</a></li>
-                    <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
-                    <li><a href="about.html" class="link">About us</a></li>
-                </ul>
-            </div>
-            <div class="nav-button">
-                <a href="login.html"
-                  ><button class="btn" id="loginBtn">Exit</button></a
-                >
-               <button class="btn" id="registerBtn">User</button>
-                
-              </div>
-            <div class="nav-menu-btn">
-                <i class="bx bx-menu"></i>
-            </div>
-        </nav>
+      <nav class="navigation">
+        <div class="nav-logo">
+          <img src="./img/logo.png" />
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="link active">Home</a></li>
+            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+            <li><a href="about.html" class="link">About us</a></li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <a href="login.html"
+            ><button class="btn" id="loginBtn">Exit</button></a
+          >
+          <button class="btn" id="registerBtn">User</button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
     </header>
     <div class="main--section">
-        <div class="section1">
-            <div class="filter--form">
-                <div class="user">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Welcome to FePa!</p>
-                </div>
-                <div class="menu-container">
-                    <a href="#pet-list" class="menu-item">
-                        <i class="fa fa-paw" aria-hidden="true"></i>
-                        My Pet Listing
-                        <a href="#report-pet" class="menu-item">
-                            <i class="fa fa-file" aria-hidden="true"></i>Report Pet
-                        </a>
-                        <a href="#user-account" class="menu-item">
-                            <i class="fa fa-user" aria-hidden="true"></i>User Account
-                        </a>
-                </div>
-            </div>
+      <div class="section1">
+        <div class="filter--form">
+          <div class="user">
+            <i class="fa-solid fa-user"></i>
+            <p>Welcome to FePa!</p>
+          </div>
+          <div class="menu-container">
+            <a href="#pet-list" class="menu-item">
+              <i class="fa fa-paw" aria-hidden="true"></i>
+              My Pet Listing
+              <a href="#report-pet" class="menu-item">
+                <i class="fa fa-file" aria-hidden="true"></i>Report Pet
+              </a>
+              <a href="#user-account" class="menu-item">
+                <i class="fa fa-user" aria-hidden="true"></i>User Account
+              </a>
+            </a>
+          </div>
         </div>
-        <!--section1 end-->
-        <div class="section2">
-            <div class="section2--title">
-                <h2>The animals you reported</h2>
-                <h4>Thank you for your dedication to reporting animals in need!</h4>
-            </div>
-            <div class="card">
-                <img class="card--image" src="./img/lost_dog3.jpeg" />
-                <div class="card--body">
-                    <div class="general-info">
-                        <div class="left">
-                            <h3 class="name">Benny</h3>
-                            <h3 class="status">Lost</h3>
-                        </div>
-                        <div class="right">
-                            <p>ID: 123457</p>
-                        </div>
-                    </div>
-
-                    <div class="card--details">
-                        <div>
-                            <strong>Lost 10 days ago, </strong><strong>Updated 3 hours ago</strong>
-                        </div>
-
-                        <span>Str Aleea Salcamilor, Iasi</span>
-                    </div>
-                    <button>View Details</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card--image" src="./img/lost_dog4.jpg" />
-                <div class="card--body">
-                    <div class="general-info">
-                        <div class="left">
-                            <h3 class="name">Dixie</h3>
-                            <h3 class="status">Lost</h3>
-                        </div>
-                        <div class="right">
-                            <p>ID: 123456</p>
-                        </div>
-                    </div>
-
-                    <div class="card--details">
-                        <div>
-                            <strong>Lost 2 days ago, </strong><strong>Updated 34 hours ago</strong>
-                        </div>
-
-                        <span>Str Aleea Rozelor, Iasi</span>
-                    </div>
-                    <button>View Details</button>
-                </div>
-            </div>
+      </div>
+      <!--section1 end-->
+      <div class="section2">
+        <div class="section2--title">
+          <h2>The animals you reported</h2>
+          <h4>Thank you for your dedication to reporting animals in need!</h4>
         </div>
-        <div class="section3">
-        
-                <div class="user--activity">
-                    <div class="user--photo">
-                        <p>UE</p>
-                    </div>
-                    <h2>User Example</h2>
-                    <h4>user.example@gmail.com</h4>
-                    <div class="icons">
-                        <i class="fa-solid fa-envelope"></i>
-                        <i class="fa-solid fa-bell"></i>
-                    </div>
-                    <div class="activity">
-                        <h3>Recent Activities</h3>
-                        <h5> Here is the recent activities</h5>
-                    </div>
-                </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_dog3.jpeg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Benny</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right">
+                <p>ID: 123457</p>
+              </div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 10 days ago, </strong
+                ><strong>Updated 3 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Salcamilor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
         </div>
+        <div class="card">
+          <img class="card--image" src="./img/lost_dog4.jpg" />
+          <div class="card--body">
+            <div class="general-info">
+              <div class="left">
+                <h3 class="name">Dixie</h3>
+                <h3 class="status">Lost</h3>
+              </div>
+              <div class="right">
+                <p>ID: 123456</p>
+              </div>
+            </div>
+
+            <div class="card--details">
+              <div>
+                <strong>Lost 2 days ago, </strong
+                ><strong>Updated 34 hours ago</strong>
+              </div>
+
+              <span>Str Aleea Rozelor, Iasi</span>
+            </div>
+            <button>View Details</button>
+          </div>
+        </div>
+      </div>
+      <div class="section3">
+        <div class="user--activity">
+          <div class="user--photo">
+            <p>UE</p>
+          </div>
+          <h2>User Example</h2>
+          <h4>user.example@gmail.com</h4>
+          <div class="icons">
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <div class="activity">
+            <h3>Recent Activities</h3>
+            <h5>Here is the recent activities</h5>
+          </div>
+        </div>
+      </div>
     </div>
     <!--Main section end-->
     <div class="search-menu-bar">
-        <ul>
-            <li>
-                <button><img src="./img/activity.png" alt="map icon" />Activity</button>
-            </li>
-            <li>
-                <button>
-                    <img src="./img/list.png" alt="filter icon" />Pet List
-                </button>
-            </li>
-            <li>
-                <button><img src="./img/menu.png" alt="menu icon" />Menu</button>
-            </li>
-        </ul>
+      <ul>
+        <li>
+          <button>
+            <img src="./img/activity.png" alt="map icon" />Activity
+          </button>
+        </li>
+        <li>
+          <button>
+            <img src="./img/list.png" alt="filter icon" />Pet List
+          </button>
+        </li>
+        <li>
+          <button><img src="./img/menu.png" alt="menu icon" />Menu</button>
+        </li>
+      </ul>
     </div>
-</body>
-<script>
+  </body>
+  <script>
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
     output.innerHTML = slider.value;
 
     slider.oninput = function () {
-        output.innerHTML = this.value;
+      output.innerHTML = this.value;
     };
-</script>
-
+  </script>
 </html>

@@ -96,6 +96,7 @@ body {
   margin-left: 1.5rem;
 }
 .section1 {
+  margin-top: 5rem;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -107,7 +108,7 @@ FILTER FORM
 **********************************************/
 .filter--form {
   width: 300px;
-  height: 80vh;
+  height: 70vh;
   background-color: #0d7eba;
   border-radius: 20px;
   display: flex;
@@ -176,7 +177,7 @@ FILTER FORM
 /***********/
 
 .section2 {
-  width: 55%;
+  width: 45%;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -287,6 +288,7 @@ FILTER FORM
 User activity
 */
 .section3 {
+  margin-left: 5rem;
     width: 20%;
     display: flex;
     flex-direction: column;
