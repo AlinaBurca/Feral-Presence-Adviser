@@ -5,17 +5,94 @@
 
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Mochiy+Pop+P+One&family=Signika+Negative:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-@import url("navbar.css");
+
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: #e1f1f1;
   background: url("./img/filter_cover.png") no-repeat;
   background-size: cover;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 80px;
+  line-height: 100px;
+  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
+  z-index: 100;
+
+}
+
+.nav-logo img {
+  width: auto;
+  height: 4.5rem;
+  margin-top: 0.2rem;
+  user-select: none;
+  margin-left: -2rem;
+  position: absolute;
+}
+
+.nav-menu ul {
+  display: flex;
+}
+
+.nav-menu ul li {
+  list-style-type: none;
+}
+
+.nav-menu ul li .link {
+  text-decoration: none;
+  padding-bottom: 0.8rem;
+  margin: 0px 1.56rem;
+  font-size: 1.1rem;
+  color: black;
+  font-family: "Capriola", sans-serif;
+}
+
+.link:hover,
+.active {
+  border-bottom: 0.12rem solid rgb(199, 199, 175);
+}
+
+.nav-button {
+  margin-bottom: 2.2rem;
+  margin-right: 2rem;
+}
+
+.nav-button .btn {
+  text-decoration: none;
+  color: black;
+  margin-top: 2rem;
+  padding: 0.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 1.87rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1.25rem;
+  font-family: 'Coiny', sans-serif;
+}
+
+.btn:hover {
+  background: #0d7eba;
+  color: white;
+}
+
+#registerBtn {
+  margin-left: 0.93rem;
+}
+
+.nav-menu-btn {
+  display: none;
 }
 
 /***************************************************
@@ -26,6 +103,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
 .main--section {
   height: 80vh;
   display: flex;
@@ -33,6 +111,7 @@ body {
   margin-top: 6rem;
   margin-left: 1.5rem;
 }
+
 .section1 {
   width: 20%;
   display: flex;
@@ -41,6 +120,7 @@ body {
   flex-wrap: wrap;
   margin-top: 1rem;
 }
+
 /************************************************
 FILTER FORM
 **********************************************/
@@ -56,6 +136,7 @@ FILTER FORM
   align-items: flex-end;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .filter--form p {
   align-self: center;
   margin-bottom: 2rem;
@@ -64,6 +145,7 @@ FILTER FORM
   font-family: "Work Sans", sans-serif;
   color: white;
 }
+
 form {
   width: 100%;
   height: 80%;
@@ -77,11 +159,13 @@ form {
   overflow-y: scroll;
   scrollbar-width: thin;
 }
+
 form .input-title {
   font-weight: 700;
   font-size: 0.9rem;
   margin-top: 0.8rem;
 }
+
 .form-field {
   border: 2px solid #ddd;
   height: 2rem;
@@ -90,9 +174,11 @@ form .input-title {
   transition: 0.2s;
   margin-top: 0.8rem;
 }
+
 .form-field:focus {
   border-color: #0d7eba;
 }
+
 .status-title {
   font-weight: 700;
   font-size: 1rem;
@@ -102,10 +188,12 @@ form .input-title {
   padding: 0.5rem;
   margin-top: 0.5rem;
 }
+
 .types {
   display: flex;
   flex-wrap: wrap;
 }
+
 .input-box1 {
   display: flex;
   flex-direction: column;
@@ -124,12 +212,15 @@ form .input-title {
   margin-top: 0.5rem;
   font-size: 0.75rem;
 }
+
 .input-box2 input {
   margin-top: 0.3rem;
 }
+
 .slidecontainer {
   margin-top: 1.5rem;
 }
+
 .slider {
   -webkit-appearance: none;
   appearance: none;
@@ -144,6 +235,7 @@ form .input-title {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .input-box3 .inpu-title {
   margin-top: 1.3rem;
 }
@@ -153,13 +245,16 @@ form .input-title {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .input-box4 .input-title {
   margin-top: 1.3rem;
 }
+
 .button--container {
   align-self: center;
   margin: 1rem;
 }
+
 .filter-btn {
   text-decoration: none;
   justify-self: center;
@@ -168,6 +263,14 @@ form .input-title {
   background-color: #0d7eba;
   color: white;
 }
+
+.filter-btn:hover {
+
+  background-color: black;
+  color: white;
+
+}
+
 .section2 {
   width: 55%;
   height: 80vh;
@@ -179,6 +282,7 @@ form .input-title {
   overflow-y: scroll;
   scrollbar-width: thin;
 }
+
 .section2--title {
   text-align: center;
   color: #545454;
@@ -202,6 +306,7 @@ form .input-title {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transform: translate3D(0, -1px, 0) scale(1.03);
 }
+
 .card--image {
   margin-top: 1rem;
   width: 85%;
@@ -237,6 +342,7 @@ form .input-title {
   margin-left: 4rem;
   width: 60%;
 }
+
 .card--body .left {
   display: flex;
   flex-direction: column;
@@ -253,6 +359,7 @@ form .input-title {
   border-radius: 10px;
   color: white;
 }
+
 .card--details {
   padding: 0.4rem;
   font-size: 15px;
@@ -272,36 +379,51 @@ form .input-title {
   color: white;
   font-size: 14px;
 }
+
+.card--body a:hover {
+  background-color: black;
+}
+
 .section3 {
   width: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .section3 iframe {
   width: 100%;
   height: 100%;
 }
+
 .search-menu-bar {
   display: none;
 }
+
 /************************************
 RESPONSIVE
 *************************************/
 
 @media only screen and (max-width: 1032px) {
   .nav-menu ul li .link {
-    padding-bottom: 1.56rem;
+    padding-bottom: 0.9rem;
     margin: 0px 0.93rem;
-    font-size: 1.15rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-button {
+    margin-right: 1rem;
   }
 
   .nav-button .btn {
-    width: 5.5rem;
+
+    padding: 0.5rem 0.8rem;
+
   }
 
   .nav-logo img {
-    margin-left: -3rem;
+    margin-top: 0.6rem;
+    height: 4rem;
   }
 }
 
@@ -309,21 +431,31 @@ RESPONSIVE
   .section1 {
     display: none;
   }
+
   .section3 {
     display: none;
   }
+
   .section2 {
     width: 100%;
   }
+
+
   .nav-logo img {
-    height: 4.5rem;
-    margin-top: 1rem;
+    height: 3.5rem;
+    margin-top: 1.1rem;
     margin-left: -2rem;
+  }
+
+  .nav-button .btn {
+
+    font-size: 0.8rem;
   }
 
   .nav-menu {
     display: none;
   }
+
   .search-menu-bar {
     display: block !important;
     position: fixed;
@@ -337,6 +469,7 @@ RESPONSIVE
     padding: 15px 0;
     transform: translate(-50%);
   }
+
   .search-menu-bar ul {
     display: flex;
     list-style-type: none;
@@ -352,6 +485,7 @@ RESPONSIVE
     margin-top: 1px;
     border-right: 1px solid #f7f7f7;
   }
+
   .search-menu-bar ul li a {
     text-decoration: none;
     width: 100%;
@@ -364,19 +498,16 @@ RESPONSIVE
     border: none;
     background-color: transparent;
     margin: auto;
-   
+
   }
+
   .search-menu-bar img {
     width: 16px;
     margin-right: 6px;
     margin-bottom: -2.5px;
   }
 
-  .nav-button .btn {
-    width: 5rem;
-    height: 2.5rem;
-    font-size: 1rem;
-  }
+
 }
 
 @media only screen and (max-width: 720px) {
@@ -386,9 +517,5 @@ RESPONSIVE
     font-size: 0.8rem;
   }
 
-  .nav-logo img {
-    height: 3.5rem;
-    margin-top: 2rem;
-    margin-left: -2rem;
-  }
+
 }

@@ -14,77 +14,9 @@ body {
   flex-direction: column;
 }
 
-/******************
-*/
-.navigation {
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 6.25rem;
-  line-height: 6.25rem;
-  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
-  z-index: 100;
-}
 
-.nav-logo img {
-  width: auto;
-  height: 6rem;
-  user-select: none;
-  margin-top: 0rem;
-  margin-left: -3.5rem;
-  position: absolute;
-}
 
-.nav-menu ul {
-  display: flex;
-}
 
-.nav-menu ul li {
-  list-style-type: none;
-}
-
-.nav-menu ul li .link {
-  text-decoration: none;
-  font-family: 'Ponytail', sans-serif;
-  padding-bottom: 1.56rem;
-  margin: 0px 1.56rem;
-  font-size: 1.25rem;
-  color: black;
-}
-
-.link:hover,
-.active {
-  border-bottom: 0.12rem solid rgb(199, 199, 175);
-}
-
-.nav-button {
-  margin-bottom: 2rem;
-}
-
-.nav-button .btn {
-  text-decoration: none;
-  color: black;
-  margin-top: 4rem;
-  padding: 0.5rem 1.5rem;
-  background: rgba(255, 255, 255, 0.4);
-  font-family: 'Ponytail', sans-serif;
-  border: none;
-  border-radius: 1.87rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1.25rem;
-}
-
-.btn:hover {
-  background: black;
-  color: white;
-}
-
-.nav-menu-btn {
-  display: none;
-}
 
 /**************
   */
@@ -112,6 +44,7 @@ body {
 
 
 .login-container {
+  margin-top: 2rem;
   max-width: 28.12rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 30px;
@@ -219,51 +152,11 @@ input:focus~i {
 
 /* ----  Responsiveness   ----  */
 @media (max-width: 900px) {
-  .nav-button {
-    display: none;
-  }
 
-  .nav-menu.responsive {
-    top: 6.25rem;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: -50rem;
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    width: 100%;
-    height: 90vh;
-    backdrop-filter: blur(1.25rem);
-    transition: 0.3s;
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-menu-btn {
-    display: block;
-  }
-
-  .nav-menu-btn i {
-    font-size: 1.56rem;
-    color: #fff;
-    padding: 0.62rem;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .nav-menu-btn i:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
 
   .login-container {
     position: fixed;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -272,8 +165,14 @@ input:focus~i {
     align-items: center;
   }
 
-  body {
-    display: flex;
+  .login-container .key i {
+    margin-top: 1.5rem;
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+
   }
 
   .image {

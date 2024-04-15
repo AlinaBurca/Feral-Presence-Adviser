@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /******************
 */
 
@@ -22,7 +23,7 @@ body {
   flex-grow: 1;
 }
 
-.form{
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,11 +35,12 @@ div.image {
   background-size: 100% 102%;
 }
 
-.image{
+.image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .image img {
   width: 50%;
   max-width: 50%;
@@ -51,6 +53,7 @@ div.image {
   flex-direction: column;
   align-items: center;
 }
+
 .forger-password-messages {
   text-align: center;
   font-size: 1.1em;
@@ -58,6 +61,7 @@ div.image {
   margin-bottom: 1.87rem;
   color: #696969;
 }
+
 .forger-password-messages:hover {
   color: #0d7eba;
   cursor: pointer;
@@ -103,7 +107,7 @@ input {
   padding: 0.87rem 4rem;
 }
 
-input ~ i {
+input~i {
   position: absolute;
   left: 2rem;
   top: 50%;
@@ -112,14 +116,16 @@ input ~ i {
   transition: color 0.4s;
 }
 
-input:focus ~ i {
+input:focus~i {
   color: #0d7eba;
 }
+
 .between_form_and_submit {
   width: 18.75rem;
   height: 0.125rem;
   margin: 1.5rem;
 }
+
 .welcome-message {
   text-align: center;
   font-size: 1.1rem;
@@ -146,7 +152,7 @@ input:focus ~ i {
 
 /* ----  Responsiveness   ----  */
 @media (max-width: 900px) {
-  
+
   .login-container {
     position: fixed;
     top: 50%;
@@ -164,7 +170,14 @@ input:focus ~ i {
   .image {
     display: none;
   }
- .login-container{
-  margin-top: 2rem;
- }
+
+  .login-container {
+    margin-top: 2rem;
+  }
+
+  .title {
+
+    font-size: 2rem;
+
+  }
 }

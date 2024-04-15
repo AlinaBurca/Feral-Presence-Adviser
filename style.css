@@ -20,8 +20,8 @@
 .title1 h1 {
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
-  font-size: 5rem;
- font-family:  "Lora", sans-serif;
+  font-size: 4.6rem;
+  font-family: "Lora", sans-serif;
 }
 
 .title1 .btn {
@@ -36,6 +36,7 @@
   cursor: pointer;
   border-radius: 3.12rem;
 }
+
 .title1 .btn:hover {
   background: #0d7eba;
   color: white;
@@ -107,21 +108,25 @@
   font-weight: 500;
   position: relative;
 }
+
 .report .container-form form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
+
 form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2-20px);
 }
+
 .user-details .input-box .details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
+
 .user-details .input-box input {
   height: 45px;
   width: 100%;
@@ -133,15 +138,18 @@ form .user-details .input-box {
   padding-left: 15px;
   font-size: 16px;
 }
+
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
   border-color: black;
 }
+
 /**************************/
 
 form .another-details .input-box {
   margin-bottom: 15px;
 }
+
 .another-details .input-box .details {
   display: block;
   font-weight: 500;
@@ -162,6 +170,7 @@ form .another-details .input-box {
   margin-left: auto;
   margin-right: auto;
 }
+
 .another-details .input-box input:focus,
 .another-details .input-box input:valid {
   border-color: black;
@@ -186,6 +195,7 @@ form .status-details .category {
   display: flex;
   align-items: center;
 }
+
 .status-details .category .dot {
   height: 18px;
   width: 18px;
@@ -194,9 +204,10 @@ form .status-details .category {
   margin-right: 10px;
   border: 5px solid transparent;
 }
-#dot-1:checked ~ .category label .one,
-#dot-2:checked ~ .category label .two,
-#dot-3:checked ~ .category label .three {
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
   border-color: #d9d9d9;
   background: rgb(75, 75, 240);
 }
@@ -204,6 +215,7 @@ form .status-details .category {
 form input[type="radio"] {
   display: none;
 }
+
 form .button {
   height: 45px;
   margin: 45px 0;
@@ -226,14 +238,15 @@ form .button input:hover {
   background: linear-gradient(-135deg, #6bbbbd, #0d7eba);
 }
 
-.container-form > img {
+.container-form>img {
   width: 100%;
 }
 
-.container-form > img {
+.container-form>img {
   width: 100%;
   height: auto;
 }
+
 .upload-photo {
   display: flex;
   flex-direction: row;
@@ -243,6 +256,7 @@ form .button input:hover {
   font-size: 1rem;
   gap: 10px;
 }
+
 .upload-photo i {
   font-size: 2rem;
   cursor: pointer;
@@ -252,13 +266,15 @@ form .button input:hover {
 Carduri
 *************************************************************/
 .container3--title {
-  text-align: left; /* Aliniere la stÃ¢nga */
-  width: 70%; /* Latimea maxima a containerului */
+  text-align: left;
+  /* Aliniere la stÃ¢nga */
+  width: 70%;
+  /* Latimea maxima a containerului */
   font-size: 1.25rem;
   margin-left: 2rem;
   margin-top: 1rem;
   padding: 3rem 0 3rem 0;
-  
+
 }
 
 .container3--title h1 {
@@ -277,9 +293,11 @@ Carduri
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 8px;
 }
-.grid-wrapper a{
+
+.grid-wrapper a {
   text-decoration: none;
 }
+
 .card {
   width: 250px;
   margin: 40px;
@@ -295,6 +313,7 @@ Carduri
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transform: translate3D(0, -1px, 0) scale(1.03);
 }
+
 .card--image {
   margin-top: 1rem;
   width: 80%;
@@ -332,25 +351,7 @@ Carduri
 RESPONSIVE
 ******************************************/
 @media only screen and (max-width: 1032px) {
-  .nav-menu ul li .link {
-    padding-bottom: 0.9rem;
-    margin: 0px 0.93rem;
-    font-size: 1.15rem;
-  }
 
- .nav-button{
-  margin-right: 1rem;
- }
-  .nav-button .btn {
-  
-    padding: 0.3rem 1rem;
-   
-  }
-
-  .nav-logo img {
-    margin-top: 1rem;
-    height: 4rem;
-  }
 
   .title1 h1 {
     font-size: 3.5rem;
@@ -363,25 +364,10 @@ RESPONSIVE
 }
 
 @media only screen and (max-width: 900px) {
-  .nav-logo img {
-    height: 3.5rem;
-    margin-top: 1.3rem;
-    margin-left: -2rem;
-  }
 
-  .nav-menu ul li .link {
-    margin: 0px 0.9rem;
-    font-size: 0.9rem;
-    padding-bottom: 1rem;
-  }
-
-  .nav-button .btn {
-  
-    font-size: 0.9rem;
-  }
 
   .title1 h1 {
-    font-size: 3.5rem;
+    font-size: 3.4rem;
   }
 
   .title1 .btn {
@@ -405,46 +391,10 @@ RESPONSIVE
 }
 
 @media only screen and (max-width: 786px) {
-  .nav-button {
-    display: none;
-  }
-  .nav-menu.responsive {
-    top: 6.25rem;
-  }
-  .nav-menu {
-    position: absolute;
-    top: -800px;
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    width: 100%;
-    height: 90vh;
-    backdrop-filter: blur(20px);
-    transition: 0.3s;
-  }
-  .nav-menu ul {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-menu-btn {
-    display: block;
-  }
-  .nav-menu-btn i {
-    font-size: 1.56rem;
-    color: #fff;
-    padding: 0.62rem;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .nav-menu-btn i:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
+
   .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
+
+    font-size: 3.2rem;
   }
 
   .title1 .btn {
@@ -465,13 +415,16 @@ RESPONSIVE
   .container2 {
     max-width: 100%;
   }
+
   .container2 .report {
     flex-direction: column;
   }
+
   .report .container-form {
     order: 2;
     max-width: 90%;
   }
+
   .report .image-form {
     margin-left: 1rem;
     order: 1;
@@ -490,7 +443,14 @@ RESPONSIVE
     max-height: 300px;
     overflow-y: scroll;
   }
+
+  .report .container-form {
+
+    margin-left: 1.5rem;
+
+  }
 }
+
 @media only screen and (max-width: 540px) {
   .input-box p {
     padding: 0;
@@ -511,14 +471,19 @@ RESPONSIVE
     margin-top: 1rem;
     padding: 0.5rem;
   }
+
   .wrapper {
     min-height: 100vh;
   }
 
   .title1 h1 {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 3.5rem;
+
+    font-size: 3rem;
+  }
+
+  .title1 {
+
+    padding: 0rem 7rem;
   }
 
   .title1 .btn {
@@ -531,13 +496,16 @@ RESPONSIVE
   .container2 {
     max-width: 100%;
   }
+
   .container2 .report {
     flex-direction: column;
   }
+
   .report .container-form {
     order: 2;
     max-width: 90%;
   }
+
   .report .image-form {
     margin-left: 1rem;
     order: 1;
@@ -556,4 +524,18 @@ RESPONSIVE
     max-height: 300px;
     overflow-y: scroll;
   }
+
+  /* .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 8px;
+  } */
+  .grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 }
