@@ -1,5 +1,6 @@
 @import url("navbar.css");
 @import url("footer.css");
+@import url('https://fonts.cdnfonts.com/css/hvdtrial-brandon-grotesque');
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +31,7 @@ body {
   padding: 20px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .about-content h2 {
@@ -45,6 +47,7 @@ body {
   line-height: 1.6;
   font-size: 1.2em;
   text-align: justify;
+  font-family: 'HvDTrial Brandon Grotesque', sans-serif; 
 }
 /************************/
 
@@ -56,6 +59,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   min-height: 100vh;
+                              
 }
 .container2 .our-mission {
   max-width: 50%;
@@ -68,6 +72,7 @@ body {
   background-color: #f7dcbc;
   border-radius: 45px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'HvDTrial Brandon Grotesque', sans-serif; 
 }
 .container2 .our-mission h1 {
   font-size: 2rem;
@@ -81,6 +86,7 @@ body {
   color: #666;
   line-height: 1.6;
   font-size: 1.6rem;
+  font-family: 'HvDTrial Brandon Grotesque', sans-serif; 
 }
 .report-pet {
   flex: 1;

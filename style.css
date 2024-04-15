@@ -1,5 +1,6 @@
 @import url("navbar.css");
 @import url("footer.css");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sora:wght@100..800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -20,6 +21,7 @@
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
   font-size: 5rem;
+ font-family:  "Lora", sans-serif;
 }
 
 .title1 .btn {
@@ -256,13 +258,14 @@ Carduri
   margin-left: 2rem;
   margin-top: 1rem;
   padding: 3rem 0 3rem 0;
+  
 }
 
 .container3--title h1 {
-  font-family: "Signika Negative", sans-serif;
+  font-family: "Coiny", sans-serif;
   color: #595959;
-  font-weight: 600;
-  font-size: 3.2rem;
+  font-weight: 200;
+  font-size: 2.5rem;
 }
 
 .container3--title span {

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sora:wght@100..800&display=swap');
+
 .navigation {
   position: absolute;
   top: 0;
@@ -8,6 +11,7 @@
   line-height: 100px;
   background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
   z-index: 100;
+ 
 }
 .nav-logo img {
   width: auto;
@@ -25,11 +29,11 @@
 }
 .nav-menu ul li .link {
   text-decoration: none;
-  font-family: "Ponytail", sans-serif;
   padding-bottom: 0.8rem;
   margin: 0px 1.56rem;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: black;
+  font-family: "Capriola", sans-serif;
 }
 .link:hover,
 .active {
@@ -45,12 +49,12 @@
   margin-top: 2rem;
   padding: 0.5rem 1.2rem;
   background: rgba(255, 255, 255, 0.4);
-  font-family: "Ponytail", sans-serif;
   border: none;
   border-radius: 1.87rem;
   cursor: pointer;
   transition: 0.3s ease;
   font-size: 1.25rem;
+  font-family: 'Coiny', sans-serif;
 }
 .btn:hover {
   background: #0d7eba;
