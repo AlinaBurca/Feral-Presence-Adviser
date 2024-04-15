@@ -16,8 +16,8 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 80px;
-  line-height: 100px;
+  height: 5rem;
+  line-height: 6.25rem;
   background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
   z-index: 100;
 
@@ -115,10 +115,10 @@ body {
 FILTER FORM
 **********************************************/
 .filter--form {
-  width: 300px;
+  width: 18.75rem;
   height: 80vh;
   background-color: #0d7eba;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -150,7 +150,7 @@ FILTER FORM
   width: 100%;
   height: 80%;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   font-family: "Work Sans", sans-serif;
   display: flex;
   flex-direction: column;
@@ -165,10 +165,10 @@ FILTER FORM
   align-content: center;
   align-items: center;
   font-size: 1.8rem;
-  height: 100px;
-  width: 280px;
+  height: 6.25rem;
+  width: 17.25rem;
   background: #c7e6ef;
-  border-radius: 15px;
+  border-radius: 0.93rem;
   padding: 1rem;
   color: #333;
   text-decoration: none;
@@ -180,7 +180,7 @@ FILTER FORM
 }
 
 .menu-item i {
-  margin-right: 10px;
+  margin-right: 0.62rem;
 }
 
 .menu-item:hover,
@@ -210,7 +210,7 @@ FILTER FORM
   flex-direction: column;
   align-content: center;
   align-items: center;
-  border-radius: 30px;
+  border-radius: 1.87rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-image: url('./img/fundal-form.png');
   margin-top: 1rem
@@ -232,8 +232,8 @@ FILTER FORM
 .section2 .form1 .login-form .form-control {
   width: calc(50% - 20px);
   position: relative;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 0.62rem;
+  margin-bottom: 1.25rem;
   margin-left: 1rem;
 
 }
@@ -242,7 +242,7 @@ FILTER FORM
 button {
   border: none;
   outline: none;
-  border-radius: 30px;
+  border-radius: 1.87rem;
   font-size: 1rem;
 }
 
@@ -251,13 +251,13 @@ button {
   background: #e6e6e6;
   color: #333;
   letter-spacing: 0.3px;
-  padding: 14px 34px;
+  padding: 0.87rem 2.12rem;
 
 }
 
 .section2 .form1 .login-form .form-control input~i {
   position: absolute;
-  left: 14px;
+  left: 0.87rem;
   top: 50%;
   transform: translateY(-50%);
   color: #888;
@@ -269,7 +269,7 @@ button {
 }
 
 .form1 .button {
-  height: 50px;
+  height: 3.12rem;
   width: auto;
   margin-bottom: 2rem;
 
@@ -281,12 +281,12 @@ button {
   outline: none;
   color: #fff;
   border: none;
-  font-size: 17px;
+  font-size: 1.06rem;
   margin-right: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border-radius: 20px;
-  letter-spacing: 2px;
+  border-radius: 1.25rem;
+  letter-spacing: 0.12rem;
   background: linear-gradient(135deg, #6bbbbd, #0d7eba);
   cursor: pointer;
 
@@ -315,10 +315,10 @@ User activity
 .user--activity {
 
   width: 100%;
-  max-width: 300px;
+  max-width: 18.75rem;
   height: 80vh;
   background-color: #c7e6ef;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,8 +329,8 @@ User activity
 }
 
 .user--activity .user--photo {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   background-color: #0D7EBA;
   display: flex;
@@ -373,11 +373,11 @@ User activity
 }
 
 .activity {
-  width: 220px;
-  height: 150px;
+  width: 13.75rem;
+  height: 8rem;
   background-color: rgba(255, 255, 255, 0.4);
   margin-top: 2rem;
-  border-radius: 10px;
+  border-radius: 0.62rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -411,7 +411,6 @@ RESPONSIVE
 @media only screen and (max-width: 1032px) {
   .nav-menu ul li .link {
     text-decoration: none;
-    font-weight: 31.25rem;
     font-family: Coiny;
     padding-bottom: 1.56rem;
     margin: 0px 0.93rem;
@@ -474,7 +473,7 @@ RESPONSIVE
     z-index: 99;
     background: #fff;
     box-shadow: 0 -2px 70px #0000001f;
-    border-radius: 10px;
+    border-radius: 0.62rem;
     bottom: 1.2rem;
     width: 92%;
     left: 50%;
@@ -503,18 +502,18 @@ RESPONSIVE
     font-family: Work Sans;
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75rem;
+    line-height: 0.87rem;
     color: #9a9a9a;
     border: none;
     background-color: transparent;
     margin: auto;
-    padding: 14px 0;
+    padding: 0.87rem 0;
   }
 
   .search-menu-bar img {
-    width: 16px;
-    margin-right: 6px;
+    width: 1rem;
+    margin-right: 0.37rem;
     margin-bottom: -2.5px;
   }
 
@@ -544,7 +543,7 @@ RESPONSIVE
   .section2 .form1 .login-form .form-control {
     width: 100%;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     margin-left: 1rem;
 
   }

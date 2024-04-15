@@ -18,9 +18,9 @@
 }
 
 .container1 {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 62.5rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: 'HvDTrial Brandon Grotesque', sans-serif;
@@ -42,39 +42,39 @@
 }
 
 .right img {
-  height: 400px;
+  height: 25rem;
   width: auto;
 }
 
 .left {
-  width: 600px;
+  width: 37.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .title-btn h2 {
-  font-size: 26px;
-  line-height: 37px;
+  font-size: 1.62rem;
+  line-height: 2.31rem;
   color: #fff;
   background-color: #0d7eba;
   box-shadow: 0 2px 40px #0000001a;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   border: none;
-  padding: 12px;
-  width: 300px;
+  padding: 0.75rem;
+  width: 18.75rem;
   text-align: center;
   letter-spacing: 0.02em;
 }
 
 .content--text {
   margin-top: 2rem;
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 1.5rem;
+  line-height: 1.62rem;
   text-align: center;
   background: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   padding: 1rem;
 }
 
@@ -111,7 +111,7 @@
 
 .container4 img {
   margin-top: 4rem;
-  height: 450px;
+  height: 28.12rem;
 }
 
 /***************************************
@@ -120,14 +120,14 @@ RESPONSIVE
 
 @media only screen and (max-width: 1032px) {
   .container1 {
-    max-width: 700px;
+    max-width: 43.75rem;
 
   }
 }
 
 @media only screen and (max-width: 900px) {
   .container1 {
-    max-width: 600px;
+    max-width: 37.5rem;
 
   }
 }
@@ -135,7 +135,7 @@ RESPONSIVE
 @media only screen and (max-width: 786px) {
   .container1 {
     margin-top: 2rem;
-    max-width: 500px;
+    max-width: 31.25rem;
   }
 
   .container1 p {
@@ -145,25 +145,25 @@ RESPONSIVE
   }
 
   .right img {
-    height: 350px;
+    height: 21.87rem;
 
   }
 
   .left {
-    width: 500px;
+    width: 31.25rem;
 
   }
 
   .title-btn h2 {
-    font-size: 22px;
-    padding: 10px;
-    width: 260px;
+    font-size: 1.37rem;
+    padding: 0.62rem;
+    width: 16.25rem;
 
   }
 
   .content--text {
 
-    font-size: 20px;
+    font-size: 1.25rem;
 
   }
 
@@ -171,14 +171,14 @@ RESPONSIVE
 
   .container4 img {
     margin-top: 4rem;
-    height: 400px;
+    height: 25rem;
   }
 
 }
 
 @media only screen and (max-width: 540px) {
   .container1 {
-    max-width: 400px;
+    max-width: 25rem;
   }
 
   .container1 p {
@@ -188,7 +188,7 @@ RESPONSIVE
   }
 
   .left {
-    width: 400px;
+    width: 25rem;
 
   }
 }

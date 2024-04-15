@@ -1,273 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="xidthdevice-width, initial-scale=1.0" />
-    <title>Layout Master</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Coiny"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <nav class="navigation">
-        <div class="nav-logo">
-          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
-        </div>
-        <div class="nav-menu">
-          <ul>
-            <li><a href="index.html" class="link active">Home</a></li>
-            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
-            <li><a href="statistics.html" class="link">Statistics</a></li>
-            <li><a href="about.html" class="link">About us</a></li>
-            <li><a href="help.html" class="link">Help</a></li>
-          </ul>
-        </div>
-        <div class="nav-button">
-          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
-          <a href="register.html" class="btn" id="registerBtn">Sign Up</a>
-        </div>
-        <div class="nav-menu-btn">
-          <i class="bx bx-menu"></i>
-        </div>
-      </nav>
-    </header>
-    <div class="container">
-      <div class="title1">
-        <h1 class="first-title">Feral Presence</h1>
-        <h1 class="second-title">Adviser</h1>
-        <a href="#scroll-container2" class="btn" id="reportBtn">Report pet</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="xidthdevice-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navigation">
+      <div class="nav-logo">
+        <a href="index.html"><img alt="logo_img" src="./img/logo.png"></a>
       </div>
-      <div class="cover"></div>
+      <div class="nav-menu">
+        <ul>
+          <li><a href="index.html" class="link active">Home</a></li>
+          <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+          <li><a href="statistics.html" class="link">Statistics</a></li>
+          <li><a href="about.html" class="link">About us</a></li>
+          <li><a href="help.html" class="link">Help</a></li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+        <a href="register.html" class="btn" id="registerBtn">Sign Up</a>
+      </div>
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="title1">
+      <h1 class="first-title">Feral Presence</h1>
+      <h1 class="second-title">Adviser</h1>
+      <a href="#scroll-container2" class="btn" id="reportBtn">Report pet</a>
     </div>
+    <div class="cover"></div>
+  </div>
 
-    <!--Report form-->
-    <div id="scroll-container2" class="container2">
-      <div class="report">
-        <div class="container-form">
-          <div class="title">Enter pet's information</div>
-          <form action="#">
-            <div class="status-details">
-              <input type="radio" name="status" id="dot-1" />
-              <input type="radio" name="status" id="dot-2" />
-              <span class="status-title">Pet status:</span>
-              <div class="category">
-                <label for="dot-1">
-                  <span class="dot one"></span>
-                  <span class="status">Lost</span>
-                </label>
-                <label for="dot-2">
-                  <span class="dot two"></span>
-                  <span class="status">Found/Stray</span>
-                </label>
-              </div>
-              <div class="user-details">
-                <div class="input-box">
-                  <span class="details">Pet name</span>
-                  <input type="text" placeholder="Enter pet name" required />
-                </div>
-                <div class="input-box">
-                  <span class="details">Circumstance</span>
-                  <input
-                    type="text"
-                    placeholder="Enter the circumstance"
-                    required
-                  />
-                </div>
-                <div class="input-box">
-                  <span class="details">Pet type</span>
-                  <input type="text" placeholder="Enter pet type" required />
-                </div>
-                <div class="input-box">
-                  <span class="details">Phone number</span>
-                  <input
-                    type="text"
-                    placeholder="Enter phone number"
-                    required
-                  />
-                </div>
-                <div class="input-box">
-                  <span class="details">Address last seen</span>
-                  <input type="text" placeholder="Enter the adress" required />
-                </div>
-                <div class="input-box">
-                  <span class="details">Email</span>
-                  <input type="text" placeholder="Enter your email" required />
-                </div>
-              </div>
+  <!--Report form-->
+  <div id="scroll-container2" class="container2">
+    <div class="report">
+      <div class="container-form">
+        <div class="title">Enter pet's information</div>
+        <form action="#">
+          <div class="status-details">
+            <input type="radio" name="status" id="dot-1">
+            <input type="radio" name="status" id="dot-2">
+            <span class="status-title">Pet status:</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="status">Lost</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="status">Found/Stray</span>
+              </label>
             </div>
-
-            <div class="another-details">
+            <div class="user-details">
               <div class="input-box">
-                <span class="details"
-                  >Other information ( eg. leaving the shelter, risk of rabies
-                  or violent behaviour )</span
-                >
-                <input type="text" placeholder="Enter other details" required />
+                <span class="details">Pet name</span>
+                <input type="text" placeholder="Enter pet name" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Circumstance</span>
+                <input type="text" placeholder="Enter the circumstance" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Pet type</span>
+                <input type="text" placeholder="Enter pet type" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Phone number</span>
+                <input type="text" placeholder="Enter phone number" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Address last seen</span>
+                <input type="text" placeholder="Enter the adress" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" placeholder="Enter your email" required>
               </div>
             </div>
-            <div class="upload-photo">
-              <h3>Upload photo here:</h3>
-              <i class="fa-solid fa-file-import"></i>
-            </div>
-            <div class="button">
-              <input type="submit" value="Register" />
-            </div>
-          </form>
-        </div>
+          </div>
 
-        <div class="image-form">
-          <img alt="form-image" src="./img/form_image.png" />
-        </div>
+          <div class="another-details">
+            <div class="input-box">
+              <span class="details">Other information ( eg. leaving the shelter, risk of rabies
+                or violent behaviour )</span>
+              <input type="text" placeholder="Enter other details" required>
+            </div>
+          </div>
+          <div class="upload-photo">
+            <h3>Upload photo here:</h3>
+            <i class="fa-solid fa-file-import"></i>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+        </form>
+      </div>
+
+      <div class="image-form">
+        <img alt="form-image" src="./img/form_image.png">
       </div>
     </div>
+  </div>
 
-    <!--Cards section-->
-    <div class="container3">
-      <div class="container3--title">
-        <h1>
-          When you report a lost/found pet, your post will appear here as
-          <span> featured post</span>
-        </h1>
+  <!--Cards section-->
+  <div class="container3">
+    <div class="container3--title">
+      <h1>
+        When you report a lost/found pet, your post will appear here as
+        <span> featured post</span>
+      </h1>
+    </div>
+    <div class="grid-wrapper">
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_dog1.jpeg">
+          <div class="card--body">
+            <h3>Roxi</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_cat1.jpg">
+          <div class="card--body">
+            <h3>Lola</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_dog2.jpg">
+          <div class="card--body">
+            <h3>Max</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_ferret.jpg">
+          <div class="card--body">
+            <h3>Zeus</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_dog3.jpeg">
+          <div class="card--body">
+            <h3>Benny</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_cat2.jpg">
+          <div class="card--body">
+            <h3>Mina</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_rabbit.jpg">
+          <div class="card--body">
+            <h3>Pipo</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+      <a href="card.html">
+        <div class="card">
+          <img alt="pet-image" class="card--image" src="./img/lost_dog4.jpg">
+          <div class="card--body">
+            <h3>Dixie</h3>
+            <p>Addres last found</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!--Footer section-->
+
+  <footer>
+    <div class="footer--section1">
+      <div class="footer-content">
+        <a href="index.html">Home</a>
       </div>
-      <div class="grid-wrapper">
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_dog1.jpeg"
-            />
-            <div class="card--body">
-              <h3>Roxi</h3>
-              <p>Addres last found</p>
-            </div>
-          </div></a
-        >
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_cat1.jpg"
-            />
-            <div class="card--body">
-              <h3>Lola</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_dog2.jpg"
-            />
-            <div class="card--body">
-              <h3>Max</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_ferret.jpg"
-            />
-            <div class="card--body">
-              <h3>Zeus</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_dog3.jpeg"
-            />
-            <div class="card--body">
-              <h3>Benny</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_cat2.jpg"
-            />
-            <div class="card--body">
-              <h3>Mina</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_rabbit.jpg"
-            />
-            <div class="card--body">
-              <h3>Pipo</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
-        <a href="card.html">
-          <div class="card">
-            <img
-              alt="pet-image"
-              class="card--image"
-              src="./img/lost_dog4.jpg"
-            />
-            <div class="card--body">
-              <h3>Dixie</h3>
-              <p>Addres last found</p>
-            </div>
-          </div>
-        </a>
+      <div class="footer-content">
+        <a href="about.html">About us</a>
+      </div>
+      <div class="footer-content">
+        <a href="help.html">Help</a>
       </div>
     </div>
+    <hr>
+    <div class="footer--section2">
+      <h5>© Copyright. All rights reserved.</h5>
+    </div>
+  </footer>
+</body>
 
-    <!--Footer section-->
-
-    <footer>
-      <div class="footer--section1">
-        <div class="footer-content">
-          <a href="">Home</a>
-        </div>
-        <div class="footer-content">
-          <a href="">About us</a>
-        </div>
-        <div class="footer-content">
-          <a href="">Help</a>
-        </div>
-      </div>
-      <hr />
-      <div class="footer--section2">
-        <h5>© Copyright. All rights reserved.</h5>
-      </div>
-    </footer>
-  </body>
 </html>

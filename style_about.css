@@ -1,6 +1,7 @@
 @import url("navbar.css");
 @import url("footer.css");
 @import url('https://fonts.cdnfonts.com/css/hvdtrial-brandon-grotesque');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /******************
 */
 
@@ -26,9 +28,9 @@ body {
 
 /***Text***/
 .content-section {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 62.5rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -47,8 +49,9 @@ body {
   line-height: 1.6;
   font-size: 1.2em;
   text-align: justify;
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif; 
+  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
 }
+
 /************************/
 
 /***Container2****/
@@ -59,21 +62,23 @@ body {
   justify-content: space-evenly;
   align-items: center;
   min-height: 100vh;
-                              
+
 }
+
 .container2 .our-mission {
   max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 20px;
-  padding: 20px;
+  margin: 1.25rem;
+  padding: 1.25rem;
   background-color: #f7dcbc;
-  border-radius: 45px;
+  border-radius: 2.81rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif; 
+  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
 }
+
 .container2 .our-mission h1 {
   font-size: 2rem;
   font-family: Coiny;
@@ -86,11 +91,13 @@ body {
   color: #666;
   line-height: 1.6;
   font-size: 1.6rem;
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif; 
+  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
 }
+
 .report-pet {
   flex: 1;
 }
+
 .out-mission {
   flex: 2;
 }
@@ -114,6 +121,7 @@ body {
   transition: 0.3s ease;
   font-size: 1.25rem;
 }
+
 .btn-pet:hover {
   background: #0d7eba;
   color: white;
@@ -147,6 +155,7 @@ body {
     order: 2;
     max-width: 90%;
   }
+
   .container2 .report-pet {
     margin-left: 1rem;
     order: 1;

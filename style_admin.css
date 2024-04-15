@@ -21,16 +21,16 @@ a {
 .btn {
   background: #6BBBBD;
   color: white;
-  padding: 5px 10px;
+  padding: 0.31rem 0.624rem;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 1.87rem;
   cursor: pointer;
 }
 
 .btn:hover {
   color: black;
   background: #9feaea;
-  padding: 3px 8px;
+  padding: 0.18rem 0.5rem;
 
 }
 
@@ -53,15 +53,15 @@ a {
 
 .side_bar .logo-name img {
   position: relative;
-  width: 80px;
+  width: 5rem;
   height: 100%;
 
 }
 
 .side_bar li {
   font-family: Coiny;
-  font-size: 24px;
-  padding: 10px 40px;
+  font-size: 1.5rem;
+  padding: 0.62rem 2.5rem;
   display: flex;
   align-items: center;
   margin-top: 1rem;
@@ -70,7 +70,7 @@ a {
 .side_bar li:hover {
   background: #9feaea;
   color: black;
-  border-radius: 30px;
+  border-radius: 1.87rem;
   cursor: pointer;
 }
 
@@ -120,12 +120,12 @@ a {
   justify-content: center;
   border: none;
   background: #e3e3e3;
-  padding: 10px;
-  border-radius: 30px;
+  padding: 0.62rem;
+  border-radius: 1.87rem;
   height: 3rem;
   position: relative;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0.62rem;
+  margin-bottom: 0.62rem;
   margin-right: 5rem;
 }
 
@@ -137,14 +137,14 @@ a {
   background: #e6e6e6;
   color: #333;
   letter-spacing: 0.3px;
-  padding: 14px 34px;
+  padding: 0.87rem 2.12rem;
 
 }
 
 .container .header .nav .search~i {
 
   position: absolute;
-  left: 14px;
+  left: 0.87rem;
   top: 50%;
   transform: translateY(-50%);
   color: #888;
@@ -159,14 +159,14 @@ a {
 }
 
 .container .header .nav .user img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .container .header .nav .user .img-design {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 3.12rem;
+  height: 3.12rem;
 }
 
 .container .header .nav .user .img-design img {
@@ -197,11 +197,11 @@ a {
 }
 
 .container .content .cards .card {
-  width: 250px;
-  height: 150px;
+  width: 15.62rem;
+  height: 9.37rem;
   background-color: #F7DCBC;
-  margin: 20px 10px;
-  border-radius: 30px;
+  margin: 1.25rem 0.62rem;
+  border-radius: 1.87rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
@@ -253,9 +253,9 @@ a {
 
 .table td,
 .table th {
-  padding: 12px 15px;
+  padding: 0.75rem 0.93rem;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   border: 1px solid rgb(158, 152, 152);
 }
 
@@ -366,7 +366,7 @@ a {
   }
 
   .table tr {
-    margin-bottom: 15px;
+    margin-bottom: 0.93rem;
   }
 
   .table td {
@@ -381,8 +381,8 @@ a {
     position: absolute;
     left: 0;
     width: 50%;
-    padding-left: 15px;
-    font-size: 15px;
+    padding-left: 0.93rem;
+    font-size: 0.93rem;
     font-weight: bold;
     text-align: left;
   }

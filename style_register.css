@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /******************
 */
 
@@ -21,12 +22,14 @@ body {
   grid-template-columns: 0.7fr 1fr;
   flex-grow: 1;
 }
+
 .form {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .image {
   display: flex;
   justify-content: center;
@@ -90,7 +93,7 @@ input {
   padding: 0.87rem 4rem;
 }
 
-input ~ i {
+input~i {
   position: absolute;
   left: 2rem;
   top: 50%;
@@ -99,14 +102,16 @@ input ~ i {
   transition: color 0.4s;
 }
 
-input:focus ~ i {
+input:focus~i {
   color: #0d7eba;
 }
+
 .between_form_and_submit {
   width: 18.75rem;
   height: 0.125rem;
   margin: 1.5rem;
 }
+
 .welcome-message {
   text-align: center;
   font-size: 1.1rem;
@@ -133,10 +138,10 @@ button.submit:hover {
 
 /* ----  Responsiveness   ----  */
 @media (max-width: 900px) {
-  
+
   .login-container {
     position: fixed;
-    top: 50%;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -148,10 +153,12 @@ button.submit:hover {
   .image {
     display: none;
   }
-  .login-container{
+
+  .login-container {
     margin-top: 5rem;
   }
-  .login-container .title{
+
+  .login-container .title {
     font-size: 30px;
   }
 }
