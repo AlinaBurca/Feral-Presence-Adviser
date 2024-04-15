@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link rel="stylesheet" href="./style_login.css" />
-  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
-  <title>Login page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./style_forget.css">
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet">
+  <title>Forget password</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
       </div>
       <div class="nav-menu">
         <ul>
-          <li><a href="index.html" class="link">Home</a></li>
+          <li><a href="index.html" class="link active">Home</a></li>
           <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
           <li><a href="statistics.html" class="link">Statistics</a></li>
           <li><a href="about.html" class="link">About us</a></li>
@@ -37,30 +37,29 @@
     </nav>
   </header>
   <div class="sub-navbar">
+    <div class="image">
+    </div>
     <div class="form">
       <div class="login-container">
-        <p class="title">Welcome back</p>
+        <div class="key">
+          <i class="fas fa-key"></i>
+        </div>
+        <p class="title">Reset password</p>
         <div class="between_title_and_forms"></div>
         <p class="welcome-message">
-          Nice to see you again! Connect and let's get started.
+          Enter the email address associated with your account and we'll send
+          you a link to set a new password.
         </p>
 
         <form class="login-form">
           <div class="form-control">
-            <input type="text" placeholder="Username" />
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="form-control">
-            <input type="password" placeholder="Password" />
-            <i class="fas fa-lock"></i>
+            <input type="email" placeholder="Enter your email">
+            <i class="fas fa-envelope"></i>
           </div>
         </form>
-        <a href="forget.html" class="forger-password-messages">Forget password?</a>
-        <a href="dashboard/.html" class="submit">Login</a>
+        <a href="dashboard.html" class="submit">Send Reset Email</a>
+
       </div>
-    </div>
-    <div class="image">
-      <img src="./images/img.svg" alt="dog-img" />
     </div>
   </div>
 </body>
