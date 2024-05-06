@@ -12,6 +12,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: "Nunito", sans-serif;
 }
 
 
@@ -63,9 +64,9 @@ body {
 }
 
 .title {
-  font-family: 'Coiny';
+
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 800;
   text-align: center;
   letter-spacing: 0.062rem;
   margin-top: 0.8rem;
@@ -80,6 +81,7 @@ body {
   align-content: center;
 
 }
+
 
 .form-control {
   width: 100%;
@@ -124,7 +126,7 @@ input:focus~i {
 
 .welcome-message {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.75rem;
   margin-bottom: 1.25rem;
   color: #696969;

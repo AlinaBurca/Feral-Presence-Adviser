@@ -44,27 +44,26 @@
     </div>
     <div class="cover"></div>
   </div>
+  
 
   <!--Report form-->
   <div id="scroll-container2" class="container2">
     <div class="report">
       <div class="container-form">
         <div class="title">Enter pet's information</div>
-        <form action="#">
+        <form action="">
+          <div class="pet-status">
+          <span class="status-title">Pet status:</span>
+          <div class="status-types">
+          <input type="radio" name="status" id="dot-1">
+          <label for="dot-1"> Lost </label>
+          <input type="radio" name="status" id="dot-2">
+          <label for="dot-2"> Found/Stray </label>
+          </div>
+          </div>
+         
           <div class="status-details">
-            <input type="radio" name="status" id="dot-1">
-            <input type="radio" name="status" id="dot-2">
-            <span class="status-title">Pet status:</span>
-            <div class="category">
-              <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="status">Lost</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span class="status">Found/Stray</span>
-              </label>
-            </div>
+           
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Pet name</span>
@@ -101,8 +100,8 @@
             </div>
           </div>
           <div class="upload-photo">
-            <h3>Upload photo here:</h3>
-            <i class="fa-solid fa-file-import"></i>
+            <label>Upload photo here:</label>
+           <input type="file">
           </div>
           <div class="button">
             <input type="submit" value="Register">

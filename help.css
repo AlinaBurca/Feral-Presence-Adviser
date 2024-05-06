@@ -6,9 +6,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #666;
-
+  font-family: "Nunito", sans-serif;
 }
+
 
 .banner img {
   width: 100%;
@@ -23,12 +23,12 @@
   padding: 1.25rem;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
+  color: #666;
 }
 
 .container1 p {
   line-height: 1.6;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: justify;
 }
 
@@ -38,8 +38,22 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
+  color: #666;
 }
+
+.container2 .content--text {
+  font-size: 1.2rem;
+}
+
+.container3 .content--text {
+  font-size: 1.2rem;
+}
+
+.container4 .content--text {
+  font-size: 1.2rem;
+}
+
+
 
 .right img {
   height: 25rem;
@@ -78,7 +92,7 @@
   padding: 1rem;
 }
 
-.content text p {
+.content-text p {
   padding: 1rem;
 }
 
@@ -88,7 +102,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
+  color: #666;
 }
 
 .container3 .title-btn h2 {
@@ -102,7 +116,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 3rem;
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
+  color: #666;
 }
 
 .container4 .title-btn h2 {

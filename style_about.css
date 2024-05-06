@@ -33,15 +33,17 @@ body {
   padding: 1.25rem;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Nunito", sans-serif;
+
 
 }
 
 .about-content h2 {
   font-size: 2em;
-  font-family: Coiny;
   color: #000000;
   margin-bottom: 0.5em;
   text-align: center;
+  font-weight: 800;
 }
 
 .about-content p {
@@ -49,7 +51,7 @@ body {
   line-height: 1.6;
   font-size: 1.2em;
   text-align: justify;
-  font-family: 'HvDTrial Brandon Grotesque', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /************************/

@@ -12,6 +12,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: "Nunito", sans-serif;
 }
 
 /******************
@@ -69,9 +70,8 @@ div.image {
 
 .title {
   text-transform: uppercase;
-  font-family: "Coiny";
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 800;
   text-align: center;
   letter-spacing: 0.062rem;
   margin-top: 5rem;
@@ -82,6 +82,7 @@ div.image {
   display: flex;
   flex-direction: column;
   align-content: center;
+  font-family: "Nunito", sans-serif;
 }
 
 .form-control {

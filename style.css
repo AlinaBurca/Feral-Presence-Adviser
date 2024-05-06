@@ -1,6 +1,7 @@
 @import url("navbar.css");
 @import url("footer.css");
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=NTR&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=NTR&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Salsa&display=swap');
 
 * {
   box-sizing: border-box;
@@ -21,7 +22,7 @@
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
   font-size: 4.6rem;
-  font-family: "Lora", sans-serif;
+  font-family: "Salsa", sans-serif;
 }
 
 .title1 .btn {
@@ -29,7 +30,8 @@
   padding: 1rem 3rem;
   font-size: 1.75rem;
   margin-top: 1.25rem;
-  font-family: Coiny;
+  font-family: "Nunito";
+  font-weight: 900;
   border: none;
   color: black;
   background: #f7dcbc;
@@ -70,6 +72,7 @@
   justify-content: space-evenly;
   align-items: center;
   min-height: 100vh;
+  font-family: "Nunito", sans-serif;
 }
 
 .report {
@@ -102,11 +105,35 @@
 }
 
 .report .container-form .title {
-  font-family: Coiny;
+  font-family: "Nunito";
   text-align: center;
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 800;
   position: relative;
+}
+
+.pet-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 700;
+
+}
+
+.pet-status .status-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.pet-status label {
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+}
+
+.status-types input {
+  margin-left: 1rem;
+
+
 }
 
 .report .container-form form .user-details {
@@ -114,23 +141,29 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
+
 }
 
 form .user-details .input-box {
   margin-bottom: 15px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .user-details .input-box .details {
   display: block;
-  font-weight: 500;
+  margin-left: 0.5rem;
   margin-bottom: 5px;
+  font-size: 20px;
 }
 
 .user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
@@ -159,7 +192,7 @@ form .another-details .input-box {
   height: 85px;
   width: 70%;
   outline: none;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
@@ -175,49 +208,21 @@ form .another-details .input-box {
   border-color: black;
 }
 
+
+
 /*************************/
 form .status-details .status-title {
   font-size: 20px;
   font-weight: 500;
-  font-family: Coiny;
+  font-family: "Nunito";
 }
 
-form .status-details .category {
-  display: flex;
-  width: 80%;
-  margin: 14px 0;
-  justify-content: space-between;
-}
-
-.status-details .category label {
-  font-family: Coiny;
-  display: flex;
-  align-items: center;
-}
-
-.status-details .category .dot {
-  height: 18px;
-  width: 18px;
-  background: #d9d9d9;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 5px solid transparent;
-}
-
-#dot-1:checked~.category label .one,
-#dot-2:checked~.category label .two,
-#dot-3:checked~.category label .three {
-  border-color: #d9d9d9;
-  background: rgb(75, 75, 240);
-}
-
-form input[type="radio"] {
-  display: none;
-}
 
 form .button {
   height: 45px;
   margin: 45px 0;
+  font-family: "Nunito";
+  font-size: 900;
 }
 
 form .button input {
@@ -248,18 +253,13 @@ form .button input:hover {
 
 .upload-photo {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  font-family: Coiny;
-  font-size: 1rem;
+  flex-direction: column;
+  font-size: 1.2rem;
   gap: 10px;
+  font-family: "Nunito";
 }
 
-.upload-photo i {
-  font-size: 2rem;
-  cursor: pointer;
-}
+
 
 /************************************************************
 Carduri
@@ -277,10 +277,10 @@ Carduri
 }
 
 .container3--title h1 {
-  font-family: "Coiny", sans-serif;
+  font-family: "Salsa", sans-serif;
   color: #595959;
   font-weight: 200;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .container3--title span {
@@ -311,6 +311,7 @@ Carduri
   background-size: cover;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transform: translate3D(0, -1px, 0) scale(1.03);
+  font-family: "Nunito", sans-serif;
 }
 
 .card--image {

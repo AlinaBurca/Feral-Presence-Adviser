@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=NTR&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+
 }
 
 body {
   min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
 }
 
 li {
@@ -59,7 +62,6 @@ a {
 }
 
 .side_bar li {
-  font-family: Coiny;
   font-size: 1.5rem;
   padding: 0.62rem 2.5rem;
   display: flex;
@@ -215,7 +217,7 @@ a {
 }
 
 .container .content .cards .card .box h3 {
-  font-family: coiny;
+
   color: #0D7EBA;
 }
 
@@ -240,7 +242,7 @@ a {
 }
 
 .content .title-table h1 {
-  font-family: Coiny;
+
   margin-left: 1rem;
 
 }
@@ -262,7 +264,7 @@ a {
 .table th {
 
   color: black;
-  font-family: Coiny;
+
 }
 
 .nav-menu-btn {

@@ -5,6 +5,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Mochiy+Pop+P+One&family=Signika+Negative:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=NTR&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Salsa&display=swap');
+
 
 
 * {
@@ -55,7 +57,8 @@ body {
   margin: 0px 1.56rem;
   font-size: 1.1rem;
   color: black;
-  font-family: "Capriola", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
 }
 
 .link:hover,
@@ -79,7 +82,8 @@ body {
   cursor: pointer;
   transition: 0.3s ease;
   font-size: 1.25rem;
-  font-family: 'Coiny', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
 }
 
 .btn:hover {
@@ -142,7 +146,7 @@ FILTER FORM
   margin-bottom: 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: white;
 }
 
@@ -151,7 +155,7 @@ form {
   height: 80%;
   background-color: white;
   border-radius: 20px;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -262,6 +266,7 @@ form .input-title {
   border-radius: 20px;
   background-color: #0d7eba;
   color: white;
+  font-family: "Nunito", sans-serif;
 }
 
 .filter-btn:hover {
@@ -281,6 +286,7 @@ form .input-title {
   flex-wrap: wrap;
   overflow-y: scroll;
   scrollbar-width: thin;
+  font-family: "Nunito", sans-serif;
 }
 
 .section2--title {
@@ -489,7 +495,7 @@ RESPONSIVE
   .search-menu-bar ul li a {
     text-decoration: none;
     width: 100%;
-    font-family: Work Sans;
+    font-family: 'Nunito';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;

@@ -3,41 +3,46 @@
 **********************************************************************/
 
 footer {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  .footer--section1 {
-    padding: 1rem;
-    background-color: #fdcd4b;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-    font-size: 1rem;
-    font-family: "Coiny";
-    color: black;
-  }
-  
-  
-  footer a {
-    text-decoration: none;
-    color: black;
-    padding: 0.5rem;
-    margin: 0 2rem;
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  footer a:hover {
-    color: #fff;
-  }
-  
-  .footer--section2 {
-    padding-bottom: 0.8rem;
-    padding-top: 0.8rem;
-    background-color: #fdcd4b;
-    color: black;
-  }
-  hr {
-    color: white;
-  }
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer--section1 {
+  padding: 1rem;
+  background-color: #fdcd4b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  font-family: 'Nunito';
+  font-weight: 800;
+  color: black;
+}
+
+
+footer a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+  margin: 0 2rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.footer--section2 {
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  background-color: #fdcd4b;
+  color: black;
+  font-family: 'Nunito';
+}
+
+hr {
+  color: white;
+}
