@@ -15,7 +15,18 @@
 
 <body>
   <header>
-    <nav class="navigation">
+    <nav id="navigation" >
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="filter.html">Lost/Found Pets</a></li>
+          <li><a href="statistics.html" >Statistics</a></li>
+          <li><a href="about.html" >About us</a></li>
+          <li><a href="help.html" >Help</a></li>
+        </ul>
+      
+
+      <div class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></div>
       <div class="nav-logo">
         <a href="index.html"><img alt="logo_img" src="./img/logo.png"></a>
       </div>
@@ -24,16 +35,12 @@
           <li><a href="index.html" class="link">Home</a></li>
           <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
           <li><a href="statistics.html" class="link">Statistics</a></li>
-          <li><a href="about.html" class="link">About us</a></li>
+          <li><a href="about.html" class="link active">About us</a></li>
           <li><a href="help.html" class="link">Help</a></li>
         </ul>
       </div>
       <div class="nav-button">
         <a href="login.html" class="btn" id="loginBtn">Sign In</a>
-        <a href="register.html" class="btn" id="registerBtn">Sign Up</a>
-      </div>
-      <div class="nav-menu-btn">
-        <i class="bx bx-menu"></i>
       </div>
     </nav>
   </header>
@@ -135,6 +142,7 @@
       </div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

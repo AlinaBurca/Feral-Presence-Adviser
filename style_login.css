@@ -55,17 +55,29 @@ div.image {
   align-items: center;
 }
 
-.forger-password-messages {
+.forget-password-messages {
   text-align: center;
   font-size: 1.1em;
   line-height: 2.33rem;
-  margin-bottom: 1.87rem;
+  margin-bottom: 1.4rem;
   color: #696969;
 }
 
-.forger-password-messages:hover {
+.forget-password-messages:hover {
   color: #0d7eba;
   cursor: pointer;
+}
+
+.register-messages {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0d7eba;
+}
+
+
+.register-messages:hover {
+  color: #fdcd4b;
 }
 
 .title {
