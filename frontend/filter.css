@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Mochiy+Pop+P+One&family=Signika+Negative:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import url('https://fonts.googleapis.com/css2?family=NTR&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Salsa&display=swap');
-
+@import url("navbar.css");
 
 
 * {
@@ -16,92 +16,23 @@
 }
 
 body {
-  background-color: #ffffff;
+
+  background: url("./img/filter_cover.png") no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
-.navigation {
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 80px;
-  line-height: 100px;
-  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
-  z-index: 100;
 
-}
 
-.nav-logo img {
-  width: auto;
-  height: 4.5rem;
-  margin-top: 0.2rem;
-  user-select: none;
-  margin-left: -2rem;
-  position: absolute;
-}
 
-.nav-menu ul {
-  display: flex;
-}
 
-.nav-menu ul li {
-  list-style-type: none;
-}
 
-.nav-menu ul li .link {
-  text-decoration: none;
-  padding-bottom: 0.8rem;
-  margin: 0px 1.56rem;
-  font-size: 1.1rem;
-  color: black;
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
-}
-
-.link:hover,
-.active {
-  border-bottom: 0.12rem solid rgb(199, 199, 175);
-}
-
-.nav-button {
-  margin-bottom: 2.2rem;
-  margin-right: 2rem;
-}
-
-.nav-button .btn {
-  text-decoration: none;
-  color: black;
-  margin-top: 2rem;
-  padding: 0.5rem 1.2rem;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
-  border-radius: 1.87rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1.25rem;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-}
-
-.btn:hover {
-  background: #0d7eba;
-  color: white;
-}
-
-#registerBtn {
-  margin-left: 0.93rem;
-}
-
-.nav-menu-btn {
-  display: none;
-}
 
 /***************************************************
 MAIN SECTION
 ***************************************************/
 body {
+  background: url("./img/filter_cover3.png") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -408,28 +339,7 @@ form .input-title {
 RESPONSIVE
 *************************************/
 
-@media only screen and (max-width: 1032px) {
-  .nav-menu ul li .link {
-    padding-bottom: 0.9rem;
-    margin: 0px 0.93rem;
-    font-size: 0.8rem;
-  }
 
-  .nav-button {
-    margin-right: 1rem;
-  }
-
-  .nav-button .btn {
-
-    padding: 0.5rem 0.8rem;
-
-  }
-
-  .nav-logo img {
-    margin-top: 0.6rem;
-    height: 4rem;
-  }
-}
 
 @media only screen and (max-width: 900px) {
   .section1 {
@@ -445,20 +355,6 @@ RESPONSIVE
   }
 
 
-  .nav-logo img {
-    height: 3.5rem;
-    margin-top: 1.1rem;
-    margin-left: -2rem;
-  }
-
-  .nav-button .btn {
-
-    font-size: 0.8rem;
-  }
-
-  .nav-menu {
-    display: none;
-  }
 
   .search-menu-bar {
     display: block !important;
@@ -468,14 +364,15 @@ RESPONSIVE
     box-shadow: 0 -2px 70px #0000001f;
     border-radius: 10px;
     bottom: 1.2rem;
-    width: 92%;
-    left: 50%;
+    width: 40%;
+    left: 53%;
     padding: 15px 0;
     transform: translate(-50%);
   }
 
   .search-menu-bar ul {
     display: flex;
+    justify-content: space-evenly;
     list-style-type: none;
     margin-bottom: 0;
     font-size: 1rem;
@@ -484,7 +381,7 @@ RESPONSIVE
   }
 
   .search-menu-bar ul li {
-    width: 33%;
+
     text-align: center;
     margin-top: 1px;
     border-right: 1px solid #f7f7f7;
@@ -509,16 +406,6 @@ RESPONSIVE
     width: 16px;
     margin-right: 6px;
     margin-bottom: -2.5px;
-  }
-
-
-}
-
-@media only screen and (max-width: 720px) {
-  .nav-button .btn {
-    width: 4rem;
-    height: 2.2rem;
-    font-size: 0.8rem;
   }
 
 

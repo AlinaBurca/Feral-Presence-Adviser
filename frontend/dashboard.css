@@ -5,6 +5,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Mochiy+Pop+P+One&family=Signika+Negative:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=NTR&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("navbar.css");
 
 * {
   box-sizing: border-box;
@@ -13,96 +14,20 @@
 }
 
 body {
-  background-color: #ffffff;
+  background: url("./img/filter_cover.png") no-repeat;
   background-size: cover;
+  background-position: center;
+
   font-family: "Nunito", sans-serif;
 }
 
-.navigation {
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 80px;
-  line-height: 100px;
-  background: linear-gradient(rgba(39, 39, 39, 0.5), transparent);
-  z-index: 100;
 
-}
-
-.nav-logo img {
-  width: auto;
-  height: 4.5rem;
-  margin-top: 0.2rem;
-  user-select: none;
-  margin-left: -2rem;
-  position: absolute;
-}
-
-.nav-menu ul {
-  display: flex;
-}
-
-.nav-menu ul li {
-  list-style-type: none;
-}
-
-
-.nav-menu ul li .link {
-  text-decoration: none;
-  padding-bottom: 0.8rem;
-  margin: 0px 1.56rem;
-  font-size: 1.1rem;
-  color: black;
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
-
-}
-
-.link:hover,
-.active {
-  border-bottom: 0.12rem solid rgb(199, 199, 175);
-}
-
-.nav-button {
-  margin-bottom: 2.2rem;
-  margin-right: 2rem;
-}
-
-
-.nav-button .btn {
-  text-decoration: none;
-  color: black;
-  margin-top: 2rem;
-  padding: 0.5rem 1.2rem;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
-  border-radius: 1.87rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1.25rem;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-}
-
-.btn:hover {
-  background: #0d7eba;
-  color: white;
-}
-
-#registerBtn {
-  margin-left: 0.93rem;
-}
-
-.nav-menu-btn {
-  display: none;
-}
 
 /***************************************************
 MAIN SECTION
 ***************************************************/
 body {
+  background: url("./img/filter_cover3.png") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -112,11 +37,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-top: 6rem;
-  margin-left: 1.5rem;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .section1 {
   margin-top: 2rem;
+  margin-left: -4rem;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -197,7 +125,7 @@ FILTER FORM
 /***********/
 
 .section2 {
-  width: 45%;
+  width: 50%;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -312,7 +240,7 @@ FILTER FORM
 User activity
 */
 .section3 {
-  margin-left: 5rem;
+
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -416,37 +344,7 @@ User activity
 RESPONSIVE
 *************************************/
 
-@media only screen and (max-width: 1032px) {
-  .nav-menu ul li .link {
-    text-decoration: none;
-    padding-bottom: 1.56rem;
-    margin: 0px 0.93rem;
-    font-size: 1rem;
-    color: black;
-  }
 
-  .nav-logo img {
-    width: auto;
-    height: 6rem;
-    user-select: none;
-    margin-top: 0rem;
-    margin-left: -3rem;
-  }
-
-  .nav-button .btn {
-    color: black;
-    margin-top: 2rem;
-    width: 7rem;
-    height: 2.2rem;
-    background: rgba(255, 255, 255, 0.4);
-
-    border: none;
-    border-radius: 1.87rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-size: 1rem;
-  }
-}
 
 @media only screen and (max-width: 1100px) {
   .section1 {
@@ -461,17 +359,7 @@ RESPONSIVE
     width: 100%;
   }
 
-  .nav-logo img {
-    width: auto;
-    height: 4rem;
-    user-select: none;
-    margin-top: 0.5rem;
-    margin-left: -2rem;
-  }
 
-  .nav-menu {
-    display: none;
-  }
 
   .search-menu-bar {
     display: block !important;
@@ -523,15 +411,5 @@ RESPONSIVE
     margin-bottom: -2.5px;
   }
 
-  .nav-button .btn {
 
-    padding: 0.5rem 0.8rem;
-
-    font-size: 1rem;
-
-  }
-
-  .nav-button {
-    margin-right: 0;
-  }
 }
