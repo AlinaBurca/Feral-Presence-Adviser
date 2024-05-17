@@ -2,67 +2,70 @@ const mysql = require('mysql2');
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const dbConnection = require('../user/database/database.js').getConnection();
+const sendEmail = require('../util/send_email.js');
+
 
 async function registerUserController(req, res) {
-    switch (req.method) {
-        case 'POST':
-            controllerRegister(req, res);
-            break;
-        default:
-            res.writeHead(405);
-            res.end();
+    if (req.method === 'POST') {
+        await controllerRegister(req, res);
+    } else {
+
+        res.writeHead(405);
+        res.end('Method Not Allowed');
     }
 }
+
 async function controllerRegister(req, res) {
-    try {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', async () => {
-            try {
-                const user = JSON.parse(body);
-                user.password = await bcrypt.hash(user.password, saltRounds);
+    let body = '';
+    req.on('data', chunk => {
+        body += chunk.toString();
+    });
 
-                const query = `INSERT INTO users (username, password, email, phone_number, address) VALUES (?, ?, ?, ?, ?)`;
-                const values = [user.username, user.password, user.email, user.phone, user.adresa];
-
-                dbConnection.execute(query, values, (err, results) => {
-                    if (err) {
-                        throw err;
-                    }
-                    console.log("User inserted with ID:", results.insertId);
+    req.on('end', async () => {
+        try {
+            const user = JSON.parse(body);
+            console.log(user.email);
+            const [rows] = await dbConnection.promise().query('SELECT email FROM users WHERE email = ?', [user.email]);
+            console.log(rows.length);
+            if (rows.length > 0) {
+                if (!res.headersSent) {
+                    res.writeHead(409);
+                    res.end("Email already exists");
+                    return;
+                }
+            }
+            else
+                if (user.isValid) {
+                    user.password = await bcrypt.hash(user.password, saltRounds);
+                    await dbConnection.promise().execute(
+                        'INSERT INTO users (username, password, email, phone_number, address) VALUES (?, ?, ?, ?, ?)',
+                        [user.username, user.password, user.email, user.phone, user.adresa]
+                    );
+                    sendEmail(user.email, "FePA", "Hi! There, You have recently visited  our website and entered your email. Please follow the given link to verify your email http://localhost:3000/verify/${token} Thanks");
                     if (!res.headersSent) {
                         res.writeHead(201);
                         res.end("User created");
+                        return;
                     }
-                });
-            } catch (error) {
-                console.error(error);
-                if (!res.headersSent) {
-                    res.writeHead(500);
-                    res.end("Internal Server Error");
                 }
+                else {
+                    if (!res.headersSent) {
+                        res.writeHead(403);
+                        res.end("Is not a valid form");
+                        return;
+                    }
+                }
+        } catch (error) {
+            if (!res.headersSent) {
+                res.writeHead(500);
+                res.end("Internal Server Error");
+                return;
             }
-        });
-    } catch (error) {
-        console.log(error);
-        if (!res.headersSent) {
-            res.writeHead(500);
-            res.end("Internal Server Error");
         }
-    }
-}
-
-/*function controllerRegister(req, res) {
-    let body = '';
-    req.on('data', (chunk) => {
-        body += chunk.toString();
-    });
-    req.on('end', () => {
-        console.log(body);
-
     });
 }
-*/
+
+
+
+
 module.exports = registerUserController;

@@ -6,7 +6,7 @@ function createconnection() {
     connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: 'parola25072003',
+        password: 'diana',
         database: 'feral-presence-adviser'
     });
     connection.connect(function (err) {

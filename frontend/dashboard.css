@@ -14,7 +14,7 @@
 }
 
 body {
-  background: url("./img/filter_cover.png") no-repeat;
+
   background-size: cover;
   background-position: center;
 
@@ -27,7 +27,7 @@ body {
 MAIN SECTION
 ***************************************************/
 body {
-  background: url("./img/filter_cover3.png") no-repeat;
+
   background-position: center;
   background-size: cover;
 }

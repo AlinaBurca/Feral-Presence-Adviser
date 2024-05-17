@@ -54,18 +54,22 @@ function validatePassword() {
         return true;
 }
 
-function validateEmail() {
+function validateEmail(ok) {
     const email = document.querySelector('input[name="email"]');
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const error = document.getElementById('emailError');
 
-    if (!regex.test(email.value)) {
+    if (!regex.test(email.value) || ok === false) {
         email.classList.add('error');
         email.classList.remove('valid');
-        error.textContent = "It does not have a valid email syntax.";
+        if (ok === 1)
+            error.textContent = "It does not have a valid email syntax.";
+        else
+            error.textContent = "The email address is already in use.";
         error.style.visibility = 'visible';
         return false;
     }
+
     email.classList.remove('error');
     error.style.visibility = 'hidden';
     email.classList.add('valid');
@@ -95,74 +99,66 @@ function validateAdress() {
     return true;
 }
 function validateForm() {
+    const username = document.querySelector('input[name="username"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const phone = document.querySelector('input[name="telefon"]').value;
+    const adresa = document.querySelector('input[name="adresa"]').value;
+
     const isValidUsername = validateUsername();
-    const isValidEmail = validateEmail();
+    let isValidEmail = validateEmail(1);
     const isValidPassword = validatePassword();
     const isValidPhone = validatePhone();
     const isValidAdress = validateAdress();
-
+    let userData = {
+        username: username,
+        password: password,
+        email: email,
+        phone: phone,
+        adresa: adresa,
+        isValid: 0,
+    };
     if (isValidUsername && isValidEmail && isValidPassword && isValidPhone && isValidAdress) {
-        console.log("Form is valid.");
-        const username = document.querySelector('input[name="username"]');
-        const password = document.querySelector('input[name="password"]');
-        const email = document.querySelector('input[name="email"]');
-        const phone = document.querySelector('input[name="telefon"]');
-        const adresa = document.querySelector('input[name="adresa"]');
+        userData.isValid = 1;
+
+    }
 
 
+    fetch("./register", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+        .then(async (response) => {
 
-        const userData = {
-            username: username.value,
-            password: password.value,
-            email: email.value,
-            phone: phone.value,
-            adresa: adresa.value,
-        };
+
+            if (response.ok) {
+                console.log(response.status);
+                window.location.href = "./login.html";
 
 
+            } else if (response.status === 409) {
+                validateEmail(response.ok);
+            } else
+                if (response.status === 403) {
 
-        fetch("register.html", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-
-        })
-            .then(async (response) => {
-                if (response.ok) {
-                    window.location.href = "./login.html";
-                } else {
+                }
+                else {
                     const errorMessage = await response.text();
                     console.error(errorMessage);
-                    alert('Failed to register');
+                    alert('Failed to register: ' + errorMessage);
                 }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
+        })
+        .catch((err) => {
+            console.error('Network error:', err);
+            alert('Network error, please try again');
+        });
 }
 
 const submitButton = document.querySelector('.submit');
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
     validateForm();
-});
-
-function showSidebar() {
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'flex'
-}
-function hideSidebar() {
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'none'
-}
-window.addEventListener('scroll', function () {
-    var navbar = document.querySelector('#navigation');
-    if (window.scrollY > 0) {
-        navbar.classList.add('navbar-scroll');
-    } else {
-        navbar.classList.remove('navbar-scroll');
-    }
 });
