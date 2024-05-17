@@ -41,7 +41,7 @@ async function controllerRegister(req, res) {
                         'INSERT INTO users (username, password, email, phone_number, address) VALUES (?, ?, ?, ?, ?)',
                         [user.username, user.password, user.email, user.phone, user.adresa]
                     );
-                    sendEmail(user.email, "FePA", "Hi! There, You have recently visited  our website and entered your email. Please follow the given link to verify your email http://localhost:3000/verify/${token} Thanks");
+                    sendEmail(user.email, "FePA", "Hi! There, You have recently visited  our website and entered your email. Please follow the given link to verify your email Thanks");
                     if (!res.headersSent) {
                         res.writeHead(201);
                         res.end("User created");

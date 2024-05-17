@@ -60,60 +60,94 @@
     <div class="report">
       <div class="container-form">
         <div class="title">Enter pet's information</div>
-        <form action="">
+        <form action="./index.html" method="POST" id="petForm">
           <div class="pet-status">
           <span class="status-title">Pet status:</span>
           <div class="status-types">
-          <input type="radio" name="status" id="dot-1">
+          <input type="radio" name="status" id="dot-1" value="lost" required>
           <label for="dot-1"> Lost </label>
-          <input type="radio" name="status" id="dot-2">
+          <input type="radio" name="status" id="dot-2" value="found" required>
           <label for="dot-2"> Found/Stray </label>
           </div>
           </div>
+          <div class="pet-gender">
+            <span class="status-title">Gender:</span>
+           <div class="gender-types">
+              
+                <input type="radio" name="gender" id="gender1" value="female" required>
+                <label for="gender1">Female</label>
+             
+                <input type="radio" name="gender" id="gender2" value="male" required>
+                <label for="gender2">Male</label>
+              
+                <input type="radio" name="gender" id="gender3" value="Unknown" required>
+                <label for="gender3">Unknown</label>    
+            </div>
+          </div>
+
+        
          
           <div class="status-details">
            
             <div class="user-details">
               <div class="input-box">
-                <span class="details">Pet name</span>
-                <input type="text" placeholder="Enter pet name" required>
+                <span class="details-name">Pet name</span>
+                <input type="text" name="petName" placeholder="Enter pet name">
+                <span class="error-message" id="petNameError"></span>
               </div>
               <div class="input-box">
                 <span class="details">Circumstance</span>
-                <input type="text" placeholder="Enter the circumstance" required>
+                <input type="text" name="circumstance" placeholder="Enter the circumstance" required>
+                <span class="error-message" id="circumstanceError"></span>
               </div>
+             
               <div class="input-box">
                 <span class="details">Pet type</span>
-                <input type="text" placeholder="Enter pet type" required>
+                <select  name="petType" id="petType" required>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="reptile">Reptile</option>
+                <option value="horse">Horse</option>
+                <option value="ferret">Ferret</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="other">Other</option>
+              </select>
               </div>
+
+
               <div class="input-box">
                 <span class="details">Phone number</span>
-                <input type="text" placeholder="Enter phone number" required>
+                <input type="tel"  name="phoneNumber" placeholder="Enter phone number" required>
+                <span class="error-message" id="phoneNumberError"></span>
               </div>
               <div class="input-box">
                 <span class="details">Address last seen</span>
-                <input type="text" placeholder="Enter the adress" required>
+                <input type="text" name="address" placeholder="Enter the adress" required>
+                <span class="error-message" id="addressError"></span>
               </div>
               <div class="input-box">
                 <span class="details">Email</span>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <span class="error-message" id="emailError"></span>
               </div>
             </div>
           </div>
 
           <div class="another-details">
             <div class="input-box">
-              <span class="details">Other information ( eg. leaving the shelter, risk of rabies
-                or violent behaviour )</span>
-              <input type="text" placeholder="Enter other details" required>
+              <span class="more-info">Other information (eg. leaving the shelter, pet description or violent behaviour)</span>
+              <input type="text" name="information" placeholder="Enter other details" required>
+              <span class="error-message" id="informationError"></span>
             </div>
           </div>
           <div class="upload-photo">
             <label>Upload photo here:</label>
-           <input type="file">
+           <input type="file" name="file" required>
+           <span class="error-message" id="fileError"></span>
           </div>
           <div class="button">
-            <input type="submit" value="Register">
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
@@ -227,7 +261,10 @@
       <h5>© Copyright. All rights reserved.</h5>
     </div>
   </footer>
-  <script src="script.js"></script>
+ 
+  <!-- <script src="../backend/user/validare_form/validare_report.js">
+ 
+  </script> -->
 </body>
 
 </html>

@@ -15,12 +15,13 @@
   padding: 0;
 }
 
+
+
 body {
 
-  background-position: center;
-  background-size: cover;
-}
 
+  font-family: "Nunito", sans-serif;
+}
 
 
 
@@ -30,10 +31,6 @@ body {
 /***************************************************
 MAIN SECTION
 ***************************************************/
-body {
-  background-position: center;
-  background-size: cover;
-}
 
 .main--section {
   height: 80vh;
@@ -340,18 +337,42 @@ RESPONSIVE
 
 
 @media only screen and (max-width: 900px) {
-  .section1 {
+  .section2.active {
+    display: flex;
+  }
+
+  .section3.active {
+    display: flex;
+    width: 70%;
+    height: 70vh;
+
+  }
+
+  .section2 {
     display: none;
   }
 
   .section3 {
     display: none;
+
   }
 
-  .section2 {
-    width: 100%;
+  .section1 {
+    display: none;
   }
 
+
+  .section1.active {
+    display: flex;
+    width: 80%;
+
+  }
+
+  .filter--form {
+    width: 80%;
+    height: 62vh;
+
+  }
 
 
   .search-menu-bar {
@@ -362,15 +383,15 @@ RESPONSIVE
     box-shadow: 0 -2px 70px #0000001f;
     border-radius: 10px;
     bottom: 1.2rem;
-    width: 40%;
-    left: 53%;
+    width: 25rem;
+    left: 52%;
     padding: 15px 0;
     transform: translate(-50%);
   }
 
   .search-menu-bar ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     list-style-type: none;
     margin-bottom: 0;
     font-size: 1rem;
@@ -404,6 +425,15 @@ RESPONSIVE
     width: 16px;
     margin-right: 6px;
     margin-bottom: -2.5px;
+  }
+
+  .main--section {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-left: 0;
   }
 
 

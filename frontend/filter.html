@@ -44,7 +44,7 @@
     </nav>
   </header>
   <div class="main--section">
-    <div class="section1">
+    <div class="section1" id="filterSection">
       <div class="filter--form">
         <p>Filter lost and found pets</p>
         <form action="#">
@@ -217,7 +217,7 @@
       </div>
     </div>
     <!--section1 end-->
-    <div class="section2">
+    <div class="section2" id="card--section">
       <div class="section2--title">
         <h2>Lost & Found Pets Database</h2>
         <h4>Find Lost & Found Dogs, Cats & Other Pets in your area.</h4>
@@ -408,7 +408,7 @@
         </div>
       </div>
     </div>
-    <div class="section3">
+    <div class="section3" id="mapSection">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.1864110982433!2d27.57214627520643!3d47.17378671776671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb6227e846bd%3A0x193e4b6864504e2c!2sFacultatea%20de%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1712921013744!5m2!1sro!2sro"
         width="300" height="450" style="border: 0" allowfullscreen="" loading="lazy"
@@ -418,12 +418,17 @@
   <!--Main section end-->
   <div class="search-menu-bar">
     <ul>
-      <li>
+      <li id="mapLink">
         <a href=""><img alt="map-icon" src="./img/map.png">View Map</a>
       </li>
-      <li>
+      <li id="filterLink">
         <a href="">
           <img src="./img/filter.png" alt="filter icon">Filter
+        </a>
+      </li>
+      <li id="listLink">
+        <a href="">
+          <img src="./img/menu.png" alt="filter icon">Pet list
         </a>
       </li>
     </ul>

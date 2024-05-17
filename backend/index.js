@@ -6,7 +6,7 @@ const createconnection = require('./user/database/database.js');
 const dbConnection = createconnection.createconnection();
 const router = require('./router.js');
 
-const PORT = 3000;
+const PORT = 3003;
 
 http.createServer((req, res) => {
     if (router(req, res)) {

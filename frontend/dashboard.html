@@ -137,22 +137,22 @@
   <!--Main section end-->
   <div class="search-menu-bar">
     <ul>
-      <li>
-        <button>
-          <img src="./img/activity.png" alt="map icon">Activity
-        </button>
+      <li id="menuLink">
+        <a href=""><img src="./img/menu.png" alt="menu icon">Menu</a>
       </li>
-      <li>
-        <button>
+      <li id="listLink">
+        <a href="">
           <img src="./img/list.png" alt="filter icon">Pet List
-        </button>
+        </a>
       </li>
-      <li>
-        <button><img src="./img/menu.png" alt="menu icon">Menu</button>
+      <li id="activityLink">
+        <a href="">
+          <img src="./img/activity.png" alt="map icon">Activity
+        </a>
       </li>
     </ul>
   </div>
-  <script src="script.js">
+  <script src="script1.js">
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
     output.innerHTML = slider.value;

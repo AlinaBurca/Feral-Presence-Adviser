@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+.error-message {
+  font-size: 0.9rem;
+  color: red;
+}
+
 .title1 {
   display: flex;
   flex-direction: column;
@@ -71,15 +76,15 @@
   gap: 1.25rem;
   justify-content: space-evenly;
   align-items: center;
-  min-height: 100vh;
+
   font-family: "Nunito", sans-serif;
 }
 
 .report {
   background-color: rgb(255, 255, 255);
   width: 100%;
-  min-height: 25rem;
-  overflow: hidden;
+
+  overflow-y: scroll;
   display: flex;
 }
 
@@ -95,7 +100,9 @@
 }
 
 .report .container-form {
+  overflow-y: scroll;
   width: 100%;
+  height: 80vh;
   margin-left: 3rem;
   margin-bottom: 1rem;
   background: #f7dcbc;
@@ -107,12 +114,13 @@
 .report .container-form .title {
   font-family: "Nunito";
   text-align: center;
-  font-size: 25px;
+  font-size: 1.2rem;
   font-weight: 800;
   position: relative;
 }
 
 .pet-status {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -121,19 +129,60 @@
 }
 
 .pet-status .status-title {
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
 .pet-status label {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   margin-right: 1.5rem;
 }
 
 .status-types input {
   margin-left: 1rem;
 
+}
 
+.pet-gender {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.pet-gender .status-title {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.pet-gender label {
+  font-size: 0.8rem;
+  margin-right: 1.5rem;
+}
+
+.gender-types input {
+  margin-left: 1rem;
+
+}
+
+
+
+
+.details-name {
+  display: block;
+  margin-left: 0.5rem;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+
+
+.status-title::after {
+  content: " * ";
+  color: red;
 }
 
 .report .container-form form .user-details {
@@ -156,11 +205,32 @@ form .user-details .input-box {
   display: block;
   margin-left: 0.5rem;
   margin-bottom: 5px;
-  font-size: 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.more-info {
+  font-size: 0.8rem;
+}
+
+.more-info:after {
+  content: " * ";
+  color: red;
+}
+
+.details::after {
+  content: " * ";
+  color: red;
+}
+
+.upload-photo label::after {
+  content: " * ";
+  color: red;
+
 }
 
 .user-details .input-box input {
-  height: 45px;
+  height: 2.5rem;
   width: 100%;
   outline: none;
   border-radius: 10px;
@@ -168,13 +238,40 @@ form .user-details .input-box {
   border-bottom-width: 2px;
   transition: all 0.3s ease;
   padding-left: 15px;
-  font-size: 16px;
+  font-size: 0.8rem;
 }
 
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
+.input-box select {
+  height: 2.5rem;
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  padding-left: 15px;
+  font-size: 0.8rem;
+  background-color: white;
+  color: #7e7e7e;
+}
+
+.type input {
+  height: 1rem;
+  width: auto;
+}
+
+.user-details .input-box input:focus {
   border-color: black;
 }
+
+.error {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 2px solid green;
+}
+
 
 /**************************/
 
@@ -182,7 +279,7 @@ form .another-details .input-box {
   margin-bottom: 15px;
 }
 
-.another-details .input-box .details {
+.another-details .input-box .more-info {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
@@ -203,10 +300,10 @@ form .another-details .input-box {
   margin-right: auto;
 }
 
-.another-details .input-box input:focus,
-.another-details .input-box input:valid {
+.another-details .input-box input:focus {
   border-color: black;
 }
+
 
 
 
@@ -225,7 +322,7 @@ form .button {
   font-size: 900;
 }
 
-form .button input {
+form .button button {
   height: 100%;
   width: 100%;
   outline: none;
@@ -238,18 +335,18 @@ form .button input {
   background: linear-gradient(135deg, #6bbbbd, #0d7eba);
 }
 
-form .button input:hover {
+form .button button:hover {
   background: linear-gradient(-135deg, #6bbbbd, #0d7eba);
 }
 
-.container-form>img {
+/* .container-form>img {
   width: 100%;
 }
 
 .container-form>img {
   width: 100%;
   height: auto;
-}
+} */
 
 .upload-photo {
   display: flex;
@@ -361,10 +458,19 @@ RESPONSIVE
     padding: 1rem 2.5rem;
     font-size: 1.25rem;
   }
+
+  .container3--title h1 {
+
+    font-size: 2.6rem;
+  }
 }
 
 @media only screen and (max-width: 900px) {
 
+  .container3--title h1 {
+
+    font-size: 2.3rem;
+  }
 
   .title1 h1 {
     font-size: 3.4rem;
@@ -384,13 +490,15 @@ RESPONSIVE
     width: 100%;
   }
 
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
+
 }
 
 @media only screen and (max-width: 786px) {
+
+  .container3--title h1 {
+
+    font-size: 2.1rem;
+  }
 
   .title1 h1 {
 
@@ -418,11 +526,15 @@ RESPONSIVE
 
   .container2 .report {
     flex-direction: column;
+    align-items: center;
+
   }
 
   .report .container-form {
     order: 2;
     max-width: 90%;
+    max-height: 27rem;
+
   }
 
   .report .image-form {
@@ -439,10 +551,7 @@ RESPONSIVE
     width: 100%;
   }
 
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
+
 
   .report .container-form {
 
@@ -452,6 +561,16 @@ RESPONSIVE
 }
 
 @media only screen and (max-width: 540px) {
+
+  .container3--title {
+    width: 90%;
+  }
+
+  .container3--title h1 {
+
+    font-size: 2rem;
+  }
+
   .input-box p {
     padding: 0;
     margin-left: 0;
@@ -504,6 +623,7 @@ RESPONSIVE
   .report .container-form {
     order: 2;
     max-width: 90%;
+
   }
 
   .report .image-form {
@@ -520,10 +640,7 @@ RESPONSIVE
     width: 100%;
   }
 
-  .container2 .report form {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
+
 
   /* .grid-wrapper {
     display: grid;
