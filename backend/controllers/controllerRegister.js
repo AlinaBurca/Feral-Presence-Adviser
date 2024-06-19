@@ -65,7 +65,4 @@ async function controllerRegister(req, res) {
     });
 }
 
-
-
-
 module.exports = registerUserController;
