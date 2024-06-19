@@ -5,9 +5,13 @@ const url = require("url");
 const createconnection = require("./user/database/database.js");
 const dbConnection = createconnection.createconnection();
 const router = require("./router.js");
+const crypto = require("crypto");
+const sessions = require("./sessions.js");
+const PORT = 3001;
 
-const PORT = 3000;
-
+function generateSessionId() {
+  return crypto.randomBytes(16).toString("hex");
+}
 http
   .createServer((req, res) => {
     if (router(req, res)) {

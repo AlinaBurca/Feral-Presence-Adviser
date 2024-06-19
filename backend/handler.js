@@ -3,6 +3,12 @@ const homeUserController = require("./controllers/controllerHome");
 const cardsController = require("./controllers/controllerCards");
 const animalDetailsController = require("./controllers/controllerAnimalDetails");
 const filterAnimalsController = require("./controllers/controllerFilterAnimals");
+const loginUserController = require("./controllers/controllerLogin");
+const forgetUserController =
+  require("./controllers/controllerForget").forgetUserController;
+const resetPasswordController =
+  require("./controllers/controllerForget").controllerResetPassword;
+const editUserController = require("./controllers/controllerEdit");
 
 function registerPage(req, res) {
   if (req.method === "POST") {
@@ -31,4 +37,34 @@ function filterAnimals(req, res) {
   }
 }
 
-module.exports = { registerPage, homePage, cardPage, filterAnimals };
+function loginPage(req, res) {
+  if (req.method === "POST") {
+    loginUserController(req, res);
+  }
+}
+
+function forgetPage(req, res) {
+  if (req.method === "POST") {
+    forgetUserController(req, res);
+  }
+}
+
+function resetPage(req, res) {
+  if (req.method === "POST") {
+    resetPasswordController(req, res);
+  }
+}
+function editPage(req, res) {
+  editUserController(req, res);
+}
+
+module.exports = {
+  registerPage,
+  loginPage,
+  forgetPage,
+  resetPage,
+  editPage,
+  homePage,
+  cardPage,
+  filterAnimals,
+};
