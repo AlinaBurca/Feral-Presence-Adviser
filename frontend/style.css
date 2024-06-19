@@ -9,6 +9,8 @@
   padding: 0;
 }
 
+
+
 .error-message {
   font-size: 0.9rem;
   color: red;
@@ -124,18 +126,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-weight: 700;
+
 
 }
 
 .pet-status .status-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .pet-status label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-right: 1.5rem;
+  font-weight: 700;
 }
 
 .status-types input {
@@ -152,13 +156,13 @@
 
 .pet-gender .status-title {
   margin-top: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .pet-gender label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-right: 1.5rem;
 }
 
@@ -174,7 +178,7 @@
   display: block;
   margin-left: 0.5rem;
   margin-bottom: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
@@ -184,6 +188,7 @@
   content: " * ";
   color: red;
 }
+
 
 .report .container-form form .user-details {
   display: flex;
@@ -205,12 +210,12 @@ form .user-details .input-box {
   display: block;
   margin-left: 0.5rem;
   margin-bottom: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
 .more-info {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .more-info:after {
@@ -223,11 +228,7 @@ form .user-details .input-box {
   color: red;
 }
 
-.upload-photo label::after {
-  content: " * ";
-  color: red;
 
-}
 
 .user-details .input-box input {
   height: 2.5rem;
@@ -238,7 +239,7 @@ form .user-details .input-box {
   border-bottom-width: 2px;
   transition: all 0.3s ease;
   padding-left: 15px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .input-box select {
@@ -250,7 +251,7 @@ form .user-details .input-box {
   border-bottom-width: 2px;
   transition: all 0.3s ease;
   padding-left: 15px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: white;
   color: #7e7e7e;
 }
@@ -272,6 +273,25 @@ form .user-details .input-box {
   border: 2px solid green;
 }
 
+.pet-risk{
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+}
+.pet-risk span{
+
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.pet-risk-status input{
+  
+    margin-left: 1rem;
+  
+  
+}
 
 /**************************/
 
@@ -349,11 +369,31 @@ form .button button:hover {
 } */
 
 .upload-photo {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
+  font-size: 1rem;
   gap: 10px;
   font-family: "Nunito";
+}
+
+.upload-photo input {
+  display: none;
+}
+
+#pet-photo {
+  height: auto;
+  width: 200px;
+}
+
+
+.photo--label {
+  width: 120px;
+  background-color: #67a599;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
 }
 
 
@@ -363,9 +403,9 @@ Carduri
 *************************************************************/
 .container3--title {
   text-align: left;
-  /* Aliniere la stÃ¢nga */
+
   width: 70%;
-  /* Latimea maxima a containerului */
+
   font-size: 1.25rem;
   margin-left: 2rem;
   margin-top: 1rem;
@@ -384,10 +424,18 @@ Carduri
   color: #0d7eba;
 }
 
-.grid-wrapper {
+/* .grid-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 8px;
+} */
+
+.grid-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
 }
 
 .grid-wrapper a {
@@ -395,8 +443,7 @@ Carduri
 }
 
 .card {
-  width: 250px;
-  margin: 40px;
+  width: 300px;
   height: 400px;
   background-color: grey;
   border-radius: 20px;
@@ -413,11 +460,24 @@ Carduri
 
 .card--image {
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 80%;
   height: 60%;
   border-radius: 30px;
   border-color: white;
   border-style: solid;
+}
+
+.card--image img {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  border-radius: 30px;
+  inset: 0%;
+  object-fit: contain;
 }
 
 .card--body {

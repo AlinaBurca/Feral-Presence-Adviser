@@ -37,23 +37,25 @@ MAIN SECTION
   display: flex;
   flex-wrap: wrap;
   margin-top: 6rem;
-  margin-left: 1.5rem;
+
 }
 
 .section1 {
-  width: 20%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 1rem;
+  margin-left: 1.5rem;
+ 
 }
 
 /************************************************
 FILTER FORM
 **********************************************/
 .filter--form {
-  width: 250px;
+  width: 350px;
   height: 70vh;
   background-color: #0d7eba;
 
@@ -68,7 +70,7 @@ FILTER FORM
 .filter--form p {
   align-self: center;
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
   color: white;
@@ -90,17 +92,18 @@ form {
 
 form .input-title {
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin-top: 0.8rem;
 }
 
 .form-field {
   border: 2px solid #ddd;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 4px;
   outline: 0;
   transition: 0.2s;
   margin-top: 0.8rem;
+  font-size: 1rem;
 }
 
 .form-field:focus {
@@ -109,7 +112,7 @@ form .input-title {
 
 .status-title {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .type {
@@ -145,27 +148,17 @@ form .input-title {
   margin-top: 0.3rem;
 }
 
-.slidecontainer {
-  margin-top: 1.5rem;
-}
 
-.slider {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 20px;
-  height: 10px;
-  margin-top: 0.8rem;
-  background: #0d7eba;
-}
 
 .input-box3 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .input-box3 .inpu-title {
-  margin-top: 1.3rem;
+  margin-top: 1.5rem;
 }
 
 .input-box4 {
@@ -185,12 +178,14 @@ form .input-title {
 
 .filter-btn {
   text-decoration: none;
+  border-style: none;
   justify-self: center;
   padding: 0.6rem 2rem;
   border-radius: 20px;
   background-color: #0d7eba;
   color: white;
   font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
 }
 
 .filter-btn:hover {
@@ -201,16 +196,16 @@ form .input-title {
 }
 
 .section2 {
-  width: 55%;
+  width: 65%;
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
   scrollbar-width: thin;
   font-family: "Nunito", sans-serif;
+
 }
 
 .section2--title {
@@ -223,7 +218,7 @@ form .input-title {
 }
 
 .card {
-  width: 260px;
+  width: 300px;
   margin: 40px;
   height: 500px;
   background-color: grey;
@@ -279,6 +274,9 @@ form .input-title {
   width: 40%;
   font-size: 20px;
 }
+.status{
+  font-size: 1rem;
+}
 
 .left .status {
   margin-top: 0.5rem;
@@ -292,7 +290,7 @@ form .input-title {
 
 .card--details {
   padding: 0.4rem;
-  font-size: 15px;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -383,8 +381,8 @@ RESPONSIVE
     box-shadow: 0 -2px 70px #0000001f;
     border-radius: 10px;
     bottom: 1.2rem;
-    width: 25rem;
-    left: 52%;
+    width: 20rem;
+    left: 50%;
     padding: 15px 0;
     transform: translate(-50%);
   }
@@ -412,7 +410,7 @@ RESPONSIVE
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 14px;
     color: #9a9a9a;
     border: none;
@@ -422,7 +420,8 @@ RESPONSIVE
   }
 
   .search-menu-bar img {
-    width: 16px;
+    width: 18px;
+    height: auto;
     margin-right: 6px;
     margin-bottom: -2.5px;
   }
