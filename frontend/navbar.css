@@ -148,6 +148,65 @@
   display: none;
 }
 
+.dropbtn {
+  text-decoration: none;
+  color: black;
+  margin-top: 2rem;
+  padding: 0.5rem 1.2rem;
+  background: rgba(185, 185, 185, 0.345);
+  border: none;
+  border-radius: 1.87rem !important;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1.25rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  height: auto;
+  width: 10rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0px 10px;
+  text-decoration: none;
+  display: block;
+  margin-left: 1.5rem;
+
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f7dcbc;
+}
+
+.fa-rss {
+  font-size: 27px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
 /*****************************************
 RESPONSIVE
 ******************************************/
@@ -176,6 +235,11 @@ RESPONSIVE
 
   }
 
+  .dropbtn {
+    padding: 0.5rem 0.8rem;
+
+  }
+
   .nav-logo img {
     height: 3.5rem;
     margin-left: 0.5rem;
@@ -195,6 +259,11 @@ RESPONSIVE
   .nav-button .btn {
 
     font-size: 0.8rem;
+  }
+
+  .dropbtn {
+    font-size: 0.8rem;
+
   }
 
 
