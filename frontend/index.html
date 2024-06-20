@@ -179,6 +179,7 @@
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="bird">Bird</option>
+                    <option value="bird">Fox</option>
                     <option value="reptile">Reptile</option>
                     <option value="horse">Horse</option>
                     <option value="ferret">Ferret</option>
@@ -186,15 +187,25 @@
                     <option value="other">Other</option>
                   </select>
                 </div>
+                <div class="input-box">
+                  <label class="details" for="danger_level">Danger Level</label>
+                  <select id="danger_level" name="danger_level" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
 
                 <div class="input-box">
-                  <span class="details">Date last seen</span>
+                  <span class="details" id="dateLabel">Date last seen</span>
                   <input type="date" name="dateLastSeen" required />
                   <span class="error-message" id="dateLastSeenError"></span>
                 </div>
 
                 <div class="input-box">
-                  <span class="details">Address last seen</span>
+                  <span class="details" id="addressLabel"
+                    >Address last seen</span
+                  >
                   <input
                     type="text"
                     name="address"
@@ -231,49 +242,57 @@
                 </div>
               </div>
 
-              <div class="pet-risk">
-                <span class="details">Risk of violence:</span>
-                <div class="pet-risk-status">
+              <div class="input-box">
+                <span class="tags-details">Select tags:</span>
+                <div class="tags-btn">
                   <input
-                    type="radio"
-                    name="violence"
-                    id="yes1"
-                    value="yes"
-                    required
+                    type="button"
+                    value="Risk of violence"
+                    onclick="toggleTag(this)"
+                    id="violence"
                   />
-                  <label for="yes1">Yes</label>
                   <input
-                    type="radio"
-                    name="violence"
-                    id="no1"
-                    value="no"
-                    required
+                    type="button"
+                    value="Risk of rabies"
+                    onclick="toggleTag(this)"
+                    id="rabies"
                   />
-                  <label for="no1">No</label>
-                </div>
-              </div>
-              <div class="pet-risk">
-                <span class="details">Risk of rabies:</span>
-                <div class="pet-risk-status">
                   <input
-                    type="radio"
-                    name="rabies"
-                    id="yes2"
-                    value="yes"
-                    required
+                    type="button"
+                    value="Trained"
+                    onclick="toggleTag(this)"
+                    id="trained"
                   />
-                  <label for="yes2">Yes</label>
                   <input
-                    type="radio"
-                    name="rabies"
-                    id="no2"
-                    value="no"
-                    required
+                    type="button"
+                    value="Vaccinated"
+                    onclick="toggleTag(this)"
+                    id="vaccinated"
                   />
-                  <label for="no2">No</label>
+                  <input
+                    type="button"
+                    value="Injured"
+                    onclick="toggleTag(this)"
+                    id="injured"
+                  />
                 </div>
               </div>
             </div>
+            <input
+              type="hidden"
+              name="violence"
+              id="violenceField"
+              value="no"
+            />
+            <input type="hidden" name="rabies" id="rabiesField" value="no" />
+            <input type="hidden" name="trained" id="trainedField" value="no" />
+            <input
+              type="hidden"
+              name="vaccinated"
+              id="vaccinatedField"
+              value="no"
+            />
+            <input type="hidden" name="injured" id="injuredField" value="no" />
 
             <div class="another-details">
               <div class="input-box">
@@ -350,56 +369,5 @@
     </footer>
 
     <script src="../backend/user/validare_form/validare_report.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const input = document.getElementById("location-input");
-        const suggestionBox = document.getElementById("autocomplete-list");
-
-        input.addEventListener("input", function () {
-          const query = input.value;
-
-          if (query.length < 3) {
-            suggestionBox.innerHTML = "";
-            return;
-          }
-
-          fetch(
-            `https://nominatim.openstreetmap.org/search?country=Romania&q=${query}&format=json&limit=5`
-          )
-            .then((response) => response.json())
-            .then((data) => {
-              suggestionBox.innerHTML = "";
-              data.forEach((location) => {
-                const suggestionItem = document.createElement("div");
-                suggestionItem.className = "autocomplete-suggestion";
-                suggestionItem.textContent = location.display_name;
-                suggestionItem.addEventListener("click", function () {
-                  input.value = location.display_name;
-                  suggestionBox.innerHTML = "";
-                });
-                suggestionBox.appendChild(suggestionItem);
-              });
-            })
-            .catch((error) => console.error("Eroare:", error));
-        });
-
-        document.addEventListener("click", function (e) {
-          if (e.target !== input) {
-            suggestionBox.innerHTML = "";
-          }
-        });
-      });
-    </script>
   </body>
 </html>

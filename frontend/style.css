@@ -9,8 +9,29 @@
   padding: 0;
 }
 
+.tags-btn{
+  
 
+  padding: 17px 20px 13px;
 
+}
+.tags-btn input[type="button"] {
+  background-color: transparent; 
+  color: #000; 
+  border: 2.5px solid #fdcd4b; 
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-family: "Nunito", sans-serif;
+  
+}
+.tags-btn input[type="button"].selected {
+  background-color: #fdcd4b; 
+  color: #fff;
+  
+}
 .error-message {
   font-size: 0.9rem;
   color: red;
@@ -213,6 +234,13 @@ form .user-details .input-box {
   font-size: 1rem;
   font-weight: 800;
 }
+.tags-details{
+  display: block;
+  margin-left: 0.5rem;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
 
 .more-info {
   font-size: 0.9rem;
@@ -287,6 +315,26 @@ form .user-details .input-box {
   font-weight: 800;
 }
 .pet-risk-status input{
+  
+    margin-left: 1rem;
+  
+  
+}
+
+.pet-trained{
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+}
+.pet-trained span{
+
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.pet-trained-status input{
   
     margin-left: 1rem;
   
@@ -465,7 +513,7 @@ Carduri
   justify-content: center;
   width: 80%;
   height: 60%;
-  border-radius: 30px;
+  
   border-color: white;
   border-style: solid;
 }
@@ -475,9 +523,10 @@ Carduri
   max-height: 100%;
   width: auto;
   max-width: 100%;
-  border-radius: 30px;
-  inset: 0%;
+  margin: auto;
+  display: block;
   object-fit: contain;
+ 
 }
 
 .card--body {

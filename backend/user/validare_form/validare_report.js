@@ -136,7 +136,7 @@ function validateForm() {
 
   const formElement = document.getElementById("petForm");
   const formData = new FormData(formElement);
-  console.log(formData);
+  console.log("FORMDATA: ", formData);
 
   let petName = formData.get("petName");
   if (petName.trim() === "") {
@@ -156,7 +156,16 @@ function validateForm() {
     isValidInformation
   ) {
     formData.set("isValid", "1"); // Adaugă câmpul isValid
-    console.log("formdata: ", formData);
+    formData.set("violence", document.getElementById("violenceField").value);
+    formData.set("rabies", document.getElementById("rabiesField").value);
+    formData.set("trained", document.getElementById("trainedField").value);
+    formData.set(
+      "vaccinated",
+      document.getElementById("vaccinatedField").value
+    );
+    formData.set("injured", document.getElementById("injuredField").value);
+
+    console.log("FORMDATA: ", formData.violence);
 
     fetch("/index", {
       method: "POST",
@@ -183,7 +192,12 @@ function validateForm() {
       });
   }
 }
-
+function toggleTag(button) {
+  button.classList.toggle("selected");
+  const field = document.getElementById(button.id + "Field");
+  field.value = button.classList.contains("selected") ? "yes" : "no";
+  console.log(`${button.id}Field value:`, field.value); // Afișează valoarea în consolă
+}
 const submitButton = document.querySelector(".submit");
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -209,11 +223,11 @@ function loadReports() {
         card.innerHTML = `
 
             <div class="card--image" onclick="location.href='/animal-details.html?id=${report.id}';">
-            <img alt="pet-image" src="./backend/controllers/uploads/${report.imagePath}">
+            <img alt="pet-image" src="./backend/controllers/uploads/${report.image}">
             </div>
             <div class="card--body">
-              <h3>${report.petName}</h3>
-              <p>${report.address}</p>
+              <h3>${report.name}</h3>
+              <p>${report.addressLastSeen}</p>
             </div>
          
           `;

@@ -178,8 +178,19 @@
                   </label>
                 </div>
                 <div class="type">
-                  <input type="radio" name="petType" id="type9" value="other" />
+                  <input type="radio" name="petType" id="type9" value="fox" />
                   <label for="type9">
+                    <span class="status">Fox</span>
+                  </label>
+                </div>
+                <div class="type">
+                  <input
+                    type="radio"
+                    name="petType"
+                    id="type10"
+                    value="other"
+                  />
+                  <label for="type10">
                     <span class="status">Other</span>
                   </label>
                 </div>
@@ -225,26 +236,26 @@
               <span class="input-title">Within Past:</span>
               <div class="types">
                 <div class="type">
-                  <input type="radio" name="time" id="time1" value="30" />
+                  <input type="radio" name="time" id="time1" value="1 Month" />
                   <label for="time1">
                     <span class="status">1 Month</span>
                   </label>
                 </div>
                 <div class="type">
-                  <input type="radio" name="time" id="time2" value="90" />
+                  <input type="radio" name="time" id="time2" value="3 Months" />
                   <label for="time2">
                     <span class="status">3 Months</span>
                   </label>
                 </div>
 
                 <div class="type">
-                  <input type="radio" name="time" id="time3" value="180" />
+                  <input type="radio" name="time" id="time3" value="6 Months" />
                   <label for="time3">
                     <span class="status">6 Months</span>
                   </label>
                 </div>
                 <div class="type">
-                  <input type="radio" name="time" id="time4" value="365" />
+                  <input type="radio" name="time" id="time4" value="1 Year" />
                   <label for="time4">
                     <span class="status">1 Year</span>
                   </label>
@@ -535,10 +546,13 @@
           const card = document.createElement("div");
           card.className = "card";
 
+          const div = document.createElement("div");
+          div.className = "card--image";
           const img = document.createElement("img");
           img.alt = "pet-img";
           img.className = "card--image";
-          img.src = `./backend/controllers/uploads/${report.imagePath}`;
+          img.src = `./backend/controllers/uploads/${report.image}`;
+          div.appendChild(img);
 
           const cardBody = document.createElement("div");
           cardBody.className = "card--body";
@@ -551,11 +565,11 @@
 
           const name = document.createElement("h3");
           name.className = "name";
-          name.textContent = report.petName;
+          name.textContent = report.name;
 
           const status = document.createElement("h3");
           status.className = "status";
-          status.textContent = report.petStatus;
+          status.textContent = report.status;
 
           left.appendChild(name);
           left.appendChild(status);
@@ -575,10 +589,12 @@
           cardDetails.className = "card--details";
 
           const details = document.createElement("div");
-          details.innerHTML = `<strong>Lost ${report.date} days ago</strong>`;
+          const dateLastSeen = new Date(report.dateLastSeen).toDateString();
+
+          details.innerHTML = `<strong>Lost on ${dateLastSeen}</strong>`;
 
           const address = document.createElement("span");
-          address.textContent = report.address;
+          address.textContent = report.addressLastSeen;
 
           cardDetails.appendChild(details);
           cardDetails.appendChild(address);

@@ -8,8 +8,6 @@
 
 
 
-
-
 /***************************************************
 MAIN SECTION
 ***************************************************/
@@ -181,7 +179,7 @@ button {
 .section2 .form1 .login-form .form-control input~i {
   position: absolute;
   left: 0.87rem;
-  top: 50%;
+  top: 36.5%;
   transform: translateY(-50%);
   color: #888;
   transition: color 0.4s;
@@ -326,6 +324,22 @@ User activity
 }
 
 /*********************/
+.form-control .tooltip {
+  font-size: 0.8rem;
+  display: flex;
+  margin-left: 1rem;
+  color: red;
+  visibility: hidden;
+}
+
+.error {
+  border: 2px solid red !important;
+
+}
+
+.valid {
+  border: 2px solid green !important;
+}
 
 /************************************
 RESPONSIVE
@@ -449,6 +463,13 @@ RESPONSIVE
     margin-bottom: -2.5px;
   }
 
+  .form-control .tooltip {
+    font-size: 0.57rem;
+    display: flex;
+    margin-left: 1rem;
+    color: red;
+    visibility: hidden;
+  }
 
 }
 

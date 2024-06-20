@@ -35,23 +35,28 @@ function animalDetailsController(req, res, animalId) {
           res.end("Internal Server Error");
           return;
         }
-        let imagePath = "./backend/controllers/uploads/" + details.imagePath;
+        const dateLastSeen = new Date(details.dateLastSeen).toDateString();
+        console.log("dateee: ", dateLastSeen);
+        let imagePath = "./backend/controllers/uploads/" + details.image;
         console.log(imagePath);
 
         let updatedContent = content
 
-          .replace(/exampleName/g, details.petName)
+          .replace(/exampleName/g, details.name)
           .replace(/exampleID/g, details.id)
-          .replace(/exampleSpecies/g, details.petType)
-          .replace(/exampleStatus/g, details.petStatus)
-          .replace(/Information/g, details.description)
-          .replace(/exampleLocation/g, details.address)
-          .replace(/exampleDate/g, details.date)
+          .replace(/exampleSpecies/g, details.species)
+          .replace(/exampleStatus/g, details.status)
+          .replace(/Information/g, details.aditional_info)
+          .replace(/exampleLocation/g, details.addressLastSeen)
+          .replace(/exampleDate/g, dateLastSeen)
           .replace(/exampleRisk/g, details.rabies)
           .replace(/exampleViolence/g, details.violence)
+          .replace(/exampleTrained/g, details.trained)
+          .replace(/exampleVaccinated/g, details.vaccinated)
+          .replace(/exampleInjured/g, details.injured)
           .replace(/exampleSrc/g, imagePath)
 
-          .replace(/exampleDescription/g, details.information);
+          .replace(/exampleDescription/g, details.aditional_info);
 
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(updatedContent, "utf-8");

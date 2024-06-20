@@ -36,26 +36,34 @@ async function controllerHome(req, res) {
         files.file[0].filepath,
         files.file[0].filepath + path.extname(files.file[0].originalFilename)
       );
-      console.log(fields.city);
+
       const petStatus = fields.status ? fields.status[0] : null;
       const petGender = fields.gender ? fields.gender[0] : null;
       const petName = fields.petName ? fields.petName[0] : null;
-      const date = fields.dateLastSeen ? fields.dateLastSeen[0] : null;
       const petType = fields.petType ? fields.petType[0] : null;
+      const danger_level = fields.danger_level ? fields.danger_level[0] : null;
+      const dateLastSeen = fields.dateLastSeen ? fields.dateLastSeen[0] : null;
+      const addressLastSeen = fields.address ? fields.address[0] : null;
+      const city = fields.city ? fields.city[0] : null;
       const phoneNumber = fields.phoneNumber ? fields.phoneNumber[0] : null;
-      const address = fields.address ? fields.address[0] : null;
       const email = fields.email ? fields.email[0] : null;
-      const information = fields.information ? fields.information[0] : null;
-      const imagePath = imageName;
       const violence = fields.violence ? fields.violence[0] : null;
       const rabies = fields.rabies ? fields.rabies[0] : null;
-      const city = fields.city ? fields.city[0] : null;
+      const trained = fields.trained ? fields.trained[0] : null;
+      const vaccinated = fields.vaccinated ? fields.vaccinated[0] : null;
+      const injured = fields.injured ? fields.injured[0] : null;
+      const information = fields.information ? fields.information[0] : null;
+      const imagePath = imageName;
       const isValid = fields.isValid ? fields.isValid[0] : null;
+      console.log("vaccinated", vaccinated);
+      console.log("rabies: ", rabies);
+      console.log("trained: ", trained);
+      console.log("violence: ", violence);
+      console.log("injured: ", injured);
 
-      // Verifică dacă emailul există în baza de date
       const [rows] = await dbConnection
         .promise()
-        .query("SELECT email FROM users WHERE email = ?", [fields.email]);
+        .query("SELECT id, email FROM users WHERE email = ?", [email]);
       if (rows.length === 0) {
         if (!res.headersSent) {
           res.writeHead(409);
@@ -63,27 +71,32 @@ async function controllerHome(req, res) {
           return;
         }
       } else {
+        const user_id = rows[0].id;
         if (isValid === "1") {
-          await dbConnection
-            .promise()
-            .execute(
-              "INSERT INTO reports (petStatus, petGender, petName, date, petType, phoneNumber, address, email, information, imagePath, violence, rabies, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-              [
-                petStatus,
-                petGender,
-                petName,
-                date,
-                petType,
-                phoneNumber,
-                address,
-                email,
-                information,
-                imagePath,
-                violence,
-                rabies,
-                city,
-              ]
-            );
+          await dbConnection.promise().execute(
+            `INSERT INTO reports (user_id, status, gender, name, species, danger_level, dateLastSeen, addressLastSeen, city, phone_number, user_email, violence, rabies, trained, vaccinated, injured, additional_info, image)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+              user_id,
+              petStatus,
+              petGender,
+              petName,
+              petType,
+              danger_level,
+              dateLastSeen,
+              addressLastSeen,
+              city,
+              phoneNumber,
+              email,
+              violence,
+              rabies,
+              trained,
+              vaccinated,
+              injured,
+              information,
+              imagePath,
+            ]
+          );
 
           if (!res.headersSent) {
             res.writeHead(201);

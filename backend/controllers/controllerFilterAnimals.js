@@ -17,19 +17,18 @@ async function filterAnimalsController(req, res) {
     console.log("FITER", fields);
 
     try {
-      const { status, petName, city, petType, gender, timeRange } = fields;
-      console.log("Pet type:", petType);
+      const { status, petName, city, petType, gender, time } = fields;
 
       let query = "SELECT * FROM reports WHERE 1=1";
       const queryParams = [];
 
       if (status) {
-        query += " AND petStatus = ?";
+        query += " AND status = ?";
         queryParams.push(status);
       }
 
       if (petName) {
-        query += " AND petName LIKE ?";
+        query += " AND name LIKE ?";
         queryParams.push(`%${petName}%`);
       }
 
@@ -39,25 +38,27 @@ async function filterAnimalsController(req, res) {
       }
 
       if (petType) {
-        query += " AND petType = ?";
+        query += " AND species = ?";
         queryParams.push(petType);
       }
 
       if (gender) {
-        query += " AND petGender = ?";
+        query += " AND gender = ?";
         queryParams.push(gender);
       }
 
-      if (timeRange) {
+      console.log("TIME RANGE: ", time);
+
+      if (time) {
         const timeRanges = {
           "1 Month": "1 MONTH",
-          "3 Months": "3 MONTHS",
-          "6 Months": "6 MONTHS",
+          "3 Months": "3 MONTH",
+          "6 Months": "6 MONTH",
           "1 Year": "1 YEAR",
         };
         query +=
-          " AND date >= DATE_SUB(NOW(), INTERVAL " +
-          timeRanges[timeRange] +
+          " AND created_at >= DATE_SUB(NOW(), INTERVAL " +
+          timeRanges[time] +
           ")";
       }
 

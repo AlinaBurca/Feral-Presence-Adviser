@@ -104,6 +104,14 @@ div.image {
   margin-bottom: 1.25rem;
 }
 
+.form-control .tooltip {
+  font-size: 0.8rem;
+  display: flex;
+  margin-left: 1rem;
+  color: red;
+  visibility: hidden;
+}
+
 input,
 .submit {
   border: none;
@@ -124,8 +132,7 @@ input {
 input~i {
   position: absolute;
   left: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 1.2rem;
   color: #888;
   transition: color 0.4s;
 }
@@ -163,6 +170,15 @@ input:focus~i {
 .submit:hover {
   opacity: 0.9;
 }
+
+.error {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 2px solid green;
+}
+
 
 /* ----  Responsiveness   ----  */
 @media (max-width: 900px) {
