@@ -18,7 +18,34 @@ const {
   handleProfileUpdate,
   handlePasswordUpdate,
 } = require("./controllers/controllerEdit.js");
+const dbConnection = require('../backend/user/database/database.js').getConnection();
+const { generateRSSFeed } = require('./rssGenerator.js');
+const getLastReports = (callback) => {
+  const query = 'SELECT * FROM reports ORDER BY created_at DESC LIMIT 3';
+  dbConnection.query(query, (error, results) => {
+    if (error) {
+      return callback(error, null);
+    }
+    callback(null, results);
+  });
+};
 
+const getUsernameByEmail = (email, callback) => {
+  dbConnection.query(
+    'SELECT username FROM users WHERE email = ?',
+    [email],
+    (error, results) => {
+      if (error) {
+        return callback(error, null);
+      }
+      if (results.length > 0) {
+        return callback(null, results[0].username);
+      } else {
+        return callback(null, null);
+      }
+    }
+  );
+};
 function router(req, res) {
   if (req.url === "/index") {
     console.log("am trecut prin router");
@@ -116,24 +143,76 @@ function router(req, res) {
     });
     return true;
   }
-  if (req.url === "/api/get-user-details" && req.method === "POST") {
-    let body = "";
-    req.on("data", (chunk) => {
+  if (req.url === '/api/get-user-details' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => {
       body = JSON.parse(chunk.toString());
+
     });
-    req.on("end", () => {
+    req.on('end', () => {
+
       if (sessions[body.sessionId]) {
         console.log("salut");
         getUserDetails(body, res);
       } else {
-        res.writeHead(401, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ success: false, message: "Unauthorized" }));
+        res.writeHead(401, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Unauthorized' }));
       }
+    });
+    return true;
+
+  }
+  if (req.url === '/get-username' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => {
+      body = JSON.parse(chunk.toString());
+
+    });
+    req.on('end', () => {
+
+      if (sessions[body.sessionId]) {
+        let email = body.email;
+        console.log(body.email);
+        if (!email) {
+          res.writeHead(401, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Not authenticated' }));
+          return;
+        }
+
+        getUsernameByEmail(email, (err, username) => {
+          if (err) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Internal Server Error' }));
+            return;
+          }
+
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ username: username }));
+        });
+
+      }
+    });
+    return true;
+  }
+
+
+  if (req.url === '/rss' && req.method === 'GET') {
+    getLastReports((err, reports) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Internal Server Error' }));
+        return;
+      }
+
+      const feed = generateRSSFeed(reports);
+      res.writeHead(200, { 'Content-Type': 'application/rss+xml' });
+      res.end(feed);
     });
     return true;
   }
 
   return false;
 }
+
 
 module.exports = router;

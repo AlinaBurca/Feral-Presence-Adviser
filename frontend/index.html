@@ -1,373 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="xidthdevice-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Coiny"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
-    <link rel="shortcut icon" href="#" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  </head>
 
-  <body>
-    <header>
-      <nav id="navigation">
-        <ul class="sidebar">
-          <li onclick="hideSidebar()">
-            <a href="#"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="26"
-                viewBox="0 96 960 960"
-                width="26"
-              >
-                <path
-                  d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-                /></svg
-            ></a>
-          </li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="filter.html">Lost/Found Pets</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="help.html">Help</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="xidthdevice-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
+  <link rel="shortcut icon" href="#" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
 
-        <div class="menu-button" onclick="showSidebar()">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="26"
-              viewBox="0 96 960 960"
-              width="26"
-            >
+<body>
+  <header>
+    <nav id="navigation">
+      <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+              width="26">
               <path
-                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
-              /></svg
-          ></a>
-        </div>
-        <div class="nav-logo">
-          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
-        </div>
-        <div class="nav-menu">
-          <ul>
-            <li><a href="index.html" class="link active">Home</a></li>
-            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
-            <li><a href="statistics.html" class="link">Statistics</a></li>
-            <li><a href="about.html" class="link">About us</a></li>
-            <li><a href="help.html" class="link">Help</a></li>
-          </ul>
-        </div>
-        <div class="nav-button">
-          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
-        </div>
-      </nav>
-    </header>
-    <div class="container">
-      <div class="title1">
-        <h1 class="first-title">Feral Presence</h1>
-        <h1 class="second-title">Adviser</h1>
-        <a href="#scroll-container2" class="btn" id="reportBtn">Report pet</a>
+                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+            </svg></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="filter.html">Lost/Found Pets</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+
+      <div class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+            viewBox="0 96 960 960" width="26">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg></a></div>
+      <div class="nav-logo">
+        <a href="index.html"><img alt="logo_img" src="./img/logo.png"></a>
       </div>
-      <div class="cover"></div>
+      <div class="nav-menu">
+        <ul>
+          <li><a href="index.html" class="link">Home</a></li>
+          <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+          <li><a href="statistics.html" class="link">Statistics</a></li>
+          <li><a href="about.html" class="link">About us</a></li>
+          <li><a href="help.html" class="link">Help</a></li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <i class="fa-solid fa-rss" id="RSS"></i>
+        <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="username">Loading...</button>
+          <div class="dropdown-content">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-chart-line"></i>
+              Dashboard</a>
+            <a href="edit.html">
+              <i class="fa-regular fa-pen-to-square"></i>
+              Edit Profile</a>
+            <a href="#" id="logoutBtn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="title1">
+      <h1 class="first-title">Feral Presence</h1>
+      <h1 class="second-title">Adviser</h1>
+      <a href="#scroll-container2" class="btn" id="reportBtn">Report pet</a>
     </div>
+    <div class="cover"></div>
+  </div>
 
-    <!--Report form-->
-    <div id="scroll-container2" class="container2">
-      <div class="report">
-        <div class="container-form">
-          <div class="title">Enter pet's information</div>
-          <form
-            action="./index.html"
-            method="POST"
-            id="petForm"
-            enctype="multipart/form-data"
-          >
-            <div class="pet-status">
-              <span class="status-title">Pet status:</span>
-              <div class="status-types">
-                <input
-                  type="radio"
-                  name="status"
-                  id="dot-1"
-                  value="lost"
-                  required
-                />
-                <label for="dot-1"> Lost </label>
-                <input
-                  type="radio"
-                  name="status"
-                  id="dot-2"
-                  value="found"
-                  required
-                />
-                <label for="dot-2"> Found/Stray </label>
-              </div>
-              <span class="error-message" id="petStatusError"></span>
+  <!--Report form-->
+  <div id="scroll-container2" class="container2">
+    <div class="report">
+      <div class="container-form">
+        <div class="title">Enter pet's information</div>
+        <form action="./index.html" method="POST" id="petForm" enctype="multipart/form-data">
+          <div class="pet-status">
+            <span class="status-title">Pet status:</span>
+            <div class="status-types">
+              <input type="radio" name="status" id="dot-1" value="lost" required />
+              <label for="dot-1"> Lost </label>
+              <input type="radio" name="status" id="dot-2" value="found" required />
+              <label for="dot-2"> Found/Stray </label>
             </div>
-            <div class="pet-gender">
-              <span class="status-title">Gender:</span>
-              <div class="gender-types">
-                <input
-                  type="radio"
-                  name="gender"
-                  id="gender1"
-                  value="female"
-                  required
-                />
-                <label for="gender1">Female</label>
+            <span class="error-message" id="petStatusError"></span>
+          </div>
+          <div class="pet-gender">
+            <span class="status-title">Gender:</span>
+            <div class="gender-types">
+              <input type="radio" name="gender" id="gender1" value="female" required />
+              <label for="gender1">Female</label>
 
-                <input
-                  type="radio"
-                  name="gender"
-                  id="gender2"
-                  value="male"
-                  required
-                />
-                <label for="gender2">Male</label>
+              <input type="radio" name="gender" id="gender2" value="male" required />
+              <label for="gender2">Male</label>
 
-                <input
-                  type="radio"
-                  name="gender"
-                  id="gender3"
-                  value="Unknown"
-                  required
-                />
-                <label for="gender3">Unknown</label>
-              </div>
-              <span class="error-message" id="petGenderError"></span>
+              <input type="radio" name="gender" id="gender3" value="Unknown" required />
+              <label for="gender3">Unknown</label>
             </div>
+            <span class="error-message" id="petGenderError"></span>
+          </div>
 
-            <div class="status-details">
-              <div class="user-details">
-                <div class="input-box">
-                  <span class="details-name">Pet name</span>
-                  <input
-                    type="text"
-                    name="petName"
-                    placeholder="Enter pet name"
-                  />
-                  <span class="error-message" id="petNameError"></span>
-                </div>
-
-                <div class="input-box">
-                  <span class="details">Pet type</span>
-                  <select name="petType" id="petType" required>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="bird">Bird</option>
-                    <option value="bird">Fox</option>
-                    <option value="reptile">Reptile</option>
-                    <option value="horse">Horse</option>
-                    <option value="ferret">Ferret</option>
-                    <option value="rabbit">Rabbit</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div class="input-box">
-                  <label class="details" for="danger_level">Danger Level</label>
-                  <select id="danger_level" name="danger_level" required>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                  </select>
-                </div>
-
-                <div class="input-box">
-                  <span class="details" id="dateLabel">Date last seen</span>
-                  <input type="date" name="dateLastSeen" required />
-                  <span class="error-message" id="dateLastSeenError"></span>
-                </div>
-
-                <div class="input-box">
-                  <span class="details" id="addressLabel"
-                    >Address last seen</span
-                  >
-                  <input
-                    type="text"
-                    name="address"
-                    placeholder="Enter the adress"
-                    required
-                  />
-                  <span class="error-message" id="addressError"></span>
-                </div>
-                <div class="input-box">
-                  <label class="details" for="cities">City:</label>
-                  <select id="cities" name="city"></select>
-                </div>
-
-                <div class="input-box">
-                  <span class="details">Phone number</span>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    placeholder="Enter phone number"
-                    required
-                  />
-                  <span class="error-message" id="phoneNumberError"></span>
-                </div>
-
-                <div class="input-box">
-                  <span class="details">Email</span>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                  />
-                  <span class="error-message" id="emailError"></span>
-                </div>
+          <div class="status-details">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details-name">Pet name</span>
+                <input type="text" name="petName" placeholder="Enter pet name" />
+                <span class="error-message" id="petNameError"></span>
               </div>
 
               <div class="input-box">
-                <span class="tags-details">Select tags:</span>
-                <div class="tags-btn">
-                  <input
-                    type="button"
-                    value="Risk of violence"
-                    onclick="toggleTag(this)"
-                    id="violence"
-                  />
-                  <input
-                    type="button"
-                    value="Risk of rabies"
-                    onclick="toggleTag(this)"
-                    id="rabies"
-                  />
-                  <input
-                    type="button"
-                    value="Trained"
-                    onclick="toggleTag(this)"
-                    id="trained"
-                  />
-                  <input
-                    type="button"
-                    value="Vaccinated"
-                    onclick="toggleTag(this)"
-                    id="vaccinated"
-                  />
-                  <input
-                    type="button"
-                    value="Injured"
-                    onclick="toggleTag(this)"
-                    id="injured"
-                  />
-                </div>
+                <span class="details">Pet type</span>
+                <select name="petType" id="petType" required>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="bird">Bird</option>
+                  <option value="bird">Fox</option>
+                  <option value="reptile">Reptile</option>
+                  <option value="horse">Horse</option>
+                  <option value="ferret">Ferret</option>
+                  <option value="rabbit">Rabbit</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
-            </div>
-            <input
-              type="hidden"
-              name="violence"
-              id="violenceField"
-              value="no"
-            />
-            <input type="hidden" name="rabies" id="rabiesField" value="no" />
-            <input type="hidden" name="trained" id="trainedField" value="no" />
-            <input
-              type="hidden"
-              name="vaccinated"
-              id="vaccinatedField"
-              value="no"
-            />
-            <input type="hidden" name="injured" id="injuredField" value="no" />
-
-            <div class="another-details">
               <div class="input-box">
-                <span class="more-info"
-                  >Other information (eg. leaving the shelter, pet description
-                  or violent behaviour)</span
-                >
-                <input
-                  type="text"
-                  name="information"
-                  placeholder="Enter other details"
-                  required
-                />
-                <span class="error-message" id="informationError"></span>
+                <label class="details" for="danger_level">Danger Level</label>
+                <select id="danger_level" name="danger_level" required>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+
+              <div class="input-box">
+                <span class="details" id="dateLabel">Date last seen</span>
+                <input type="date" name="dateLastSeen" required />
+                <span class="error-message" id="dateLastSeenError"></span>
+              </div>
+
+              <div class="input-box">
+                <span class="details" id="addressLabel">Address last seen</span>
+                <input type="text" name="address" placeholder="Enter the adress" required />
+                <span class="error-message" id="addressError"></span>
+              </div>
+              <div class="input-box">
+                <label class="details" for="cities">City:</label>
+                <select id="cities" name="city"></select>
+              </div>
+
+              <div class="input-box">
+                <span class="details">Phone number</span>
+                <input type="tel" name="phoneNumber" placeholder="Enter phone number" required />
+                <span class="error-message" id="phoneNumberError"></span>
+              </div>
+
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="email" name="email" placeholder="Enter your email" required />
+                <span class="error-message" id="emailError"></span>
               </div>
             </div>
-            <div class="upload-photo">
-              <!-- <img class="pet-photo"> -->
-              <img id="pet-photo" />
-              <label class="photo--label" for="input-file">Upload photo</label>
-              <input
-                id="input-file"
-                type="file"
-                name="file"
-                accept="image/*"
-                required
-              />
 
-              <span class="error-message" id="fileError"></span>
+            <div class="input-box">
+              <span class="tags-details">Select tags:</span>
+              <div class="tags-btn">
+                <input type="button" value="Risk of violence" onclick="toggleTag(this)" id="violence" />
+                <input type="button" value="Risk of rabies" onclick="toggleTag(this)" id="rabies" />
+                <input type="button" value="Trained" onclick="toggleTag(this)" id="trained" />
+                <input type="button" value="Vaccinated" onclick="toggleTag(this)" id="vaccinated" />
+                <input type="button" value="Injured" onclick="toggleTag(this)" id="injured" />
+              </div>
             </div>
-            <div class="button">
-              <button class="submit" type="submit" value="submit">
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <input type="hidden" name="violence" id="violenceField" value="no" />
+          <input type="hidden" name="rabies" id="rabiesField" value="no" />
+          <input type="hidden" name="trained" id="trainedField" value="no" />
+          <input type="hidden" name="vaccinated" id="vaccinatedField" value="no" />
+          <input type="hidden" name="injured" id="injuredField" value="no" />
 
-        <div class="image-form">
-          <img alt="form-image" src="./img/form_image.png" />
-        </div>
+          <div class="another-details">
+            <div class="input-box">
+              <span class="more-info">Other information (eg. leaving the shelter, pet description
+                or violent behaviour)</span>
+              <input type="text" name="information" placeholder="Enter other details" required />
+              <span class="error-message" id="informationError"></span>
+            </div>
+          </div>
+          <div class="upload-photo">
+            <!-- <img class="pet-photo"> -->
+            <img id="pet-photo" />
+            <label class="photo--label" for="input-file">Upload photo</label>
+            <input id="input-file" type="file" name="file" accept="image/*" required />
+
+            <span class="error-message" id="fileError"></span>
+          </div>
+          <div class="button">
+            <button class="submit" type="submit" value="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="image-form">
+        <img alt="form-image" src="./img/form_image.png" />
       </div>
     </div>
+  </div>
 
-    <!--Cards section-->
-    <div class="container3">
-      <div class="container3--title">
-        <h1>
-          When you report a lost/found pet, your post will appear here as
-          <span> featured post</span>
-        </h1>
+  <!--Cards section-->
+  <div class="container3">
+    <div class="container3--title">
+      <h1>
+        When you report a lost/found pet, your post will appear here as
+        <span> featured post</span>
+      </h1>
+    </div>
+  </div>
+  <div class="grid-wrapper"></div>
+
+  <!--Footer section-->
+
+  <footer>
+    <div class="footer--section1">
+      <div class="footer-content">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="footer-content">
+        <a href="about.html">About us</a>
+      </div>
+      <div class="footer-content">
+        <a href="help.html">Help</a>
       </div>
     </div>
-    <div class="grid-wrapper"></div>
+    <hr />
+    <div class="footer--section2">
+      <h5>© Copyright. All rights reserved.</h5>
+    </div>
+  </footer>
 
-    <!--Footer section-->
+  <script src="../backend/user/validare_form/validare_report.js"></script>
+  <script src="../backend/user/validare_form/validare_user_button.js"></script>
 
-    <footer>
-      <div class="footer--section1">
-        <div class="footer-content">
-          <a href="index.html">Home</a>
-        </div>
-        <div class="footer-content">
-          <a href="about.html">About us</a>
-        </div>
-        <div class="footer-content">
-          <a href="help.html">Help</a>
-        </div>
-      </div>
-      <hr />
-      <div class="footer--section2">
-        <h5>© Copyright. All rights reserved.</h5>
-      </div>
-    </footer>
+</body>
 
-    <script src="../backend/user/validare_form/validare_report.js"></script>
-  </body>
 </html>

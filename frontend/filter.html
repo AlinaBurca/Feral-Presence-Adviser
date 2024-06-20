@@ -1,284 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./filter.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Coiny"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <title>Lost/Found pets</title>
-  </head>
 
-  <body>
-    <header>
-      <nav id="navigation">
-        <ul class="sidebar">
-          <li onclick="hideSidebar()">
-            <a href="#"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="26"
-                viewBox="0 96 960 960"
-                width="26"
-              >
-                <path
-                  d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-                /></svg
-            ></a>
-          </li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="filter.html">Lost/Found Pets</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="help.html">Help</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="./filter.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Lost/Found pets</title>
+</head>
 
-        <div class="menu-button" onclick="showSidebar()">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="26"
-              viewBox="0 96 960 960"
-              width="26"
-            >
+<body>
+  <header>
+    <nav id="navigation">
+      <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+              width="26">
               <path
-                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
-              /></svg
-          ></a>
-        </div>
-        <div class="nav-logo">
-          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
-        </div>
-        <div class="nav-menu">
-          <ul>
-            <li><a href="index.html" class="link">Home</a></li>
-            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
-            <li><a href="statistics.html" class="link">Statistics</a></li>
-            <li><a href="about.html" class="link">About us</a></li>
-            <li><a href="help.html" class="link">Help</a></li>
-          </ul>
-        </div>
-        <div class="nav-button">
-          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
-        </div>
-      </nav>
-    </header>
-    <div class="main--section">
-      <div class="section1" id="filterSection">
-        <div class="filter--form">
-          <p>Filter lost and found pets</p>
-          <form id="filterForm" action="#">
-            <div class="status-details">
-              <span class="status-title">Pet status:</span>
-              <div class="types">
-                <div class="type">
-                  <input type="radio" name="status" id="dot-1" value="lost" />
-                  <label for="dot-1">
-                    <span class="status">Lost</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="status" id="dot-2" value="found" />
-                  <label for="dot-2">
-                    <span class="status">Found/Stray</span>
-                  </label>
-                </div>
-              </div>
-            </div>
+                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+            </svg></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="filter.html">Lost/Found Pets</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
 
-            <div class="input-box1">
-              <span class="input-title">Pet name:</span>
-              <input
-                class="form-field"
-                type="text"
-                placeholder="Enter pet name"
-                name="petName"
-                required
-              />
-            </div>
-            <div class="input-box2">
-              <label class="input-title" for="cities">City:</label>
-              <select class="form-field" name="city" id="cities"></select>
-            </div>
-            <div class="input-box3">
-              <span class="input-title">Species:</span>
-              <div class="input-box3 types">
-                <div class="type">
-                  <input type="radio" name="petType" id="type1" />
-                  <label for="type1">
-                    <span class="status">All species</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="petType" id="type2" value="dog" />
-                  <label for="type2">
-                    <span class="status">Dog</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="petType" id="type3" value="cat" />
-                  <label for="type3">
-                    <span class="status">Cat</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="petType" id="type4" value="bird" />
-                  <label for="type4">
-                    <span class="status">Bird</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input
-                    type="radio"
-                    name="petType"
-                    id="type5"
-                    value="reptile"
-                  />
-                  <label for="type5">
-                    <span class="status">Reptile</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="petType" id="type6" value="horse" />
-                  <label for="type6">
-                    <span class="status">Horse</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input
-                    type="radio"
-                    name="petType"
-                    id="type7"
-                    value="ferret"
-                  />
-                  <label for="type7">
-                    <span class="status">Ferret</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input
-                    type="radio"
-                    name="petType"
-                    id="type8"
-                    value="rabbit"
-                  />
-                  <label for="type8">
-                    <span class="status">Rabbit</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="petType" id="type9" value="fox" />
-                  <label for="type9">
-                    <span class="status">Fox</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input
-                    type="radio"
-                    name="petType"
-                    id="type10"
-                    value="other"
-                  />
-                  <label for="type10">
-                    <span class="status">Other</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="input-box4">
-              <span class="input-title">Gender:</span>
-              <div class="types">
-                <div class="type">
-                  <input type="radio" name="gender" id="gender1" />
-                  <label for="gender1">
-                    <span class="status">All</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender2"
-                    value="female"
-                  />
-                  <label for="gender2">
-                    <span class="status">Female</span>
-                  </label>
-                </div>
-
-                <div class="type">
-                  <input type="radio" name="gender" id="gender3" value="male" />
-                  <label for="gender3">
-                    <span class="status">Male</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="gender" id="gender4" />
-                  <label for="gender4">
-                    <span class="status">Unknown</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div class="input-box4">
-              <span class="input-title">Within Past:</span>
-              <div class="types">
-                <div class="type">
-                  <input type="radio" name="time" id="time1" value="1 Month" />
-                  <label for="time1">
-                    <span class="status">1 Month</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="time" id="time2" value="3 Months" />
-                  <label for="time2">
-                    <span class="status">3 Months</span>
-                  </label>
-                </div>
-
-                <div class="type">
-                  <input type="radio" name="time" id="time3" value="6 Months" />
-                  <label for="time3">
-                    <span class="status">6 Months</span>
-                  </label>
-                </div>
-                <div class="type">
-                  <input type="radio" name="time" id="time4" value="1 Year" />
-                  <label for="time4">
-                    <span class="status">1 Year</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="button--container">
-          <button type="button" class="filter-btn" onclick="filterPets()">
-            Find
-          </button>
+      <div class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+            viewBox="0 96 960 960" width="26">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg></a></div>
+      <div class="nav-logo">
+        <a href="index.html"><img alt="logo_img" src="./img/logo.png"></a>
+      </div>
+      <div class="nav-menu">
+        <ul>
+          <li><a href="index.html" class="link">Home</a></li>
+          <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+          <li><a href="statistics.html" class="link">Statistics</a></li>
+          <li><a href="about.html" class="link">About us</a></li>
+          <li><a href="help.html" class="link">Help</a></li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="username">Loading...</button>
+          <div class="dropdown-content">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-chart-line"></i>
+              Dashboard</a>
+            <a href="edit.html">
+              <i class="fa-regular fa-pen-to-square"></i>
+              Edit Profile</a>
+            <a href="#" id="logoutBtn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out</a>
+          </div>
         </div>
       </div>
-      <!--section1 end-->
-      <div class="section2" id="card--section">
-        <div class="section2--title">
-          <h2>Lost & Found Pets Database</h2>
-          <h4>Find Lost & Found Dogs, Cats & Other Pets in your area.</h4>
-        </div>
+    </nav>
+  </header>
+  <div class="main--section">
+    <div class="section1" id="filterSection">
+      <div class="filter--form">
+        <p>Filter lost and found pets</p>
+        <form id="filterForm" action="#">
+          <div class="status-details">
+            <span class="status-title">Pet status:</span>
+            <div class="types">
+              <div class="type">
+                <input type="radio" name="status" id="dot-1" value="lost" />
+                <label for="dot-1">
+                  <span class="status">Lost</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="status" id="dot-2" value="found" />
+                <label for="dot-2">
+                  <span class="status">Found/Stray</span>
+                </label>
+              </div>
+            </div>
+          </div>
 
-        <!-- <div class="card">
+          <div class="input-box1">
+            <span class="input-title">Pet name:</span>
+            <input class="form-field" type="text" placeholder="Enter pet name" name="petName" required />
+          </div>
+          <div class="input-box2">
+            <label class="input-title" for="cities">City:</label>
+            <select class="form-field" name="city" id="cities"></select>
+          </div>
+          <div class="input-box3">
+            <span class="input-title">Species:</span>
+            <div class="input-box3 types">
+              <div class="type">
+                <input type="radio" name="petType" id="type1" />
+                <label for="type1">
+                  <span class="status">All species</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type2" value="dog" />
+                <label for="type2">
+                  <span class="status">Dog</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type3" value="cat" />
+                <label for="type3">
+                  <span class="status">Cat</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type4" value="bird" />
+                <label for="type4">
+                  <span class="status">Bird</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type5" value="reptile" />
+                <label for="type5">
+                  <span class="status">Reptile</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type6" value="horse" />
+                <label for="type6">
+                  <span class="status">Horse</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type7" value="ferret" />
+                <label for="type7">
+                  <span class="status">Ferret</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type8" value="rabbit" />
+                <label for="type8">
+                  <span class="status">Rabbit</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type9" value="fox" />
+                <label for="type9">
+                  <span class="status">Fox</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="petType" id="type10" value="other" />
+                <label for="type10">
+                  <span class="status">Other</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="input-box4">
+            <span class="input-title">Gender:</span>
+            <div class="types">
+              <div class="type">
+                <input type="radio" name="gender" id="gender1" />
+                <label for="gender1">
+                  <span class="status">All</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="gender" id="gender2" value="female" />
+                <label for="gender2">
+                  <span class="status">Female</span>
+                </label>
+              </div>
+
+              <div class="type">
+                <input type="radio" name="gender" id="gender3" value="male" />
+                <label for="gender3">
+                  <span class="status">Male</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="gender" id="gender4" />
+                <label for="gender4">
+                  <span class="status">Unknown</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-box4">
+            <span class="input-title">Within Past:</span>
+            <div class="types">
+              <div class="type">
+                <input type="radio" name="time" id="time1" value="1 Month" />
+                <label for="time1">
+                  <span class="status">1 Month</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="time" id="time2" value="3 Months" />
+                <label for="time2">
+                  <span class="status">3 Months</span>
+                </label>
+              </div>
+
+              <div class="type">
+                <input type="radio" name="time" id="time3" value="6 Months" />
+                <label for="time3">
+                  <span class="status">6 Months</span>
+                </label>
+              </div>
+              <div class="type">
+                <input type="radio" name="time" id="time4" value="1 Year" />
+                <label for="time4">
+                  <span class="status">1 Year</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="button--container">
+        <button type="button" class="filter-btn" onclick="filterPets()">
+          Find
+        </button>
+      </div>
+    </div>
+    <!--section1 end-->
+    <div class="section2" id="card--section">
+      <div class="section2--title">
+        <h2>Lost & Found Pets Database</h2>
+        <h4>Find Lost & Found Dogs, Cats & Other Pets in your area.</h4>
+      </div>
+
+      <!-- <div class="card">
           <img alt="pet-img" class="card--image" src="./img/lost_cat1.jpg" />
           <div class="card--body">
             <div class="general-info">
@@ -470,8 +428,8 @@
             <a href="card.html">View Details</a>
           </div>
         </div> -->
-      </div>
-      <!-- <div class="section3" id="mapSection">
+    </div>
+    <!-- <div class="section3" id="mapSection">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.1864110982433!2d27.57214627520643!3d47.17378671776671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb6227e846bd%3A0x193e4b6864504e2c!2sFacultatea%20de%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1712921013744!5m2!1sro!2sro"
           width="300"
@@ -482,191 +440,194 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div> -->
-    </div>
-    <!--Main section end-->
-    <div class="search-menu-bar">
-      <ul>
-        <li id="filterLink">
-          <a href="">
-            <img src="./img/filter.png" alt="filter icon" />Filter
-          </a>
-        </li>
-        <li id="listLink">
-          <a href="">
-            <img src="./img/menu.png" alt="filter icon" />Pet list
-          </a>
-        </li>
-      </ul>
-    </div>
-    <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const radios = document.querySelectorAll('input[type="radio"]');
-        radios.forEach((radio) => {
-          radio.addEventListener("click", (event) => {
-            if (radio.checked) {
-              if (radio.previousChecked) {
-                radio.checked = false;
-                radio.previousChecked = false;
-              } else {
-                radios.forEach((r) => (r.previousChecked = false));
-                radio.previousChecked = true;
-              }
+  </div>
+  <!--Main section end-->
+  <div class="search-menu-bar">
+    <ul>
+      <li id="filterLink">
+        <a href="">
+          <img src="./img/filter.png" alt="filter icon" />Filter
+        </a>
+      </li>
+      <li id="listLink">
+        <a href="">
+          <img src="./img/menu.png" alt="filter icon" />Pet list
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const radios = document.querySelectorAll('input[type="radio"]');
+      radios.forEach((radio) => {
+        radio.addEventListener("click", (event) => {
+          if (radio.checked) {
+            if (radio.previousChecked) {
+              radio.checked = false;
+              radio.previousChecked = false;
+            } else {
+              radios.forEach((r) => (r.previousChecked = false));
+              radio.previousChecked = true;
             }
-          });
-        });
-      });
-
-      async function filterPets() {
-        const form = document.getElementById("filterForm");
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch("/filter", {
-            method: "POST",
-            body: formData,
-          });
-
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
           }
-
-          const reports = await response.json();
-          displayReports(reports);
-        } catch (error) {
-          console.error("There was a problem with the fetch operation:", error);
-        }
-      }
-
-      function displayReports(reports) {
-        const cardSection = document.getElementById("card--section");
-        cardSection.innerHTML = "";
-
-        reports.forEach((report) => {
-          const card = document.createElement("div");
-          card.className = "card";
-
-          const div = document.createElement("div");
-          div.className = "card--image";
-          const img = document.createElement("img");
-          img.alt = "pet-img";
-          img.className = "card--image";
-          img.src = `./backend/controllers/uploads/${report.image}`;
-          div.appendChild(img);
-
-          const cardBody = document.createElement("div");
-          cardBody.className = "card--body";
-
-          const generalInfo = document.createElement("div");
-          generalInfo.className = "general-info";
-
-          const left = document.createElement("div");
-          left.className = "left";
-
-          const name = document.createElement("h3");
-          name.className = "name";
-          name.textContent = report.name;
-
-          const status = document.createElement("h3");
-          status.className = "status";
-          status.textContent = report.status;
-
-          left.appendChild(name);
-          left.appendChild(status);
-
-          const right = document.createElement("div");
-          right.className = "right";
-
-          const id = document.createElement("p");
-          id.textContent = `ID: ${report.id}`;
-
-          right.appendChild(id);
-
-          generalInfo.appendChild(left);
-          generalInfo.appendChild(right);
-
-          const cardDetails = document.createElement("div");
-          cardDetails.className = "card--details";
-
-          const details = document.createElement("div");
-          const dateLastSeen = new Date(report.dateLastSeen).toDateString();
-
-          details.innerHTML = `<strong>Lost on ${dateLastSeen}</strong>`;
-
-          const address = document.createElement("span");
-          address.textContent = report.addressLastSeen;
-
-          cardDetails.appendChild(details);
-          cardDetails.appendChild(address);
-
-          const viewDetailsLink = document.createElement("a");
-          viewDetailsLink.href = `/animal-details.html?id=${report.id}`;
-          viewDetailsLink.textContent = "View Details";
-
-          cardBody.appendChild(generalInfo);
-          cardBody.appendChild(cardDetails);
-          cardBody.appendChild(viewDetailsLink);
-
-          card.appendChild(img);
-          card.appendChild(cardBody);
-
-          cardSection.appendChild(card);
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const cities = [
-          "București",
-          "Cluj-Napoca",
-          "Timișoara",
-          "Iași",
-          "Constanța",
-          "Craiova",
-          "Brașov",
-          "Galați",
-          "Ploiești",
-          "Oradea",
-          "Brăila",
-          "Arad",
-          "Pitești",
-          "Sibiu",
-          "Bacău",
-          "Târgu Mureș",
-          "Baia Mare",
-          "Buzău",
-          "Botoșani",
-          "Satu Mare",
-          "Râmnicu Vâlcea",
-          "Suceava",
-          "Piatra Neamț",
-          "Drobeta-Turnu Severin",
-          "Târgu Jiu",
-          "Tulcea",
-          "Reșița",
-          "Focșani",
-          "Bistrița",
-          "Slatina",
-          "Călărași",
-          "Alba Iulia",
-          "Giurgiu",
-          "Deva",
-          "Hunedoara",
-          "Zalău",
-          "Sfântu Gheorghe",
-          "Bârlad",
-          "Vaslui",
-          "Roman",
-        ];
-
-        const selectElement = document.getElementById("cities");
-
-        cities.forEach(function (city) {
-          const option = document.createElement("option");
-          option.value = city;
-          option.textContent = city;
-          selectElement.appendChild(option);
         });
       });
-    </script>
-  </body>
+    });
+
+    async function filterPets() {
+      const form = document.getElementById("filterForm");
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("/filter", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const reports = await response.json();
+        displayReports(reports);
+      } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+      }
+    }
+
+    function displayReports(reports) {
+      const cardSection = document.getElementById("card--section");
+      cardSection.innerHTML = "";
+
+      reports.forEach((report) => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const div = document.createElement("div");
+        div.className = "card--image";
+        const img = document.createElement("img");
+        img.alt = "pet-img";
+        img.className = "card--image";
+        img.src = `./backend/controllers/uploads/${report.image}`;
+        div.appendChild(img);
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card--body";
+
+        const generalInfo = document.createElement("div");
+        generalInfo.className = "general-info";
+
+        const left = document.createElement("div");
+        left.className = "left";
+
+        const name = document.createElement("h3");
+        name.className = "name";
+        name.textContent = report.name;
+
+        const status = document.createElement("h3");
+        status.className = "status";
+        status.textContent = report.status;
+
+        left.appendChild(name);
+        left.appendChild(status);
+
+        const right = document.createElement("div");
+        right.className = "right";
+
+        const id = document.createElement("p");
+        id.textContent = `ID: ${report.id}`;
+
+        right.appendChild(id);
+
+        generalInfo.appendChild(left);
+        generalInfo.appendChild(right);
+
+        const cardDetails = document.createElement("div");
+        cardDetails.className = "card--details";
+
+        const details = document.createElement("div");
+        const dateLastSeen = new Date(report.dateLastSeen).toDateString();
+
+        details.innerHTML = `<strong>Lost on ${dateLastSeen}</strong>`;
+
+        const address = document.createElement("span");
+        address.textContent = report.addressLastSeen;
+
+        cardDetails.appendChild(details);
+        cardDetails.appendChild(address);
+
+        const viewDetailsLink = document.createElement("a");
+        viewDetailsLink.href = `/animal-details.html?id=${report.id}`;
+        viewDetailsLink.textContent = "View Details";
+
+        cardBody.appendChild(generalInfo);
+        cardBody.appendChild(cardDetails);
+        cardBody.appendChild(viewDetailsLink);
+
+        card.appendChild(img);
+        card.appendChild(cardBody);
+
+        cardSection.appendChild(card);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const cities = [
+        "București",
+        "Cluj-Napoca",
+        "Timișoara",
+        "Iași",
+        "Constanța",
+        "Craiova",
+        "Brașov",
+        "Galați",
+        "Ploiești",
+        "Oradea",
+        "Brăila",
+        "Arad",
+        "Pitești",
+        "Sibiu",
+        "Bacău",
+        "Târgu Mureș",
+        "Baia Mare",
+        "Buzău",
+        "Botoșani",
+        "Satu Mare",
+        "Râmnicu Vâlcea",
+        "Suceava",
+        "Piatra Neamț",
+        "Drobeta-Turnu Severin",
+        "Târgu Jiu",
+        "Tulcea",
+        "Reșița",
+        "Focșani",
+        "Bistrița",
+        "Slatina",
+        "Călărași",
+        "Alba Iulia",
+        "Giurgiu",
+        "Deva",
+        "Hunedoara",
+        "Zalău",
+        "Sfântu Gheorghe",
+        "Bârlad",
+        "Vaslui",
+        "Roman",
+      ];
+
+      const selectElement = document.getElementById("cities");
+
+      cities.forEach(function (city) {
+        const option = document.createElement("option");
+        option.value = city;
+        option.textContent = city;
+        selectElement.appendChild(option);
+      });
+    });
+  </script>
+  <script src="../backend/user/validare_form/validare_user_button.js"></script>
+
+</body>
+
 </html>

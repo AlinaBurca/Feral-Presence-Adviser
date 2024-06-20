@@ -13,18 +13,24 @@
 
 <body>
   <header>
-    <nav id="navigation" >
-        <ul class="sidebar">
-          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-          <li><a href="index.html" >Home</a></li>
-          <li><a href="filter.html">Lost/Found Pets</a></li>
-          <li><a href="statistics.html" >Statistics</a></li>
-          <li><a href="about.html" >About us</a></li>
-          <li><a href="help.html" >Help</a></li>
-        </ul>
-      
+    <nav id="navigation">
+      <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+              width="26">
+              <path
+                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+            </svg></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="filter.html">Lost/Found Pets</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
 
-      <div class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></div>
+      <div class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+            viewBox="0 96 960 960" width="26">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg></a></div>
       <div class="nav-logo">
         <a href="index.html"><img alt="logo_img" src="./img/logo.png"></a>
       </div>
@@ -39,6 +45,20 @@
       </div>
       <div class="nav-button">
         <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="username">Loading...</button>
+          <div class="dropdown-content">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-chart-line"></i>
+              Dashboard</a>
+            <a href="edit.html">
+              <i class="fa-regular fa-pen-to-square"></i>
+              Edit Profile</a>
+            <a href="#" id="logoutBtn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out</a>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -106,6 +126,8 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script src="../backend/user/validare_form/validare_user_button.js"></script>
+
 </body>
 
 </html>
