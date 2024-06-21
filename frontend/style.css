@@ -9,29 +9,32 @@
   padding: 0;
 }
 
-.tags-btn{
-  
+.tags-btn {
+
 
   padding: 17px 20px 13px;
 
 }
+
 .tags-btn input[type="button"] {
-  background-color: transparent; 
-  color: #000; 
-  border: 2.5px solid #fdcd4b; 
+  background-color: transparent;
+  color: #000;
+  border: 2.5px solid #fdcd4b;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
   border-radius: 15px;
   font-size: 0.9rem;
   font-family: "Nunito", sans-serif;
-  
+
 }
+
 .tags-btn input[type="button"].selected {
-  background-color: #fdcd4b; 
+  background-color: #fdcd4b;
   color: #fff;
-  
+
 }
+
 .error-message {
   font-size: 0.9rem;
   color: red;
@@ -234,7 +237,8 @@ form .user-details .input-box {
   font-size: 1rem;
   font-weight: 800;
 }
-.tags-details{
+
+.tags-details {
   display: block;
   margin-left: 0.5rem;
   margin-bottom: 5px;
@@ -301,7 +305,7 @@ form .user-details .input-box {
   border: 2px solid green;
 }
 
-.pet-risk{
+.pet-risk {
 
   display: flex;
   flex-direction: row;
@@ -309,19 +313,21 @@ form .user-details .input-box {
   margin-bottom: 1.5rem;
 
 }
-.pet-risk span{
+
+.pet-risk span {
 
   font-size: 0.9rem;
   font-weight: 800;
 }
-.pet-risk-status input{
-  
-    margin-left: 1rem;
-  
-  
+
+.pet-risk-status input {
+
+  margin-left: 1rem;
+
+
 }
 
-.pet-trained{
+.pet-trained {
 
   display: flex;
   flex-direction: row;
@@ -329,16 +335,18 @@ form .user-details .input-box {
   margin-bottom: 1.5rem;
 
 }
-.pet-trained span{
+
+.pet-trained span {
 
   font-size: 0.9rem;
   font-weight: 800;
 }
-.pet-trained-status input{
-  
-    margin-left: 1rem;
-  
-  
+
+.pet-trained-status input {
+
+  margin-left: 1rem;
+
+
 }
 
 /**************************/
@@ -478,7 +486,7 @@ Carduri
   grid-gap: 8px;
 } */
 
-.grid-wrapper{
+.grid-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -513,7 +521,7 @@ Carduri
   justify-content: center;
   width: 80%;
   height: 60%;
-  
+
   border-color: white;
   border-style: solid;
 }
@@ -526,7 +534,7 @@ Carduri
   margin: auto;
   display: block;
   object-fit: contain;
- 
+
 }
 
 .card--body {
