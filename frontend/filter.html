@@ -549,10 +549,9 @@
           const div = document.createElement("div");
           div.className = "card--image";
           const img = document.createElement("img");
-          img.alt = "pet-img";
-          img.className = "card--image";
-          img.src = `./backend/controllers/uploads/${report.image}`;
           div.appendChild(img);
+          img.alt = "pet-img";
+          img.src = `./backend/controllers/uploads/${report.image}`;
 
           const cardBody = document.createElement("div");
           cardBody.className = "card--body";
@@ -606,8 +605,7 @@
           cardBody.appendChild(generalInfo);
           cardBody.appendChild(cardDetails);
           cardBody.appendChild(viewDetailsLink);
-
-          card.appendChild(img);
+          card.appendChild(div);
           card.appendChild(cardBody);
 
           cardSection.appendChild(card);

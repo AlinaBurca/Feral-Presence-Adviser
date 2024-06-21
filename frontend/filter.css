@@ -236,10 +236,8 @@ form .input-title {
   margin-top: 1rem;
   width: 85%;
   height: 50%;
-
-  border-color: #0d7eba;
-  border-style: solid;
-  border-width: thin;
+  border: 2px solid #0d7eba;;
+ 
 }
 
 .card--image img{
