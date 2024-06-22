@@ -1,203 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./styles_edit.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Coiny"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
 
-    <title>Edit Profile</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="./styles_edit.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
 
-  <body>
-    <header>
-      <nav id="navigation">
-        <ul class="sidebar">
-          <li onclick="hideSidebar()">
-            <a href="#"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="26"
-                viewBox="0 96 960 960"
-                width="26"
-              >
-                <path
-                  d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-                /></svg
-            ></a>
-          </li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="filter.html">Lost/Found Pets</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="help.html">Help</a></li>
-        </ul>
+  <title>Edit Profile</title>
+</head>
 
-        <div class="menu-button" onclick="showSidebar()">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="26"
-              viewBox="0 96 960 960"
-              width="26"
-            >
+<body>
+  <header>
+    <nav id="navigation">
+      <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+              width="26">
               <path
-                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
-              /></svg
-          ></a>
-        </div>
-        <div class="nav-logo">
-          <a href="index.html"><img alt="logo_img" src="./img/logo.png" /></a>
-        </div>
-        <div class="nav-menu">
-          <ul>
-            <li><a href="index.html" class="link">Home</a></li>
-            <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
-            <li><a href="statistics.html" class="link">Statistics</a></li>
-            <li><a href="about.html" class="link">About us</a></li>
-            <li><a href="help.html" class="link">Help</a></li>
-          </ul>
-        </div>
-        <div class="nav-button">
-          <a href="login.html" class="btn" id="loginBtn">Sign In</a>
-        </div>
-      </nav>
-    </header>
-    <div class="main--section">
-      <div class="section1">
-        <div class="filter--form">
-          <div class="user">
-            <p>Welcome to FePa!</p>
-          </div>
-          <div class="menu-container">
-            <a href="dashboard.html" class="menu-item">
-              <i class="fa fa-paw" aria-hidden="true"></i>
-              My Pet Listing
-            </a>
-            <a href="index.html" class="menu-item">
-              <i class="fa fa-file" aria-hidden="true"></i>Report Pet
-            </a>
-            <a href="edit.html" class="menu-item">
-              <i class="fa fa-user" aria-hidden="true"></i>User Account
-            </a>
+                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+            </svg></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="filter.html">Lost/Found Pets</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+
+      <div class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+            viewBox="0 96 960 960" width="26">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg></a></div>
+      <div class="nav-logo">
+        <a href="index.html"><img alt="logo_img" src="./img/logo.png"></a>
+      </div>
+      <div class="nav-menu">
+        <ul>
+          <li><a href="index.html" class="link">Home</a></li>
+          <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
+          <li><a href="statistics.html" class="link">Statistics</a></li>
+          <li><a href="about.html" class="link">About us</a></li>
+          <li><a href="help.html" class="link">Help</a></li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <i class="fa-solid fa-rss" id="RSS"></i>
+        <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="username">Loading...</button>
+          <div class="dropdown-content">
+            <a href="dashboard.html">
+              <i class="fa-solid fa-chart-line"></i>
+              Dashboard</a>
+            <a href="edit.html">
+              <i class="fa-regular fa-pen-to-square"></i>
+              Edit Profile</a>
+            <a href="#" id="logoutBtn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out</a>
           </div>
         </div>
       </div>
-      <div class="section2">
-        <div class="form1">
-          <h1>Profile details</h1>
-          <form class="login-form" action="/edit" method="POST">
-            <div class="form-control">
-              <input
-                type="text"
-                name="name"
-                id="fullName"
-                placeholder="Username"
-                required
-                autofocus
-              />
-              <span id="usernameError" class="tooltip"
-                >The username must have at least 3 characters.</span
-              >
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="form-control">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email Address"
-                required
-              />
-              <span id="emailError" class="tooltip"
-                >It does not have a valid email syntax.</span
-              >
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="form-control">
-              <input
-                type="text"
-                name="number"
-                id="contactNumber"
-                placeholder="Contact Number"
-                required
-              />
-              <span id="phoneError" class="tooltip"
-                >The phone number must contain only digits!</span
-              >
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="form-control">
-              <input
-                type="text"
-                name="adress"
-                id="address"
-                placeholder="Address"
-                required
-              />
-              <i class="fas fa-address-card"></i>
-            </div>
-            <div class="button">
-              <input type="submit" value="Update Details" />
-            </div>
-          </form>
+    </nav>
+  </header>
+  <div class="main--section">
+    <div class="section1">
+      <div class="filter--form">
+        <div class="user">
+          <p>Welcome to FePa!</p>
         </div>
-        <div class="form1">
-          <h1>Change Password</h1>
-          <form
-            id="password-form"
-            class="login-form"
-            action="/edit_password"
-            method="POST"
-          >
-            <div class="form-control">
-              <input
-                type="password"
-                placeholder=" Current password"
-                name="password"
-                required
-                autofocus
-              />
-              <span id="passwordError" class="tooltip"
-                >The password is incorect.</span
-              >
-              <i class="fa-solid fa-lock"></i>
-            </div>
-            <div class="form-control">
-              <input
-                type="password"
-                placeholder="New Password"
-                name="new_password"
-                required
-                autofocus
-              />
-              <span id="newPasswordError" class="tooltip"
-                >The password must consist of at least 6 characters.</span
-              >
-              <i class="fa-solid fa-lock"></i>
-            </div>
-            <div class="button">
-              <input type="submit" value="Update Password" />
-            </div>
-          </form>
+        <div class="menu-container">
+          <a href="dashboard.html" class="menu-item">
+            <i class="fa fa-paw" aria-hidden="true"></i>
+            My Pet Listing
+          </a>
+          <a href="index.html" class="menu-item">
+            <i class="fa fa-file" aria-hidden="true"></i>Report Pet
+          </a>
+          <a href="edit.html" class="menu-item">
+            <i class="fa fa-user" aria-hidden="true"></i>User Account
+          </a>
         </div>
       </div>
-      <div class="section3">
-        <div class="user--activity">
-          <img src="./img/lola.png" />
-          <!-- <div class="user--photo">
+    </div>
+    <div class="section2">
+      <div class="form1">
+        <h1>Profile details</h1>
+        <form class="login-form" action="/edit" method="POST">
+          <div class="form-control">
+            <input type="text" name="name" id="fullName" placeholder="Username" required autofocus />
+            <span id="usernameError" class="tooltip">The username must have at least 3 characters.</span>
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form-control">
+            <input type="email" name="email" id="email" placeholder="Email Address" required />
+            <span id="emailError" class="tooltip">It does not have a valid email syntax.</span>
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="form-control">
+            <input type="text" name="number" id="contactNumber" placeholder="Contact Number" required />
+            <span id="phoneError" class="tooltip">The phone number must contain only digits!</span>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="form-control">
+            <input type="text" name="adress" id="address" placeholder="Address" required />
+            <i class="fas fa-address-card"></i>
+          </div>
+          <div class="button">
+            <input type="submit" value="Update Details" />
+          </div>
+        </form>
+      </div>
+      <div class="form1">
+        <h1>Change Password</h1>
+        <form id="password-form" class="login-form" action="/edit_password" method="POST">
+          <div class="form-control">
+            <input type="password" placeholder=" Current password" name="password" required autofocus />
+            <span id="passwordError" class="tooltip">The password is incorect.</span>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="form-control">
+            <input type="password" placeholder="New Password" name="new_password" required autofocus />
+            <span id="newPasswordError" class="tooltip">The password must consist of at least 6 characters.</span>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="button">
+            <input type="submit" value="Update Password" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="section3">
+      <div class="user--activity">
+        <img src="./img/lola.png" />
+        <!-- <div class="user--photo">
           <p>UE</p>
         </div>
         <h2>User Example</h2>
@@ -210,37 +148,40 @@
           <h3>Recent Activities</h3>
           <h5>Here is the recent activities</h5>
         </div> -->
-        </div>
       </div>
     </div>
-    <!--Main section end-->
-    <div class="search-menu-bar">
-      <ul>
-        <li id="menuLink">
-          <a href=""><img src="./img/menu.png" alt="menu icon" />Menu</a>
-        </li>
+  </div>
+  <!--Main section end-->
+  <div class="search-menu-bar">
+    <ul>
+      <li id="menuLink">
+        <a href=""><img src="./img/menu.png" alt="menu icon" />Menu</a>
+      </li>
 
-        <li id="editLink">
-          <a href="">
-            <img src="./img/list.png" alt="filter icon" />Edit Profile
-          </a>
-        </li>
-        <li id="activityLink">
-          <a href="">
-            <img src="./img/activity.png" alt="map icon" />Activity
-          </a>
-        </li>
-      </ul>
-    </div>
-    <script src="script2.js">
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value;
+      <li id="editLink">
+        <a href="">
+          <img src="./img/list.png" alt="filter icon" />Edit Profile
+        </a>
+      </li>
+      <li id="activityLink">
+        <a href="">
+          <img src="./img/activity.png" alt="map icon" />Activity
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="script2.js">
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
 
-      slider.oninput = function () {
-        output.innerHTML = this.value;
-      };
-    </script>
-    <script src="../backend/user/validare_form/validare_edit.js"></script>
-  </body>
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
+  </script>
+  <script src="../backend/user/validare_form/validare_edit.js"></script>
+  <script src="../backend/user/validare_form/validare_user_button.js"></script>
+
+</body>
+
 </html>

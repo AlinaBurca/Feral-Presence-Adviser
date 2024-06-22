@@ -74,7 +74,7 @@
         </div>
         <div class="nav-menu">
           <ul>
-            <li><a href="index.html" class="link active">Home</a></li>
+            <li><a href="index.html" class="link">Home</a></li>
             <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
             <li><a href="statistics.html" class="link">Statistics</a></li>
             <li><a href="about.html" class="link">About us</a></li>
@@ -82,7 +82,25 @@
           </ul>
         </div>
         <div class="nav-button">
+          <i class="fa-solid fa-rss" id="RSS"></i>
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <div class="dropdown">
+            <button class="dropbtn" id="username">Loading...</button>
+            <div class="dropdown-content">
+              <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard</a
+              >
+              <a href="edit.html">
+                <i class="fa-regular fa-pen-to-square"></i>
+                Edit Profile</a
+              >
+              <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -204,7 +222,7 @@
 
                 <div class="input-box">
                   <span class="details" id="addressLabel"
-                    >Address last seen</span
+                    >Location last seen</span
                   >
                   <input
                     type="text"
@@ -369,5 +387,6 @@
     </footer>
 
     <script src="../backend/user/validare_form/validare_report.js"></script>
+    <script src="../backend/user/validare_form/validare_user_button.js"></script>
   </body>
 </html>

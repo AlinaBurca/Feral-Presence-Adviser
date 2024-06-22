@@ -66,18 +66,40 @@
             <li><a href="index.html" class="link">Home</a></li>
             <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
             <li><a href="statistics.html" class="link">Statistics</a></li>
-            <li><a href="about.html" class="link active">About us</a></li>
+            <li><a href="about.html" class="link">About us</a></li>
             <li><a href="help.html" class="link">Help</a></li>
           </ul>
         </div>
         <div class="nav-button">
+          <i class="fa-solid fa-rss" id="RSS"></i>
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <div class="dropdown">
+            <button class="dropbtn" id="username">Loading...</button>
+            <div class="dropdown-content">
+              <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard</a
+              >
+              <a href="edit.html">
+                <i class="fa-regular fa-pen-to-square"></i>
+                Edit Profile</a
+              >
+              <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </header>
     <div class="main--section">
       <div class="title--container">
-        <h2>exampleName - Lost exampleSpecies in exampleLocation</h2>
+        <h2>
+          exampleName -
+          <span class="status--title">exampleStatus</span> exampleSpecies in
+          exampleLocation
+        </h2>
       </div>
       <div class="section--details">
         <div class="container1">
@@ -193,11 +215,20 @@
               <h4>exampleInjured</h4>
             </div>
           </div>
+          <div class="details-row">
+            <div class="label-name">
+              <h4>Description:</h4>
+            </div>
+            <div class="label-text">
+              <h4>Information</h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <script src="script.js"></script>
     <script src="animal-details.js"></script>
+    <script src="../backend/user/validare_form/validare_user_button.js"></script>
   </body>
 </html>

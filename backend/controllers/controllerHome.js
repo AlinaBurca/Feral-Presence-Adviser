@@ -7,7 +7,6 @@ const dbConnection = require("../user/database/database.js").getConnection();
 
 async function homeUserController(req, res) {
   if (req.method === "POST") {
-    console.log("am ajuns în controller");
     await controllerHome(req, res);
   } else {
     res.writeHead(405);
@@ -27,7 +26,7 @@ async function controllerHome(req, res) {
       res.end("Internal Server Error");
       return;
     }
-    console.log(fields);
+
     try {
       const imageName =
         files.file[0].newFilename +
@@ -55,11 +54,6 @@ async function controllerHome(req, res) {
       const information = fields.information ? fields.information[0] : null;
       const imagePath = imageName;
       const isValid = fields.isValid ? fields.isValid[0] : null;
-      console.log("vaccinated", vaccinated);
-      console.log("rabies: ", rabies);
-      console.log("trained: ", trained);
-      console.log("violence: ", violence);
-      console.log("injured: ", injured);
 
       const [rows] = await dbConnection
         .promise()
@@ -105,8 +99,6 @@ async function controllerHome(req, res) {
           }
         } else {
           if (!res.headersSent) {
-            console.log("isValid: ");
-            console.log(fields.isValid);
             res.writeHead(403);
             res.end("Is not a valid form");
             return;

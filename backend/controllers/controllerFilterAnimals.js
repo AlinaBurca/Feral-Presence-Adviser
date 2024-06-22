@@ -14,8 +14,6 @@ async function filterAnimalsController(req, res) {
       return;
     }
 
-    console.log("FITER", fields);
-
     try {
       const { status, petName, city, petType, gender, time } = fields;
 
@@ -47,8 +45,6 @@ async function filterAnimalsController(req, res) {
         queryParams.push(gender);
       }
 
-      console.log("TIME RANGE: ", time);
-
       if (time) {
         const timeRanges = {
           "1 Month": "1 MONTH",
@@ -59,12 +55,10 @@ async function filterAnimalsController(req, res) {
         query +=
           " AND created_at >= DATE_SUB(NOW(), INTERVAL " +
           timeRanges[time] +
-          ")";
+          " ORDER BY created_at)";
       }
 
       const [rows] = await dbConnection.promise().query(query, queryParams);
-
-      console.log("REZULTAT: ", rows);
 
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify(rows));

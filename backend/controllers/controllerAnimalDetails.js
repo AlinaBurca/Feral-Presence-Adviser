@@ -22,8 +22,6 @@ async function getAnimalDetails(animalId) {
 }
 
 function animalDetailsController(req, res, animalId) {
-  console.log("animal id", animalId);
-
   getAnimalDetails(animalId)
     .then((details) => {
       const filePath = "../frontend/animal-details.html";
@@ -35,8 +33,8 @@ function animalDetailsController(req, res, animalId) {
           res.end("Internal Server Error");
           return;
         }
-        const dateLastSeen = new Date(details.dateLastSeen).toDateString();
-        console.log("dateee: ", dateLastSeen);
+        const dateLastSeen = formatDate(details.dateLastSeen);
+
         let imagePath = "./backend/controllers/uploads/" + details.image;
         console.log(imagePath);
 
@@ -46,7 +44,7 @@ function animalDetailsController(req, res, animalId) {
           .replace(/exampleID/g, details.id)
           .replace(/exampleSpecies/g, details.species)
           .replace(/exampleStatus/g, details.status)
-          .replace(/Information/g, details.aditional_info)
+          .replace(/Information/g, details.additional_info)
           .replace(/exampleLocation/g, details.addressLastSeen)
           .replace(/exampleDate/g, dateLastSeen)
           .replace(/exampleRisk/g, details.rabies)
@@ -54,9 +52,7 @@ function animalDetailsController(req, res, animalId) {
           .replace(/exampleTrained/g, details.trained)
           .replace(/exampleVaccinated/g, details.vaccinated)
           .replace(/exampleInjured/g, details.injured)
-          .replace(/exampleSrc/g, imagePath)
-
-          .replace(/exampleDescription/g, details.aditional_info);
+          .replace(/exampleSrc/g, imagePath);
 
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(updatedContent, "utf-8");
@@ -67,6 +63,14 @@ function animalDetailsController(req, res, animalId) {
       res.writeHead(500, { "Content-Type": "text/plain" });
       res.end("Internal Server Error");
     });
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}-${month}-${year}`;
 }
 
 module.exports = animalDetailsController;

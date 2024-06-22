@@ -9,6 +9,7 @@ const forgetUserController =
 const resetPasswordController =
   require("./controllers/controllerForget").controllerResetPassword;
 const editUserController = require("./controllers/controllerEdit");
+const userReportsController = require("./controllers/controllerUserReports");
 
 function registerPage(req, res) {
   if (req.method === "POST") {
@@ -57,6 +58,10 @@ function resetPage(req, res) {
 function editPage(req, res) {
   editUserController(req, res);
 }
+function userReports(req, res) {
+  if (req.method == "POST") console.log("am ajuns in reports handler");
+  userReportsController(req, res);
+}
 
 module.exports = {
   registerPage,
@@ -67,4 +72,5 @@ module.exports = {
   homePage,
   cardPage,
   filterAnimals,
+  userReports,
 };

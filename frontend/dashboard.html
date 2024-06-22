@@ -70,7 +70,25 @@
           </ul>
         </div>
         <div class="nav-button">
+          <i class="fa-solid fa-rss" id="RSS"></i>
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <div class="dropdown">
+            <button class="dropbtn" id="username">Sign in</button>
+            <div class="dropdown-content">
+              <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard</a
+              >
+              <a href="edit.html">
+                <i class="fa-regular fa-pen-to-square"></i>
+                Edit Profile</a
+              >
+              <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -100,7 +118,9 @@
           <h2>The animals you reported</h2>
           <h4>Thank you for your dedication to reporting animals in need!</h4>
         </div>
-        <div class="card">
+        <div id="user-reports-container"></div>
+
+        <!-- <div class="card">
           <img class="card--image" src="./img/lost_dog3.jpeg" alt="lost_dog3" />
           <div class="card--body">
             <div class="general-info">
@@ -147,7 +167,7 @@
             </div>
             <button>View Details</button>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="section3">
         <div class="user--activity">
@@ -186,13 +206,83 @@
       </ul>
     </div>
     <script src="script1.js">
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value;
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
 
       slider.oninput = function () {
         output.innerHTML = this.value;
       };
+    </script>
+    <script src="../backend/user/validare_form/validare_user_button.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sessionId = localStorage.getItem("sessionId");
+
+        if (!sessionId) {
+          window.location.href = "login.html";
+          return;
+        }
+
+        fetch("/user-reports", {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain",
+          },
+          body: sessionId,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const reportsContainer = document.getElementById(
+              "user-reports-container"
+            );
+            console.log("DATA", data);
+            if (data.length === 0) {
+              reportsContainer.innerHTML = "<p>No reports found</p>";
+            } else {
+              data.forEach((report) => {
+                const dateLastSeen = formatDate(report.dateLastSeen);
+                const reportCard = document.createElement("div");
+                reportCard.classList.add("card");
+
+                reportCard.innerHTML = `
+                        <div class="card--image">
+                        <img src="./backend/controllers/uploads/${report.image}" alt="${report.name}" />
+                      </div>
+                        <div class="card--body">
+                            <div class="general-info">
+                                <div class="left">
+                                    <h3 class="name">${report.name}</h3>
+                                    <h3 class="status">${report.status}</h3>
+                                </div>
+                                <div class="right">
+                                    <p>ID: ${report.id}</p>
+                                </div>
+                            </div>
+                            <div class="card--details">
+                                <div>
+                                    <strong>Reported on ${dateLastSeen}</strong>
+                                </div>
+                                <span>${report.addressLastSeen}, ${report.city}</span>
+                            </div>
+                            <button onclick="location.href='/animal-details.html?id=${report.id}';">View Details</button>
+                        </div>
+                    `;
+
+                reportsContainer.appendChild(reportCard);
+              });
+            }
+          })
+          .catch((error) => console.error("Error fetching reports:", error));
+
+        function formatDate(dateString) {
+          const date = new Date(dateString);
+          const day = String(date.getDate()).padStart(2, "0");
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const year = date.getFullYear();
+          return `${day}-${month}-${year}`;
+        }
+      });
     </script>
   </body>
 </html>

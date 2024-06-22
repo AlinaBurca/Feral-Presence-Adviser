@@ -24,7 +24,10 @@
   font-size: 20px;
   color: #545454;
 }
-
+.status--title{
+  color: #0d7eba;
+  font-weight: 800;
+}
 .section--details {
   width: 90%;
   height: 70vh;

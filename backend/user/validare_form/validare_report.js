@@ -136,7 +136,6 @@ function validateForm() {
 
   const formElement = document.getElementById("petForm");
   const formData = new FormData(formElement);
-  console.log("FORMDATA: ", formData);
 
   let petName = formData.get("petName");
   if (petName.trim() === "") {
@@ -165,15 +164,12 @@ function validateForm() {
     );
     formData.set("injured", document.getElementById("injuredField").value);
 
-    console.log("FORMDATA: ", formData.violence);
-
     fetch("/index", {
       method: "POST",
       body: formData,
     })
       .then(async (response) => {
         if (response.ok) {
-          console.log(response.status);
           document.getElementById("petForm").reset();
           document.querySelector("#pet-photo").src = "";
         } else if (response.status === 409) {
@@ -196,7 +192,6 @@ function toggleTag(button) {
   button.classList.toggle("selected");
   const field = document.getElementById(button.id + "Field");
   field.value = button.classList.contains("selected") ? "yes" : "no";
-  console.log(`${button.id}Field value:`, field.value); // Afișează valoarea în consolă
 }
 const submitButton = document.querySelector(".submit");
 submitButton.addEventListener("click", function (event) {
@@ -216,7 +211,6 @@ function loadReports() {
     .then((data) => {
       const gridWrapper = document.querySelector(".grid-wrapper");
       gridWrapper.innerHTML = "";
-      console.log("data");
       data.forEach((report) => {
         const card = document.createElement("div");
         card.className = "card";

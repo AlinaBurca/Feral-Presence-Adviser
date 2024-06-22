@@ -13,6 +13,11 @@
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <title>Help</title>
   </head>
 
@@ -66,7 +71,25 @@
           </ul>
         </div>
         <div class="nav-button">
+          <i class="fa-solid fa-rss" id="RSS"></i>
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <div class="dropdown">
+            <button class="dropbtn" id="username">Loading...</button>
+            <div class="dropdown-content">
+              <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard</a
+              >
+              <a href="edit.html">
+                <i class="fa-regular fa-pen-to-square"></i>
+                Edit Profile</a
+              >
+              <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -165,5 +188,6 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="../backend/user/validare_form/validare_user_button.js"></script>
   </body>
 </html>

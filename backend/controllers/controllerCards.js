@@ -19,8 +19,10 @@ async function getAnimalCards(req, res) {
   try {
     const [results] = await dbConnection
       .promise()
-      .query("SELECT id, name, addressLastSeen, image FROM reports");
-    console.log(results);
+      .query(
+        "SELECT id, name, addressLastSeen, image FROM reports ORDER BY created_at DESC LIMIT 16"
+      );
+
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(results));
   } catch (err) {

@@ -70,7 +70,25 @@
           </ul>
         </div>
         <div class="nav-button">
+          <i class="fa-solid fa-rss" id="RSS"></i>
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
+          <div class="dropdown">
+            <button class="dropbtn" id="username">Loading...</button>
+            <div class="dropdown-content">
+              <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard</a
+              >
+              <a href="edit.html">
+                <i class="fa-regular fa-pen-to-square"></i>
+                Edit Profile</a
+              >
+              <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -588,9 +606,9 @@
           cardDetails.className = "card--details";
 
           const details = document.createElement("div");
-          const dateLastSeen = new Date(report.dateLastSeen).toDateString();
+          const created_at = formatDate(report.created_at);
 
-          details.innerHTML = `<strong>Lost on ${dateLastSeen}</strong>`;
+          details.innerHTML = `<strong>Reported on ${created_at}</strong>`;
 
           const address = document.createElement("span");
           address.textContent = report.addressLastSeen;
@@ -610,6 +628,14 @@
 
           cardSection.appendChild(card);
         });
+      }
+
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+        return `${day}-${month}-${year}`;
       }
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -666,5 +692,6 @@
         });
       });
     </script>
+    <script src="../backend/user/validare_form/validare_user_button.js"></script>
   </body>
 </html>

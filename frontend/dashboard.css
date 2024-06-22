@@ -140,7 +140,7 @@ FILTER FORM
 }
 
 .card {
-  width: 260px;
+  width: 350px;
   margin: 40px;
   height: 500px;
   background-color: grey;
@@ -158,10 +158,19 @@ FILTER FORM
   margin-top: 1rem;
   width: 85%;
   height: 50%;
-  border-radius: 30px;
   border-color: #0d7eba;
   border-style: solid;
-  border-width: thin;
+}
+
+.card--image img{
+
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .card--body {
@@ -223,7 +232,15 @@ FILTER FORM
   border-style: hidden;
   color: white;
   font-size: 14px;
+  cursor: pointer;
 }
+
+.card--body button:hover{
+
+   background-color: black;
+  
+}
+
 
 .search-menu-bar {
   display: none;
@@ -332,6 +349,8 @@ User activity
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
+
+
 
 /*********************/
 
