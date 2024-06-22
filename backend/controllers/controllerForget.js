@@ -16,7 +16,6 @@ async function forgetUserController(req, res) {
 }
 
 async function controllerForget(req, res) {
-  console.log("Am ajuns in controller");
   let body = "";
   req.on("data", (chunk) => {
     body += chunk.toString();

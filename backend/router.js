@@ -11,7 +11,6 @@ const {
 } = require("./handler.js");
 const fs = require("fs");
 const path = require("path");
-//const { getUserDetails } = require('./controllers/controllerEdit');
 const sessions = require("./sessions.js");
 const {
   editUserController,
@@ -19,9 +18,16 @@ const {
   handleProfileUpdate,
   handlePasswordUpdate,
 } = require("./controllers/controllerEdit.js");
+const {
+  getWeeklyReports,
+  getReportsBySpecies,
+  getReportsByDangerAndBehavior,
+  getReportsByCity,
+} = require("./controllers/controllerStatistic.js");
 const dbConnection =
   require("../backend/user/database/database.js").getConnection();
 const { generateRSSFeed } = require("./rssGenerator.js");
+
 const getLastReports = (callback) => {
   const query = "SELECT * FROM reports ORDER BY created_at DESC LIMIT 3";
   dbConnection.query(query, (error, results) => {
@@ -48,6 +54,7 @@ const getUsernameByEmail = (email, callback) => {
     }
   );
 };
+
 function router(req, res) {
   if (req.url === "/index") {
     console.log("am trecut prin router");
@@ -208,6 +215,29 @@ function router(req, res) {
       res.writeHead(200, { "Content-Type": "application/rss+xml" });
       res.end(feed);
     });
+    return true;
+  }
+
+  if (req.url === "/api/reports/weekly" && req.method === "GET") {
+    getWeeklyReports(res);
+    return true;
+  }
+
+  if (req.url === "/api/reports/by-city" && req.method === "GET") {
+    getReportsByCity(res);
+    return true;
+  }
+
+  if (req.url === "/api/reports/by-species" && req.method === "GET") {
+    getReportsBySpecies(res);
+    return true;
+  }
+
+  if (
+    req.url === "/api/reports/by-danger-and-behavior" &&
+    req.method === "GET"
+  ) {
+    getReportsByDangerAndBehavior(res);
     return true;
   }
 
