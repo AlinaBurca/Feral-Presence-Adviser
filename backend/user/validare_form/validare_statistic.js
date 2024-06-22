@@ -41,7 +41,7 @@ function fetchReportsBySpecies() {
     fetch('/api/reports/by-species')
         .then(response => response.json())
         .then(data => {
-            speciesData = data; // Salvăm datele
+            speciesData = data;
             const species = data.map(item => item.species);
             const counts = data.map(item => item.count);
             Plotly.newPlot('chart-species', [{
@@ -49,7 +49,8 @@ function fetchReportsBySpecies() {
                 values: counts,
                 type: 'pie'
             }], {
-                title: 'Reports by Species'
+                title: 'Reports by Species',
+                showlegend: false
             });
         });
 }
