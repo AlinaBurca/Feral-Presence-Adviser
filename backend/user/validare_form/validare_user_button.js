@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const usernameButton = document.getElementById('username');
     const loginButton = document.getElementById('loginBtn'); // Butonul de "Sign In"
     const dropdownContent = document.querySelector('.dropdown-content');
+    const rssButton = document.getElementById('RSS');
 
     if (!sessionId) {
         if (usernameButton) {
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (dropdownContent) {
             dropdownContent.style.display = 'none';
+        }
+        if (rssButton) {
+            rssButton.style.display = 'none';
         }
         return;
     }
@@ -59,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'login.html';
         });
     }
-    const rssButton = document.getElementById('RSS');
 
     rssButton.addEventListener('click', function () {
         redirectToRSSFeed();
