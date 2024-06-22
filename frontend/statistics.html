@@ -19,6 +19,7 @@
     />
 
     <title>Statistics</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
 
   <body>
@@ -103,38 +104,32 @@
         lost pet statistics and facts you want.
       </p>
     </div>
-    <div class="main--section">
-      <div class="section1">
-        <div class="chart-img">
-          <img src="./img/chart.png" alt="char-img" />
-        </div>
 
-        <div class="details">
-          <div class="row">
-            <div class="box">1 IN 3</div>
-            <div class="text">
-              1 in three pets goes missing in their lifetime
-            </div>
-          </div>
-          <div class="row">
-            <div class="box">10 M</div>
-            <div class="text">10M pets get lost or stolen each year</div>
-          </div>
-          <div class="row">
-            <div class="box">23%</div>
-            <div class="text">
-              Less than 23% of lost pets are runited with their owners
-            </div>
-          </div>
-        </div>
+    <div>
+      <h1>Animal Reports Statistics</h1>
+      <div class="chart-container" id="chart-weekly"></div>
+      <div class="exports">
+        <div class="item" id="export-csv_weekly">CSV</div>
+        <div class="item" id="export-webp_weekly">WebP</div>
+        <div class="item" id="export-svg_weekly">SVG</div>
       </div>
-      <div class="section2">
-        <div class="chart-img">
-          <img src="./img/area_stats.png" alt="area-chart" />
-        </div>
-        <div class="chart-img">
-          <img src="./img/speacies_stats.png" alt="speacies-chart" />
-        </div>
+      <div class="chart-container" id="chart-city"></div>
+      <div class="exports">
+        <div class="item" id="export-csv_city">CSV</div>
+        <div class="item" id="export-webp_city">WebP</div>
+        <div class="item" id="export-svg_city">SVG</div>
+      </div>
+      <div class="chart-container" id="chart-species"></div>
+      <div class="exports">
+        <div class="item" id="export-csv_species">CSV</div>
+        <div class="item" id="export-webp_species">WebP</div>
+        <div class="item" id="export-svg_species">SVG</div>
+      </div>
+      <div class="chart-container" id="chart-danger-behavior"></div>
+      <div class="exports">
+        <div class="item" id="export-csv_behavior">CSV</div>
+        <div class="item" id="export-webp_behavior">WebP</div>
+        <div class="item" id="export-svg_behavior">SVG</div>
       </div>
     </div>
 
@@ -158,5 +153,6 @@
     </footer>
     <script src="script.js"></script>
     <script src="../backend/user/validare_form/validare_user_button.js"></script>
+    <script src="../backend/user/validare_form/validare_statistic.js"></script>
   </body>
 </html>

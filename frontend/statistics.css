@@ -17,6 +17,28 @@
   padding-bottom: 2rem;
 }
 
+.item {
+  cursor: pointer;
+  margin: 5px;
+  background-color: rgb(115, 172, 236);
+  border-radius: 20px;
+  color: #f6f0f6;
+  height: 30px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+.exports {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .title-section h1 {
   margin-bottom: 1.25rem;
 }
@@ -85,6 +107,10 @@
   margin-left: 0.8rem;
   font-family: "Coiny";
   font-size: 1rem;
+}
+
+.chart-container {
+  margin: 20px 0;
 }
 
 /***************************************
