@@ -74,8 +74,13 @@ div.image {
   font-size: 1.1rem;
   font-weight: 600;
   color: #0d7eba;
+  text-align: center;
+  margin-top: 1rem;
 }
 
+.register-messages a{
+  text-decoration: none;
+}
 
 .register-messages:hover {
   color: #fdcd4b;

@@ -27,7 +27,7 @@ const {
 const dbConnection =
   require("../backend/user/database/database.js").getConnection();
 const { generateRSSFeed } = require("./rssGenerator.js");
-
+const url = require("url");
 const getLastReports = (callback) => {
   const query = "SELECT * FROM reports ORDER BY created_at DESC LIMIT 3";
   dbConnection.query(query, (error, results) => {
@@ -56,6 +56,129 @@ const getUsernameByEmail = (email, callback) => {
 };
 
 function router(req, res) {
+  const parsedUrl = url.parse(req.url, true);
+  const pathName = parsedUrl.pathname;
+
+  if (req.url === "/rss" && req.method === "GET") {
+    getLastReports((err, reports) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Internal Server Error" }));
+        return;
+      }
+
+      const feed = generateRSSFeed(reports);
+      res.writeHead(200, { "Content-Type": "application/rss+xml" });
+      res.end(feed);
+    });
+    return true;
+  }
+
+  if (pathName.startsWith("/delete-report/") && req.method === "DELETE") {
+    const reportId = pathName.split("/").pop();
+
+    dbConnection.query(
+      "DELETE FROM reports WHERE id = ?",
+      [reportId],
+      (err, results) => {
+        if (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Failed to delete report" }));
+          return;
+        }
+
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ success: true }));
+      }
+    );
+    return true;
+  }
+
+  // Endpoint pentru obținerea utilizatorilor
+  if (pathName === "/api/usersAdmin" && req.method === "GET") {
+    console.log("am ajuns in router users");
+    dbConnection.query("SELECT * FROM users", (err, results) => {
+      if (err) {
+        console.error("Error fetching users:", err);
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Failed to fetch users" }));
+        return;
+      }
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(results));
+    });
+    return true;
+  }
+
+  // Endpoint pentru obținerea rapoartelor
+  if (pathName === "/api/reportsAdmin" && req.method === "GET") {
+    console.log("am ajuns in router reports");
+    dbConnection.query("SELECT * FROM reports", (err, results) => {
+      if (err) {
+        console.error("Error fetching reports:", err);
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Failed to fetch reports" }));
+        return;
+      }
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(results));
+    });
+    return true;
+  }
+
+  if (pathName.startsWith("/api/usersAdmin") && req.method === "DELETE") {
+    const userId = pathName.split("/").pop();
+
+    // Șterge rapoartele asociate utilizatorului
+    dbConnection.query(
+      "DELETE FROM reports WHERE user_id = ?",
+      [userId],
+      (err, results) => {
+        if (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Failed to delete reports" }));
+          return;
+        }
+
+        // După ștergerea rapoartelor, șterge utilizatorul
+        dbConnection.query(
+          "DELETE FROM users WHERE id = ?",
+          [userId],
+          (err, results) => {
+            if (err) {
+              res.writeHead(500, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ error: "Failed to delete user" }));
+              return;
+            }
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ success: true }));
+          }
+        );
+      }
+    );
+    return true;
+  }
+
+  if (pathName.startsWith("/api/reportsAdmin") && req.method === "DELETE") {
+    const reportId = pathName.split("/").pop();
+
+    dbConnection.query(
+      "DELETE FROM reports WHERE id = ?",
+      [reportId],
+      (err, results) => {
+        if (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Failed to delete report" }));
+          return;
+        }
+
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ success: true }));
+      }
+    );
+    return true;
+  }
+
   if (req.url === "/index") {
     console.log("am trecut prin router");
     homePage(req, res);
@@ -79,7 +202,6 @@ function router(req, res) {
   }
   if (req.url == "/user-reports") {
     userReports(req, res);
-    console.log("am ajuns in reports router");
     return true;
   }
 

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+
+    <link rel="stylesheet" href="./card.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Coiny"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav id="navigation">
+        <!-- Navigation content -->
+      </nav>
+    </header>
+    <div class="main--section">
+      <div class="title--container">
+        <h2>
+          <span id="animalName">exampleName</span> -
+          <span class="status--title" id="animalStatus">exampleStatus</span>
+          <span id="animalSpecies">exampleSpecies</span> in
+          <span id="animalLocation">exampleLocation</span>
+        </h2>
+      </div>
+      <div class="section--details">
+        <div class="container1">
+          <div class="card">
+            <div class="card--image">
+              <img alt="pet-img" src="exampleSrc" id="animalImage" />
+            </div>
+            <div class="card--body">
+              <img
+                class="warning-icon"
+                alt="warning-icon"
+                src="./img/warning.png"
+              />
+              <h3>ID: <span id="animalID">exampleID</span></h3>
+            </div>
+          </div>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.503273093092!2d27.5859538!3d47.14799689999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafba3a571e589%3A0xf02efa6e69512fd3!2sAleea%20Rozelor%2C%20Ia%C8%99i!5e0!3m2!1sro!2sro!4v1712997282108!5m2!1sro!2sro"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+        <div class="container2">
+          <form id="animalDetailsForm">
+            <div class="details-row">
+              <div class="label-name">
+                <h4>ID:</h4>
+              </div>
+              <div class="label-text">
+                <input type="text" name="id" value="exampleID" id="inputID" />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Pet name:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="name"
+                  value="exampleName"
+                  id="inputName"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Status:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="status"
+                  value="exampleStatus"
+                  id="inputStatus"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Species:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="species"
+                  value="exampleSpecies"
+                  id="inputSpecies"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Date last seen:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="date"
+                  name="dateLastSeen"
+                  value="exampleDate"
+                  id="inputDateLastSeen"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Location last seen:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="locationLastSeen"
+                  value="exampleLocation"
+                  id="inputLocationLastSeen"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Risk of rabies:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="riskRabies"
+                  value="exampleRisk"
+                  id="inputRiskRabies"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Risk of violence:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="riskViolence"
+                  value="exampleViolence"
+                  id="inputRiskViolence"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Is Trained:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="isTrained"
+                  value="exampleTrained"
+                  id="inputIsTrained"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Is Vaccinated:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="isVaccinated"
+                  value="exampleVaccinated"
+                  id="inputIsVaccinated"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Is injured:</h4>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  name="isInjured"
+                  value="exampleInjured"
+                  id="inputIsInjured"
+                />
+              </div>
+            </div>
+            <div class="details-row">
+              <div class="label-name">
+                <h4>Description:</h4>
+              </div>
+              <div class="label-text">
+                <textarea name="description" id="inputDescription">
+Information</textarea
+                >
+              </div>
+            </div>
+            <div class="details-row">
+              <button type="button" onclick="saveAnimalDetails()">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="animal-details.js"></script>
+    <script src="../backend/user/validare_form/validare_user_button.js"></script>
+    <script>
+      function saveAnimalDetails() {
+        // Here you would typically gather the data and send it to your server using fetch or AJAX
+        const formData = new FormData(
+          document.getElementById("animalDetailsForm")
+        );
+        const data = Object.fromEntries(formData.entries());
+        console.log(data);
+
+        // Example of sending data to server
+        fetch("/save-animal-details", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            console.log("Success:", result);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -41,9 +41,21 @@ function validateForm() {
     .then(async (response) => {
       if (response.ok) {
         const data = await response.json();
-        const user = { sessionId: data.sessionId, email };
+
+        const user = {
+          sessionId: data.sessionId,
+          email: email,
+          isAdmin: data.isAdmin,
+          username: data.username,
+        };
+        console.log("USER: ", data);
         localStorage.setItem("sessionId", JSON.stringify(user));
-        window.location.href = "./dashboard.html";
+
+        if (data.isAdmin) {
+          window.location.href = "/admin.html";
+        } else {
+          window.location.href = "/dashboard.html";
+        }
       } else if (response.status === 401) {
         validatePassword();
         validateEmail(1);

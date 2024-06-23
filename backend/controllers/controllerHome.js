@@ -4,6 +4,7 @@ const path = require("path");
 const formidable = require("formidable");
 const mysql = require("mysql2");
 const dbConnection = require("../user/database/database.js").getConnection();
+const sessions = require("../sessions.js");
 
 async function homeUserController(req, res) {
   if (req.method === "POST") {
@@ -15,6 +16,18 @@ async function homeUserController(req, res) {
 }
 
 async function controllerHome(req, res) {
+  // const sessionId = req.headers["session-id"];
+  // console.log("sessionId", sessionId);
+  // const sessionData = sessions[sessionId];
+
+  // console.log("SessionData: ", sessionData.email);
+
+  // if (!sessionData || !sessionData.email) {
+  //   res.writeHead(401);
+  //   res.end("Unauthorized");
+  //   return;
+  // }
+
   const form = new formidable.IncomingForm();
   form.uploadDir = path.join(__dirname, "uploads"); // Setează directorul de upload
   form.keepExtensions = true; // Păstrează extensia fișierului
@@ -28,6 +41,26 @@ async function controllerHome(req, res) {
     }
 
     try {
+      const sessionData = fields.sessionId ? fields.sessionId[0] : null;
+      const data = JSON.parse(sessionData);
+      console.log("DATA: ", data.email);
+      console.log("data: ", sessionData);
+      //console.log("sessionEmail ", sessionData[email]);
+      if (!data || !data.email) {
+        res.writeHead(401);
+        res.end("Unauthorized");
+        return;
+      }
+
+      const email = fields.email ? fields.email[0] : null;
+
+      // Verificarea emailului din formular cu cel din sesiune
+      if (data.email !== email) {
+        console.log("am ajuns in if");
+        res.writeHead(403);
+        res.end("Email mismatch");
+        return;
+      }
       const imageName =
         files.file[0].newFilename +
         path.extname(files.file[0].originalFilename);
@@ -45,7 +78,7 @@ async function controllerHome(req, res) {
       const addressLastSeen = fields.address ? fields.address[0] : null;
       const city = fields.city ? fields.city[0] : null;
       const phoneNumber = fields.phoneNumber ? fields.phoneNumber[0] : null;
-      const email = fields.email ? fields.email[0] : null;
+      //  const email = fields.email ? fields.email[0] : null;
       const violence = fields.violence ? fields.violence[0] : null;
       const rabies = fields.rabies ? fields.rabies[0] : null;
       const trained = fields.trained ? fields.trained[0] : null;

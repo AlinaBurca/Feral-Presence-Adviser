@@ -30,7 +30,7 @@ function fetchReportsByCity() {
   fetch("/api/reports/by-city")
     .then((response) => response.json())
     .then((data) => {
-      cityData = data; // Salvăm datele
+      cityData = data;
       const cities = data.map((item) => item.city);
       const counts = data.map((item) => item.count);
       Plotly.newPlot(
@@ -77,7 +77,7 @@ function fetchReportsByDangerAndBehavior() {
   fetch("/api/reports/by-danger-and-behavior")
     .then((response) => response.json())
     .then((data) => {
-      dangerBehaviorData = data; // Salvăm datele
+      dangerBehaviorData = data;
       const dangerLevels = data.map((item) => item.danger_level);
       const violenceCounts = data.map((item) => item.violent);
       const rabiesCounts = data.map((item) => item.rabies);
@@ -145,9 +145,9 @@ function exportAsCSV(data, filename) {
   const link = document.createElement("a");
   link.setAttribute("href", encodedUri);
   link.setAttribute("download", filename);
-  document.body.appendChild(link); // Required for Firefox
+  document.body.appendChild(link);
   link.click();
-  document.body.removeChild(link); // Clean up
+  document.body.removeChild(link);
 }
 
 function exportAsWebP(chartId, filename) {
@@ -156,7 +156,7 @@ function exportAsWebP(chartId, filename) {
       const link = document.createElement("a");
       link.href = url;
       link.download = filename;
-      document.body.appendChild(link); // Required for Firefox
+      document.body.appendChild(link);
       link.click();
       link.parentNode.removeChild(link);
     }
@@ -170,6 +170,69 @@ function exportAsSVG(chartId, filename) {
     height: 600,
     filename: filename,
   });
+}
+
+function exportAsHTML(data, filename) {
+  let htmlContent = '<table border="1"><thead><tr>';
+  const keys = Object.keys(data[0]);
+  keys.forEach((key) => {
+    htmlContent += `<th>${key}</th>`;
+  });
+  htmlContent += "</tr></thead><tbody>";
+  data.forEach((row) => {
+    htmlContent += "<tr>";
+    keys.forEach((key) => {
+      htmlContent += `<td>${row[key]}</td>`;
+    });
+    htmlContent += "</tr>";
+  });
+  htmlContent += "</tbody></table>";
+
+  const blob = new Blob([htmlContent], { type: "text/html" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function exportAsHTMLContent(data) {
+  let htmlContent = '<table border="1"><thead><tr>';
+  const keys = Object.keys(data[0]);
+  keys.forEach((key) => {
+    htmlContent += `<th>${key}</th>`;
+  });
+  htmlContent += "</tr></thead><tbody>";
+  data.forEach((row) => {
+    htmlContent += "<tr>";
+    keys.forEach((key) => {
+      htmlContent += `<td>${row[key]}</td>`;
+    });
+    htmlContent += "</tr>";
+  });
+  htmlContent += "</tbody></table>";
+
+  return htmlContent;
+}
+
+function exportAsPDF(data, filename) {
+  const element = document.createElement("div");
+  element.innerHTML = exportAsHTMLContent(data);
+  document.body.appendChild(element);
+
+  html2pdf()
+    .from(element)
+    .set({
+      margin: 1,
+      filename: filename,
+      html2canvas: { scale: 2 },
+      jsPDF: { orientation: "portrait" },
+    })
+    .save()
+    .then(() => {
+      document.body.removeChild(element);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -229,5 +292,41 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("export-svg_behavior")
     .addEventListener("click", () => {
       exportAsSVG("chart-danger-behavior", "behavior_reports.svg");
+    });
+
+  document
+    .getElementById("export-html_weekly")
+    .addEventListener("click", () => {
+      exportAsHTML(weeklyData, "weekly_reports.html");
+    });
+  document.getElementById("export-html_city").addEventListener("click", () => {
+    exportAsHTML(cityData, "city_reports.html");
+  });
+  document
+    .getElementById("export-html_species")
+    .addEventListener("click", () => {
+      exportAsHTML(speciesData, "species_reports.html");
+    });
+  document
+    .getElementById("export-html_behavior")
+    .addEventListener("click", () => {
+      exportAsHTML(dangerBehaviorData, "behavior_reports.html");
+    });
+
+  document.getElementById("export-pdf_weekly").addEventListener("click", () => {
+    exportAsPDF(weeklyData, "weekly_reports.pdf");
+  });
+  document.getElementById("export-pdf_city").addEventListener("click", () => {
+    exportAsPDF(cityData, "city_reports.pdf");
+  });
+  document
+    .getElementById("export-pdf_species")
+    .addEventListener("click", () => {
+      exportAsPDF(speciesData, "species_reports.pdf");
+    });
+  document
+    .getElementById("export-pdf_behavior")
+    .addEventListener("click", () => {
+      exportAsPDF(dangerBehaviorData, "behavior_reports.pdf");
     });
 });

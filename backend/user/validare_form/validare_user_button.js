@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sessionId = localStorage.getItem("sessionId");
+  const sessionData = JSON.parse(localStorage.getItem("sessionId"));
   const usernameButton = document.getElementById("username");
-  const loginButton = document.getElementById("loginBtn"); // Butonul de "Sign In"
-  const dropdownContent = document.querySelector(".dropdown-content");
+  const loginButton = document.getElementById("loginBtn");
+  const dropdownContent = document.getElementById("dropdownContent");
   const rssButton = document.getElementById("RSS");
 
-  if (!sessionId) {
+  console.log("SessionData: ", sessionData);
+  console.log("LoginButton ", loginButton);
+  console.log("userNameButton: ", usernameButton);
+
+  if (!sessionData) {
     if (usernameButton) {
       usernameButton.style.display = "none";
     }
@@ -20,43 +24,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return;
   }
-
   if (loginButton) {
     loginButton.style.display = "none";
   }
 
-  fetch("/get-username", {
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain",
-    },
-    body: sessionId,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.username) {
-        usernameButton.innerText = data.username;
-      } else {
-        if (usernameButton) {
-          usernameButton.style.display = "none";
-        }
-        if (dropdownContent) {
-          dropdownContent.style.display = "none";
-        }
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching username:", error);
-      if (usernameButton) {
-        usernameButton.style.display = "none";
-      }
-      if (dropdownContent) {
-        dropdownContent.style.display = "none";
-      }
-    });
+  const isAdmin = sessionData.isAdmin;
+  if (sessionData.username) {
+    usernameButton.innerText = sessionData.username;
+  } else {
+    if (usernameButton) {
+      usernameButton.style.display = "none";
+    }
+    if (dropdownContent) {
+      dropdownContent.style.display = "none";
+    }
+  }
+
+  if (isAdmin) {
+    dropdownContent.innerHTML = `
+          <a href="admin.html">
+              <i class="fa-solid fa-user-shield"></i>
+              Admin Panel</a>
+          <a href="login.html" id="logoutBtn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out</a>
+      `;
+  } else {
+    dropdownContent.innerHTML = `
+          <a href="dashboard.html">
+              <i class="fa-solid fa-chart-line"></i>
+              Dashboard</a>
+          <a href="edit.html">
+              <i class="fa-regular fa-pen-to-square"></i>
+              Edit Profile</a>
+          <a href="login.html" id="logoutBtn">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out</a>
+      `;
+  }
 
   const logoutButton = document.getElementById("logoutBtn");
   if (logoutButton) {
+    console.log("logoutBtn: ", logoutButton);
     logoutButton.addEventListener("click", () => {
       localStorage.clear();
       window.location.href = "login.html";

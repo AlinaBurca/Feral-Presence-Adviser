@@ -59,8 +59,7 @@ function editPage(req, res) {
   editUserController(req, res);
 }
 function userReports(req, res) {
-  if (req.method == "POST") console.log("am ajuns in reports handler");
-  userReportsController(req, res);
+  if (req.method == "POST") userReportsController(req, res);
 }
 
 module.exports = {

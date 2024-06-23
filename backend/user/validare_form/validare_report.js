@@ -82,7 +82,7 @@ function validateEmail(ok) {
     email.classList.add("error");
     email.classList.remove("valid");
     if (ok === 1) error.textContent = "It does not have a valid email syntax.";
-    else error.textContent = "The email doesn't exist. Please register!";
+    else error.textContent = "Please enter a valid email account!";
     error.style.visibility = "visible";
     return false;
   }
@@ -163,7 +163,9 @@ function validateForm() {
       document.getElementById("vaccinatedField").value
     );
     formData.set("injured", document.getElementById("injuredField").value);
-
+    const sessionId = localStorage.getItem("sessionId");
+    console.log("sessionId", sessionId);
+    formData.append("sessionId", sessionId);
     fetch("/index", {
       method: "POST",
       body: formData,
@@ -175,7 +177,8 @@ function validateForm() {
         } else if (response.status === 409) {
           validateEmail(response.ok);
         } else if (response.status === 403) {
-          // Handle specific error
+          console.log("RESPONSE", response.ok);
+          validateEmail(response.ok);
         } else {
           const errorMessage = await response.text();
           console.error(errorMessage);

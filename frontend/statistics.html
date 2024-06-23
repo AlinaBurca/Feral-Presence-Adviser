@@ -20,6 +20,7 @@
 
     <title>Statistics</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   </head>
 
   <body>
@@ -76,20 +77,7 @@
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
           <div class="dropdown">
             <button class="dropbtn" id="username">Loading...</button>
-            <div class="dropdown-content">
-              <a href="dashboard.html">
-                <i class="fa-solid fa-chart-line"></i>
-                Dashboard</a
-              >
-              <a href="edit.html">
-                <i class="fa-regular fa-pen-to-square"></i>
-                Edit Profile</a
-              >
-              <a href="#" id="logoutBtn">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                Log out</a
-              >
-            </div>
+            <div class="dropdown-content" id="dropdownContent"></div>
           </div>
         </div>
       </nav>
@@ -112,24 +100,37 @@
         <div class="item" id="export-csv_weekly">CSV</div>
         <div class="item" id="export-webp_weekly">WebP</div>
         <div class="item" id="export-svg_weekly">SVG</div>
+        <div class="item" id="export-html_weekly">HTML</div>
+        <div class="item" id="export-pdf_weekly">PDF</div>
       </div>
+
+      <!-- Similar divs for city, species, and danger-behavior charts -->
+
       <div class="chart-container" id="chart-city"></div>
       <div class="exports">
         <div class="item" id="export-csv_city">CSV</div>
         <div class="item" id="export-webp_city">WebP</div>
         <div class="item" id="export-svg_city">SVG</div>
+        <div class="item" id="export-html_city">HTML</div>
+        <div class="item" id="export-pdf_city">PDF</div>
       </div>
+
       <div class="chart-container" id="chart-species"></div>
       <div class="exports">
         <div class="item" id="export-csv_species">CSV</div>
         <div class="item" id="export-webp_species">WebP</div>
         <div class="item" id="export-svg_species">SVG</div>
+        <div class="item" id="export-html_species">HTML</div>
+        <div class="item" id="export-pdf_species">PDF</div>
       </div>
+
       <div class="chart-container" id="chart-danger-behavior"></div>
       <div class="exports">
         <div class="item" id="export-csv_behavior">CSV</div>
         <div class="item" id="export-webp_behavior">WebP</div>
         <div class="item" id="export-svg_behavior">SVG</div>
+        <div class="item" id="export-html_behavior">HTML</div>
+        <div class="item" id="export-pdf_behavior">PDF</div>
       </div>
     </div>
 

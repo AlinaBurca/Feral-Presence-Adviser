@@ -221,14 +221,26 @@ FILTER FORM
   display: flex;
   flex-direction: column;
 }
+.button-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 
+}
+.delete-btn{
+  background-color: red;
+  border-color: red;
+}
+.details-btn{
+  background-color: #0d7eba;
+  border-color: #0d7eba;
+}
 .card--body button {
   margin-top: 0.6rem;
   align-self: center;
   padding: 0.6rem;
-  background-color: #0d7eba;
   border-radius: 15px;
-  border-color: #0d7eba;
   border-style: hidden;
   color: white;
   font-size: 14px;

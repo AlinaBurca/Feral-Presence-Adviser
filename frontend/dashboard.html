@@ -74,20 +74,7 @@
           <a href="login.html" class="btn" id="loginBtn">Sign In</a>
           <div class="dropdown">
             <button class="dropbtn" id="username">Sign in</button>
-            <div class="dropdown-content">
-              <a href="dashboard.html">
-                <i class="fa-solid fa-chart-line"></i>
-                Dashboard</a
-              >
-              <a href="edit.html">
-                <i class="fa-regular fa-pen-to-square"></i>
-                Edit Profile</a
-              >
-              <a href="#" id="logoutBtn">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                Log out</a
-              >
-            </div>
+            <div class="dropdown-content" id="dropdownContent"></div>
           </div>
         </div>
       </nav>
@@ -171,7 +158,8 @@
       </div>
       <div class="section3">
         <div class="user--activity">
-          <div class="user--photo">
+          <img src="./img/lola.png" />
+          <!-- <div class="user--photo">
             <p>UE</p>
           </div>
           <h2>User Example</h2>
@@ -183,7 +171,7 @@
           <div class="activity">
             <h3>Recent Activities</h3>
             <h5>Here is the recent activities</h5>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -265,7 +253,10 @@
                                 </div>
                                 <span>${report.addressLastSeen}, ${report.city}</span>
                             </div>
-                            <button onclick="location.href='/animal-details.html?id=${report.id}';">View Details</button>
+                            <div class="button-section">
+                            <button class="details-btn"onclick="location.href='/animal-details.html?id=${report.id}';">View Details</button>
+                            <button class="delete-btn" onclick="deleteReport(${report.id})">Delete</button>
+                            </div>
                         </div>
                     `;
 
@@ -283,6 +274,23 @@
           return `${day}-${month}-${year}`;
         }
       });
+
+      function deleteReport(reportId) {
+        fetch(`/delete-report/${reportId}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            if (result.success) {
+              location.reload();
+            } else {
+              console.error("Error deleting report:", result.message);
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
     </script>
   </body>
 </html>
