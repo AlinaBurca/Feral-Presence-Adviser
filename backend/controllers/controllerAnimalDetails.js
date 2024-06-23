@@ -2,6 +2,8 @@ const mysql = require("mysql2");
 const dbConnection = require("../user/database/database.js").getConnection();
 const fs = require("fs");
 const path = require("path");
+const logFilePath = path.join(__dirname, "error.log");
+
 
 async function getAnimalDetails(animalId) {
   return new Promise((resolve, reject) => {
@@ -18,6 +20,15 @@ async function getAnimalDetails(animalId) {
         resolve(results[0]);
       }
     );
+  });
+}
+
+function logError(error) {
+  const errorMessage = `${new Date().toISOString()} - Error: ${error.message}\n`;
+  fs.appendFile(logFilePath, errorMessage, (err) => {
+    if (err) {
+      console.error("Failed to write to log file:", err);
+    }
   });
 }
 
@@ -59,7 +70,7 @@ function animalDetailsController(req, res, animalId) {
       });
     })
     .catch((error) => {
-      console.error("Error:", error);
+      logError(error);  // Înregistrează eroarea într-un fișier de loguri
       res.writeHead(500, { "Content-Type": "text/plain" });
       res.end("Internal Server Error");
     });

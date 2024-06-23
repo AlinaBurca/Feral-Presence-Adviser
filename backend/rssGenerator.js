@@ -28,12 +28,12 @@ function generateRSSFeed(reports) {
 
     const title = name ? `<![CDATA[${name}]]>` : "";
     const link = id ? `http://localhost:3000/animal-details.html?id=${id}` : "";
-    const newCreated_at = formatDate(created_at);
+    const newCreated_at = formatDateRFC822(created_at);
     const newDateLastSeen = formatDate(dateLastSeen);
     const guid = link;
     const description = `
       <![CDATA[
-        Status: ${status}
+        Status: ${status}<br>
         Gender: ${gender}<br>
         Species: ${species}<br>
         Danger Level: ${danger_level}<br>
@@ -78,12 +78,24 @@ function generateRSSFeed(reports) {
 
   return feed;
 }
+
 function formatDate(dateString) {
   const date = new Date(dateString);
   const day = String(date.getDate()).padStart(2, "0");
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = date.getFullYear();
   return `${day}-${month}-${year}`;
+}
+
+function formatDateRFC822(dateString) {
+  let date;
+  // Verifică dacă dateString este un număr (timestamp)
+  if (!isNaN(dateString)) {
+    date = new Date(Number(dateString));
+  } else {
+    date = new Date(dateString);
+  }
+  return date.toUTCString();
 }
 
 module.exports = { generateRSSFeed };
