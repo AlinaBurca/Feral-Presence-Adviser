@@ -192,7 +192,6 @@ function router(req, res) {
     const animalId = new URLSearchParams(
       req.url.slice(req.url.indexOf("?"))
     ).get("id");
-    console.log("Animal id: ", animalId);
     cardPage(req, res, animalId);
     return true;
   }
