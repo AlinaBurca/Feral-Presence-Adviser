@@ -48,7 +48,7 @@ function validateForm() {
           isAdmin: data.isAdmin,
           username: data.username,
         };
-        console.log("USER: ", data);
+
         localStorage.setItem("sessionId", JSON.stringify(user));
 
         if (data.isAdmin) {
@@ -93,26 +93,22 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("navbar-scroll");
   }
 });
-// Obține linkurile meniului
+
 const mapLink = document.getElementById("mapLink");
 const filterLink = document.getElementById("filterLink");
 const listLink = document.getElementById("listLink");
 
-// Obține secțiunile
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 
-// Ascunde toate secțiunile la început
 const sections = [section1, section2, section3];
 sections.forEach((section) => {
   section.classList.remove("active");
 });
 
-// Afișează secțiunea 2 (începutul)
 section2.classList.add("active");
 
-// Adaugă eveniment pentru linkul de hartă
 mapLink.addEventListener("click", function (event) {
   event.preventDefault();
   section1.classList.remove("active");
@@ -120,7 +116,6 @@ mapLink.addEventListener("click", function (event) {
   section3.classList.add("active");
 });
 
-// Adaugă eveniment pentru linkul de filtrare
 filterLink.addEventListener("click", function (event) {
   event.preventDefault();
   section1.classList.add("active");

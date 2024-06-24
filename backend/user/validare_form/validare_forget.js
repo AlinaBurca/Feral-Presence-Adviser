@@ -25,12 +25,10 @@ function validateForm() {
   })
     .then(async (response) => {
       if (response.ok) {
-        console.log("aici");
         validateEmail(1);
         window.location.href = "./login.html";
       } else if (response.status === 404) {
         validateEmail(0);
-        console.log("User not found, please login first");
       } else {
         const errorMessage = await response.text();
         console.error(errorMessage);
@@ -65,26 +63,21 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Obține linkurile meniului
 const mapLink = document.getElementById("mapLink");
 const filterLink = document.getElementById("filterLink");
 const listLink = document.getElementById("listLink");
 
-// Obține secțiunile
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 
-// Ascunde toate secțiunile la început
 const sections = [section1, section2, section3];
 sections.forEach((section) => {
   section.classList.remove("active");
 });
 
-// Afișează secțiunea 2 (începutul)
 section2.classList.add("active");
 
-// Adaugă eveniment pentru linkul de hartă
 mapLink.addEventListener("click", function (event) {
   event.preventDefault();
   section1.classList.remove("active");
@@ -92,7 +85,6 @@ mapLink.addEventListener("click", function (event) {
   section3.classList.add("active");
 });
 
-// Adaugă eveniment pentru linkul de filtrare
 filterLink.addEventListener("click", function (event) {
   event.preventDefault();
   section1.classList.add("active");

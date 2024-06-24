@@ -91,7 +91,7 @@
               <i class="fa fa-paw" aria-hidden="true"></i>
               My Pet Listing
             </a>
-            <a href="index.html" class="menu-item">
+            <a href="index.html#scroll-container2" class="menu-item">
               <i class="fa fa-file" aria-hidden="true"></i>Report Pet
             </a>
             <a href="edit.html" class="menu-item">
@@ -107,72 +107,10 @@
           <h4>Thank you for your dedication to reporting animals in need!</h4>
         </div>
         <div id="user-reports-container"></div>
-
-        <!-- <div class="card">
-          <img class="card--image" src="./img/lost_dog3.jpeg" alt="lost_dog3" />
-          <div class="card--body">
-            <div class="general-info">
-              <div class="left">
-                <h3 class="name">Benny</h3>
-                <h3 class="status">Lost</h3>
-              </div>
-              <div class="right">
-                <p>ID: 123457</p>
-              </div>
-            </div>
-
-            <div class="card--details">
-              <div>
-                <strong>Lost 10 days ago, </strong
-                ><strong>Updated 3 hours ago</strong>
-              </div>
-
-              <span>Str Aleea Salcamilor, Iasi</span>
-            </div>
-            <button>View Details</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card--image" src="./img/lost_dog4.jpg" alt="lost_dog4" />
-          <div class="card--body">
-            <div class="general-info">
-              <div class="left">
-                <h3 class="name">Dixie</h3>
-                <h3 class="status">Lost</h3>
-              </div>
-              <div class="right">
-                <p>ID: 123456</p>
-              </div>
-            </div>
-
-            <div class="card--details">
-              <div>
-                <strong>Lost 2 days ago, </strong
-                ><strong>Updated 34 hours ago</strong>
-              </div>
-
-              <span>Str Aleea Rozelor, Iasi</span>
-            </div>
-            <button>View Details</button>
-          </div>
-        </div> -->
       </div>
       <div class="section3">
         <div class="user--activity">
           <img src="./img/lola.png" />
-          <!-- <div class="user--photo">
-            <p>UE</p>
-          </div>
-          <h2>User Example</h2>
-          <h4>user.example@gmail.com</h4>
-          <div class="icons">
-            <i class="fa-solid fa-envelope"></i>
-            <i class="fa-solid fa-bell"></i>
-          </div>
-          <div class="activity">
-            <h3>Recent Activities</h3>
-            <h5>Here is the recent activities</h5>
-          </div> -->
         </div>
       </div>
     </div>
@@ -195,19 +133,18 @@
       </ul>
     </div>
     <script src="script1.js">
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
 
-      slider.oninput = function () {
-        output.innerHTML = this.value;
-      };
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        };
     </script>
     <script src="../backend/user/validare_form/validare_user_button.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const sessionId = localStorage.getItem("sessionId");
-        console.log("sesiune", sessionId);
 
         if (!sessionId) {
           window.location.href = "login.html";
@@ -226,7 +163,7 @@
             const reportsContainer = document.getElementById(
               "user-reports-container"
             );
-            console.log("DATA", data);
+
             if (data.length === 0) {
               reportsContainer.innerHTML = "<p>No reports found</p>";
             } else {

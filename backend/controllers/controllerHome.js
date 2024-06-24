@@ -16,21 +16,9 @@ async function homeUserController(req, res) {
 }
 
 async function controllerHome(req, res) {
-  // const sessionId = req.headers["session-id"];
-  // console.log("sessionId", sessionId);
-  // const sessionData = sessions[sessionId];
-
-  // console.log("SessionData: ", sessionData.email);
-
-  // if (!sessionData || !sessionData.email) {
-  //   res.writeHead(401);
-  //   res.end("Unauthorized");
-  //   return;
-  // }
-
   const form = new formidable.IncomingForm();
-  form.uploadDir = path.join(__dirname, "uploads"); // Setează directorul de upload
-  form.keepExtensions = true; // Păstrează extensia fișierului
+  form.uploadDir = path.join(__dirname, "uploads");
+  form.keepExtensions = true;
 
   form.parse(req, async (err, fields, files) => {
     if (err) {
@@ -43,9 +31,7 @@ async function controllerHome(req, res) {
     try {
       const sessionData = fields.sessionId ? fields.sessionId[0] : null;
       const data = JSON.parse(sessionData);
-      console.log("DATA: ", data.email);
-      console.log("data: ", sessionData);
-      //console.log("sessionEmail ", sessionData[email]);
+
       if (!data || !data.email) {
         res.writeHead(401);
         res.end("Unauthorized");
@@ -54,9 +40,7 @@ async function controllerHome(req, res) {
 
       const email = fields.email ? fields.email[0] : null;
 
-      // Verificarea emailului din formular cu cel din sesiune
       if (data.email !== email) {
-        console.log("am ajuns in if");
         res.writeHead(403);
         res.end("Email mismatch");
         return;
@@ -147,17 +131,6 @@ async function controllerHome(req, res) {
       }
     }
   });
-}
-
-function generateRandomString() {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let result = "";
-  const charactersLength = characters.length;
-  for (let i = 0; i < 5; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
 }
 
 module.exports = homeUserController;

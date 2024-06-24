@@ -39,8 +39,6 @@ async function controllerLogin(req, res) {
           const isAdmin = user.email === "admin@gmail.com";
           const username = rows[0].username;
 
-          console.log("username: ", username);
-
           res.writeHead(200, {
             "Content-Type": "application/json",
           });

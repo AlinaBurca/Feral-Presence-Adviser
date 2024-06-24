@@ -15,25 +15,19 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Obține linkurile meniului
-
 const filterLink = document.getElementById("filterLink");
 const listLink = document.getElementById("listLink");
 
-// Obține secțiunile
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 
-// Ascunde toate secțiunile la început
 const sections = [section1, section2];
 sections.forEach((section) => {
   section.classList.remove("active");
 });
 
-// Afișează secțiunea 2 (începutul)
 section2.classList.add("active");
 
-// Adaugă eveniment pentru linkul de filtrare
 filterLink.addEventListener("click", function (event) {
   event.preventDefault();
   section1.classList.add("active");

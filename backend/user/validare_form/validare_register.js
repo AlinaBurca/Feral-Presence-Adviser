@@ -131,7 +131,6 @@ function validateForm() {
   })
     .then(async (response) => {
       if (response.ok) {
-        console.log(response.status);
         window.location.href = "./login.html";
       } else if (response.status === 409) {
         validateEmail(response.ok);

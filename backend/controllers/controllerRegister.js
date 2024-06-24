@@ -22,13 +22,11 @@ async function controllerRegister(req, res) {
   req.on("end", async () => {
     try {
       const user = JSON.parse(body);
-      console.log("user: ");
-      console.log(user);
-      console.log(user.email);
+
       const [rows] = await dbConnection
         .promise()
         .query("SELECT email FROM users WHERE email = ?", [user.email]);
-      console.log(rows.length);
+
       if (rows.length > 0) {
         if (!res.headersSent) {
           res.writeHead(409);

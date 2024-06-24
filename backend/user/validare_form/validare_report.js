@@ -145,7 +145,6 @@ function validateForm() {
   formData.append("isValid", "0");
   let address = formData.get("address");
 
-  console.log("FORM: ", address);
   if (
     isValidPhone &&
     isValidEmail &&
@@ -156,7 +155,7 @@ function validateForm() {
     isValidDate &&
     isValidInformation
   ) {
-    formData.set("isValid", "1"); // Adaugă câmpul isValid
+    formData.set("isValid", "1");
     formData.set("violence", document.getElementById("violenceField").value);
     formData.set("rabies", document.getElementById("rabiesField").value);
     formData.set("trained", document.getElementById("trainedField").value);
@@ -166,7 +165,7 @@ function validateForm() {
     );
     formData.set("injured", document.getElementById("injuredField").value);
     const sessionId = localStorage.getItem("sessionId");
-    console.log("sessionId", sessionId);
+
     formData.append("sessionId", sessionId);
     fetch("/index", {
       method: "POST",
@@ -179,7 +178,6 @@ function validateForm() {
         } else if (response.status === 409) {
           validateEmail(response.ok);
         } else if (response.status === 403) {
-          console.log("RESPONSE", response.ok);
           validateEmail(response.ok);
         } else {
           const errorMessage = await response.text();

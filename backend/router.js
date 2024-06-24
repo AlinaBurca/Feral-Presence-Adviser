@@ -94,9 +94,7 @@ function router(req, res) {
     return true;
   }
 
-  // Endpoint pentru obținerea utilizatorilor
   if (pathName === "/api/usersAdmin" && req.method === "GET") {
-    console.log("am ajuns in router users");
     dbConnection.query("SELECT * FROM users", (err, results) => {
       if (err) {
         console.error("Error fetching users:", err);
@@ -110,9 +108,7 @@ function router(req, res) {
     return true;
   }
 
-  // Endpoint pentru obținerea rapoartelor
   if (pathName === "/api/reportsAdmin" && req.method === "GET") {
-    console.log("am ajuns in router reports");
     dbConnection.query("SELECT * FROM reports", (err, results) => {
       if (err) {
         console.error("Error fetching reports:", err);
@@ -129,7 +125,6 @@ function router(req, res) {
   if (pathName.startsWith("/api/usersAdmin") && req.method === "DELETE") {
     const userId = pathName.split("/").pop();
 
-    // Șterge rapoartele asociate utilizatorului
     dbConnection.query(
       "DELETE FROM reports WHERE user_id = ?",
       [userId],
@@ -140,7 +135,6 @@ function router(req, res) {
           return;
         }
 
-        // După ștergerea rapoartelor, șterge utilizatorul
         dbConnection.query(
           "DELETE FROM users WHERE id = ?",
           [userId],
@@ -180,7 +174,6 @@ function router(req, res) {
   }
 
   if (req.url === "/index") {
-    console.log("am trecut prin router");
     homePage(req, res);
     return true;
   }
@@ -192,7 +185,6 @@ function router(req, res) {
     const animalId = new URLSearchParams(
       req.url.slice(req.url.indexOf("?"))
     ).get("id");
-    console.log("Animal id: ", animalId);
     cardPage(req, res, animalId);
     return true;
   }
@@ -248,14 +240,10 @@ function router(req, res) {
     let body = "";
     req.on("data", (chunk) => {
       body = JSON.parse(chunk.toString());
-      console.log(JSON.parse(chunk.toString()));
     });
-    console.log(sessions);
+
     req.on("end", () => {
-      console.log("---inainte");
-      console.log(JSON.parse(body.sessionId).sessionId);
       if (sessions[JSON.parse(body.sessionId).sessionId]) {
-        console.log("---dupa");
         handleProfileUpdate(body, res);
       } else {
         res.writeHead(401);
@@ -286,7 +274,6 @@ function router(req, res) {
     });
     req.on("end", () => {
       if (sessions[body.sessionId]) {
-        console.log("salut");
         getUserDetails(body, res);
       } else {
         res.writeHead(401, { "Content-Type": "application/json" });
@@ -303,7 +290,7 @@ function router(req, res) {
     req.on("end", () => {
       if (sessions[body.sessionId]) {
         let email = body.email;
-        console.log(body.email);
+
         if (!email) {
           res.writeHead(401, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: "Not authenticated" }));

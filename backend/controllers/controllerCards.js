@@ -7,7 +7,6 @@ const dbConnection = require("../user/database/database.js").getConnection();
 
 async function cardsController(req, res) {
   if (req.method === "GET") {
-    console.log("am ajuns în controller");
     await getAnimalCards(req, res);
   } else {
     res.writeHead(405);

@@ -5,10 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdownContent = document.getElementById("dropdownContent");
   const rssButton = document.getElementById("RSS");
 
-  console.log("SessionData: ", sessionData);
-  console.log("LoginButton ", loginButton);
-  console.log("userNameButton: ", usernameButton);
-
   if (!sessionData) {
     if (usernameButton) {
       usernameButton.style.display = "none";
@@ -65,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const logoutButton = document.getElementById("logoutBtn");
   if (logoutButton) {
-    console.log("logoutBtn: ", logoutButton);
     logoutButton.addEventListener("click", () => {
       localStorage.clear();
       window.location.href = "login.html";

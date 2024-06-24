@@ -18,12 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="icon" type="image/x-icon" href="img.png" />
   </head>
 
   <body>
@@ -223,16 +218,6 @@
                 </div>
 
                 <div class="input-box">
-                  <!-- <span class="details" id="addressLabel"
-                    >Location last seen</span
-                  >
-                  <input
-                    id="location-input"
-                    type="text"
-                    name="address"
-                    placeholder="Enter a location"
-                    required
-                  /> -->
                   <span class="details" id="addressLabel"
                     >Location last seen</span
                   >
@@ -255,7 +240,6 @@
                 </div>
                 <div class="input-box">
                   <span class="details" for="cities">City or town:</span>
-                  <!-- <select id="cities" name="city"></select> -->
                   <input
                     id="city-input"
                     type="text"
@@ -334,7 +318,6 @@
               </div>
             </div>
             <div class="upload-photo">
-              <!-- <img class="pet-photo"> -->
               <img id="pet-photo" />
               <label class="photo--label" for="input-file">Upload photo</label>
               <input
@@ -354,10 +337,6 @@
             </div>
           </form>
         </div>
-
-        <!-- <div class="image-form">
-          <img alt="form-image" src="./img/form_image.png" />
-        </div> -->
       </div>
     </div>
     <!--Cards section-->
@@ -401,7 +380,6 @@
         );
         const mapContainer = document.getElementById("map");
 
-        // Initialize Leaflet map but keep it hidden initially
         const map = L.map("map").setView([51.505, -0.09], 13);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution:
@@ -415,7 +393,7 @@
 
           if (query.length < 3) {
             resultsContainer.innerHTML = "";
-            mapContainer.style.display = "none"; // Ascunde harta dacă input-ul are mai puțin de 3 caractere
+            mapContainer.style.display = "none";
             return;
           }
 
@@ -437,16 +415,13 @@
                   input.value = location.display_name;
                   resultsContainer.innerHTML = "";
 
-                  // Clear existing markers
                   markersLayer.clearLayers();
 
-                  // Add new marker
                   const lat = location.lat;
                   const lon = location.lon;
                   const marker = L.marker([lat, lon]).addTo(markersLayer);
                   map.setView([lat, lon], 13);
 
-                  // Show map when a location is selected
                   mapContainer.style.display = "block";
                 });
 

@@ -6,7 +6,6 @@ const dbConnection = require("../user/database/database.js").getConnection();
 const sessions = require("../sessions.js");
 
 async function userReportsController(req, res) {
-  console.log("am ajuns in reports controller");
   if (req.method === "POST") {
     let body = "";
     req.on("data", (chunk) => {
@@ -14,13 +13,8 @@ async function userReportsController(req, res) {
     });
     req.on("end", async () => {
       try {
-        console.log("sessions ", sessions[body.sessionId]);
         if (sessions[body.sessionId]) {
           const email = body.email;
-          console.log("inainte");
-
-          console.log("EMAIL:", email);
-          console.log("dupa");
 
           if (!email) {
             res.writeHead(401, { "Content-Type": "application/json" });
@@ -35,7 +29,6 @@ async function userReportsController(req, res) {
               [email]
             );
 
-          console.log("REPORTS:", reports);
           res.writeHead(200, { "Content-Type": "application/json" });
           res.end(JSON.stringify(reports));
         } else {

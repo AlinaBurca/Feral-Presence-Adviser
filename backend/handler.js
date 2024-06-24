@@ -33,7 +33,6 @@ function cardPage(req, res, animalId) {
 
 function filterAnimals(req, res) {
   if (req.method == "POST") {
-    console.log("am trecut prin handler");
     filterAnimalsController(req, res);
   }
 }
