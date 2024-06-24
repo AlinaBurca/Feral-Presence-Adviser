@@ -59,11 +59,17 @@ async function getProfileDetails(email) {
   });
 }
 
-async function updateProfileDetails(email, fullName, contactNumber, address) {
+async function updateProfileDetails(
+  email,
+  email_nou,
+  fullName,
+  contactNumber,
+  address
+) {
   return new Promise((resolve, reject) => {
     dbConnection.query(
-      "UPDATE users SET username = ?, phone_number = ?, address = ? WHERE email = ?",
-      [fullName, contactNumber, address, email],
+      "UPDATE users SET username = ?, phone_number = ?, address = ?, email=? WHERE email = ?",
+      [fullName, contactNumber, address, email_nou, email],
       (error, results) => {
         if (error) {
           return reject(error);
@@ -99,11 +105,12 @@ async function handleProfileUpdate(body, res) {
   const parsedBody = new URLSearchParams(body);
   const fullName = parsedBody.get("name");
   const contactNumber = parsedBody.get("number");
+  const email_nou = parsedBody.get("email_nou");
   const address = parsedBody.get("adress");
-
   try {
     const profile = await updateProfileDetails(
       body.email,
+      email_nou,
       fullName,
       contactNumber,
       address

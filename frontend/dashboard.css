@@ -136,13 +136,14 @@ FILTER FORM
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 70%;
+  width: 100%;
+  
 }
 
 .card {
   width: 350px;
   margin: 40px;
-  height: 500px;
+  height: 550px;
   background-color: grey;
   border-radius: 20px;
   display: flex;
@@ -226,6 +227,8 @@ FILTER FORM
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  height: 10%;
+  margin-top: 1rem;
 
 }
 .delete-btn{
@@ -258,6 +261,9 @@ FILTER FORM
   display: none;
 }
 
+.no-reports{
+  
+}
 
 /*********
 User activity

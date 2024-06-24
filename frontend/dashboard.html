@@ -165,7 +165,8 @@
             );
 
             if (data.length === 0) {
-              reportsContainer.innerHTML = "<p>No reports found</p>";
+              reportsContainer.innerHTML =
+                "<div class='no-reports'>No reports found</div>";
             } else {
               data.forEach((report) => {
                 const dateLastSeen = formatDate(report.dateLastSeen);

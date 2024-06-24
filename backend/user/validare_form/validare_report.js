@@ -175,6 +175,10 @@ function validateForm() {
         if (response.ok) {
           document.getElementById("petForm").reset();
           document.querySelector("#pet-photo").src = "";
+
+          document.getElementById("map").style.display = "none";
+
+          resetTagButtons();
         } else if (response.status === 409) {
           validateEmail(response.ok);
         } else if (response.status === 403) {
@@ -202,6 +206,16 @@ submitButton.addEventListener("click", function (event) {
   validateForm();
 });
 
+function resetTagButtons() {
+  const tagsButtons = document.querySelectorAll(
+    '.tags-btn input[type="button"]'
+  );
+  tagsButtons.forEach((button) => {
+    button.classList.remove("selected");
+    const field = document.getElementById(button.id + "Field");
+    field.value = "no";
+  });
+}
 /***************************************************
 CARDURI
 ***************************************************/

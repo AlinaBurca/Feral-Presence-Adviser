@@ -423,8 +423,8 @@
         </li>
         <li>
           Jsonwebtoken: Este utilizat pentru generarea și verificarea
-          tokenurilor JSON Web Tokens (JWT), care sunt folosite pentru
-          autentificare și autorizare în cadrul aplicației noastre.
+          tokenurilor JSON Web Tokens (JWT), care sunt folosite pentru forget
+          password în cadrul aplicației noastre.
         </li>
       </ul>
 
@@ -443,23 +443,6 @@
         realizează prin intermediul Fetch API, asigurând cereri HTTP directe și
         gestionarea eficientă a răspunsurilor pentru a afișa rezultate precise
         pe hartă, folosind biblioteca Leaflet pentru vizualizare.
-      </p>
-
-      <h3>4.2.2 Multi Page Application (MPA)</h3>
-      <p>
-        O aplicație multi-page (MPA - Multi Page Application) este un model
-        tradițional de dezvoltare web în care fiecare pagină a site-ului este
-        trimisă de server ca un nou document HTML. Acest lucru duce la
-        reîncărcarea completă a paginii de fiecare dată când este vizitată o
-        nouă pagină.
-      </p>
-      <p>
-        Fiecare pagină poate fi accesată direct prin propriul URL. Într-o MPA,
-        serverul determină ce HTML să trimită înapoi la browser în funcție de
-        cerere. Aceasta se opune modelului de Single Page Application (SPA),
-        unde majoritatea resurselor (HTML/CSS/JS) sunt încărcate o singură dată,
-        iar schimbarea conținutului este gestionată prin JavaScript pe partea de
-        client.
       </p>
 
       <h3><span>4.2 </span>Interfață comunicare</h3>
@@ -510,12 +493,11 @@
         <h3>Login/Logout/Register</h3>
         <p>
           Pentru a putea raporta un animal sau a face modificări ale contului,
-          utilizatorii trebuie să fie logați. Totuși, aplicația poate fi
-          utilizată fără autentificare, doar în scop informativ, oferind acces
-          limitat la vizualizarea datelor fără posibilitatea de a efectua
-          acțiuni. Astfel, utilizatorii neautentificați pot explora informațiile
-          disponibile, dar nu pot interacționa activ cu funcționalitățile
-          aplicației.
+          utilizatorii trebuie să fie logați. Utilizăm localStorage pentru a
+          menține utilizatorii conectați, stocând token-uri de sesiune care
+          permit reautentificarea automată la revenirea pe site fără necesitatea
+          de a se loga din nou. Această abordare îmbunătățește experiența
+          utilizatorului menținând starea de conectare între sesiuni.
         </p>
       </section>
       <section id="filter_page">
@@ -545,21 +527,12 @@
       <section id="filtrare">
         <h3>Filtrare animale</h3>
         <p>
-          Raportarea animalelor se poate face doar dacă utilizatorul este logat,
-          iar adresa de email introdusă în formularul de raportare trebuie să
-          corespundă cu cea a contului utilizatorului logat. Formularul de
-          raportare solicită introducerea datelor despre animale, având anumite
-          câmpuri obligatorii. Informațiile furnizate variază în funcție de
-          statusul animalului, fie pierdut, fie găsit, și includ nivelul de
-          pericol, locațiile, taguri și informații adiționale. Unele dintre
-          aceste informații sunt utilizate pentru generarea statisticilor
-          relevante. pentru informatii aditionale. Pagina de filtrare oferă
-          posibilitatea de a găsi animale în funcție de interesele pe care le
-          ai. Formularul de filtrare conține mai multe câmpuri, care nu sunt
-          obligatorii de completat, permițându-ți să alegi animalele doar pe
-          baza interesului specific. După aplicarea filtrelor, animalele
-          relevante sunt afișate și poți accesa cardul fiecărui animal pentru
-          informații adiționale. Această funcționalitate facilitează
+          Pagina de filtrare oferă posibilitatea de a găsi animale în funcție de
+          interesele pe care le ai. Formularul de filtrare conține mai multe
+          câmpuri, care nu sunt obligatorii de completat, permițându-ți să alegi
+          animalele doar pe baza interesului specific. După aplicarea filtrelor,
+          animalele relevante sunt afișate și poți accesa cardul fiecărui animal
+          pentru informații adiționale. Această funcționalitate facilitează
           identificarea rapidă a animalelor care corespund preferințelor tale.
         </p>
       </section>

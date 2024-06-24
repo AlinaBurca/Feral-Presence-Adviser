@@ -95,16 +95,19 @@ function router(req, res) {
   }
 
   if (pathName === "/api/usersAdmin" && req.method === "GET") {
-    dbConnection.query("SELECT * FROM users", (err, results) => {
-      if (err) {
-        console.error("Error fetching users:", err);
-        res.writeHead(500, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ error: "Failed to fetch users" }));
-        return;
+    dbConnection.query(
+      "SELECT * FROM users WHERE email <> 'admin@gmail.com' ",
+      (err, results) => {
+        if (err) {
+          console.error("Error fetching users:", err);
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Failed to fetch users" }));
+          return;
+        }
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify(results));
       }
-      res.writeHead(200, { "Content-Type": "application/json" });
-      res.end(JSON.stringify(results));
-    });
+    );
     return true;
   }
 

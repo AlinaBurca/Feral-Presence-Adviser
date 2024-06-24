@@ -68,6 +68,7 @@ function validateEmail() {
   email.classList.add("valid");
   return true;
 }
+
 function validatePhone() {
   const phone = document.querySelector('input[name="number"]');
   const regex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/;
@@ -85,11 +86,13 @@ function validatePhone() {
   phone.classList.add("valid");
   return true;
 }
+
 function validateAdress() {
   const adresa = document.querySelector('input[name="adress"]');
   adresa.classList.add("valid");
   return true;
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".login-form");
   const form_password = document.querySelector("#password-form");
@@ -118,11 +121,12 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     const fullName = form.querySelector("input[name='name']").value;
-    const email = form.querySelector("input[name='email']").value;
+    const email_nou = form.querySelector("input[name='email']").value;
+    const email = JSON.parse(localStorage.getItem("sessionId")).email;
     const contactNumber = form.querySelector("input[name='number']").value;
     const address = form.querySelector("input[name='adress']").value;
 
-    if (!fullName || !email || !contactNumber || !address) {
+    if (!fullName || !email_nou || !contactNumber || !address) {
       alert("All fields are required!");
       return;
     }
@@ -130,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = {
       name: fullName,
       email: email,
+      email_nou: email_nou,
       number: contactNumber,
       adress: address,
       sessionId: localStorage.getItem("sessionId"),
@@ -141,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Session ID not found. Please log in again.");
       return;
     }
+
     const isValidUsername = validateUsername();
     const isValidEmail = validateEmail();
     const isValidPhone = validatePhone();
@@ -149,6 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Check if the email has changed
+    const initialEmail = document.getElementById("email").defaultValue;
+    const emailChanged = email !== initialEmail;
+
     fetch("/edit", {
       method: "POST",
       body: JSON.stringify(data),
@@ -156,6 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
+          if (emailChanged) {
+            let sessionData = JSON.parse(localStorage.getItem("sessionId"));
+            sessionData.email = email_nou;
+            localStorage.setItem("sessionId", JSON.stringify(sessionData));
+          }
           window.location.href = "/edit.html";
         } else {
           alert("Failed to update profile: " + data.message);
@@ -185,7 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const data_password = {
       password: password,
       new_password: new_password,
-
       sessionId: localStorage.getItem("sessionId"),
     };
 

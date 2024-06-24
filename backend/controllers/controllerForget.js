@@ -30,7 +30,7 @@ async function controllerForget(req, res) {
         const token = jwt.sign({ email: user.email }, secretKey, {
           expiresIn: "1h",
         });
-        const resetUrl = `http://127.0.0.1:3001/reset-password/${token}`;
+        const resetUrl = `http://127.0.0.1:3000/reset-password/${token}`;
         sendEmail(
           user.email,
           "Password Reset",

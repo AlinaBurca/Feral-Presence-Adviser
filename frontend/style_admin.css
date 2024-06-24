@@ -105,7 +105,7 @@ a {
 
 .container .header {
 
-  width: 88vw;
+  width: 87vw;
   height: 15vh;
   background: white;
   padding: 1rem;
@@ -245,7 +245,7 @@ table {
     top: 0;
     right: 0;
     left: 0;
-    width: 76vw;
+    width: 78vw;
     height: 15vh;
     background: white;
     display: flex;
