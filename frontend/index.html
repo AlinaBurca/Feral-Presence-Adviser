@@ -9,27 +9,21 @@
       href="https://fonts.googleapis.com/css?family=Coiny"
       rel="stylesheet"
     />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/x-icon" href="img.png" />
+
     <link href="https://fonts.cdnfonts.com/css/ponytail" rel="stylesheet" />
-    <link rel="shortcut icon" href="#" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    />
+
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="icon" type="image/x-icon" href="img.png" />
   </head>
 
   <body>
@@ -74,7 +68,7 @@
         </div>
         <div class="nav-menu">
           <ul>
-            <li><a href="index.html" class="link">Home</a></li>
+            <li><a href="index.html" class="link active">Home</a></li>
             <li><a href="filter.html" class="link">Lost/Found Pets</a></li>
             <li><a href="statistics.html" class="link">Statistics</a></li>
             <li><a href="about.html" class="link">About us</a></li>
@@ -206,24 +200,6 @@
                   <input type="date" name="dateLastSeen" required />
                   <span class="error-message" id="dateLastSeenError"></span>
                 </div>
-
-                <div class="input-box">
-                  <span class="details" id="addressLabel"
-                    >Location last seen</span
-                  >
-                  <input
-                    type="text"
-                    name="address"
-                    placeholder="Enter the adress"
-                    required
-                  />
-                  <span class="error-message" id="addressError"></span>
-                </div>
-                <div class="input-box">
-                  <label class="details" for="cities">City:</label>
-                  <select id="cities" name="city"></select>
-                </div>
-
                 <div class="input-box">
                   <span class="details">Phone number</span>
                   <input
@@ -244,6 +220,49 @@
                     required
                   />
                   <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="input-box">
+                  <!-- <span class="details" id="addressLabel"
+                    >Location last seen</span
+                  >
+                  <input
+                    id="location-input"
+                    type="text"
+                    name="address"
+                    placeholder="Enter a location"
+                    required
+                  /> -->
+                  <span class="details" id="addressLabel"
+                    >Location last seen</span
+                  >
+                  <div class="autocomplete-container">
+                    <input
+                      type="text"
+                      id="autocomplete-input"
+                      placeholder="Enter location"
+                      name="address"
+                      required
+                    />
+                    <div
+                      id="autocomplete-results"
+                      class="autocomplete-results"
+                    ></div>
+                  </div>
+                  <span class="error-message" id="addressError"></span>
+                  <div id="map" class="map"></div>
+                  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                </div>
+                <div class="input-box">
+                  <span class="details" for="cities">City or town:</span>
+                  <!-- <select id="cities" name="city"></select> -->
+                  <input
+                    id="city-input"
+                    type="text"
+                    name="city"
+                    placeholder="Enter the city, town or area"
+                    required
+                  />
                 </div>
               </div>
 
@@ -341,7 +360,6 @@
         </div> -->
       </div>
     </div>
-
     <!--Cards section-->
     <div class="container3">
       <div class="container3--title">
@@ -375,5 +393,77 @@
 
     <script src="../backend/user/validare_form/validare_report.js"></script>
     <script src="../backend/user/validare_form/validare_user_button.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("autocomplete-input");
+        const resultsContainer = document.getElementById(
+          "autocomplete-results"
+        );
+        const mapContainer = document.getElementById("map");
+
+        // Initialize Leaflet map but keep it hidden initially
+        const map = L.map("map").setView([51.505, -0.09], 13);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        let markersLayer = L.layerGroup().addTo(map);
+
+        input.addEventListener("input", () => {
+          const query = input.value;
+
+          if (query.length < 3) {
+            resultsContainer.innerHTML = "";
+            mapContainer.style.display = "none"; // Ascunde harta dacă input-ul are mai puțin de 3 caractere
+            return;
+          }
+
+          fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+              query
+            )}`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              resultsContainer.innerHTML = "";
+
+              data.forEach((location) => {
+                const item = document.createElement("div");
+                item.className = "autocomplete-result";
+                item.textContent = location.display_name;
+
+                item.addEventListener("click", () => {
+                  input.value = location.display_name;
+                  resultsContainer.innerHTML = "";
+
+                  // Clear existing markers
+                  markersLayer.clearLayers();
+
+                  // Add new marker
+                  const lat = location.lat;
+                  const lon = location.lon;
+                  const marker = L.marker([lat, lon]).addTo(markersLayer);
+                  map.setView([lat, lon], 13);
+
+                  // Show map when a location is selected
+                  mapContainer.style.display = "block";
+                });
+
+                resultsContainer.appendChild(item);
+              });
+            })
+            .catch((error) => {
+              console.error("Error fetching data:", error);
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!resultsContainer.contains(e.target) && e.target !== input) {
+            resultsContainer.innerHTML = "";
+          }
+        });
+      });
+    </script>
   </body>
 </html>

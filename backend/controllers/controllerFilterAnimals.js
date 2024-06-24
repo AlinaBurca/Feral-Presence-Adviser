@@ -17,6 +17,8 @@ async function filterAnimalsController(req, res) {
     try {
       const { status, petName, city, petType, gender, time } = fields;
 
+      console.log("FIELDS: ", fields);
+
       let query = "SELECT * FROM reports WHERE 1=1";
       const queryParams = [];
 
@@ -36,6 +38,7 @@ async function filterAnimalsController(req, res) {
       }
 
       if (petType) {
+        console.log("a intrat in if");
         query += " AND species = ?";
         queryParams.push(petType);
       }
@@ -55,11 +58,15 @@ async function filterAnimalsController(req, res) {
         query +=
           " AND created_at >= DATE_SUB(NOW(), INTERVAL " +
           timeRanges[time] +
-          " ORDER BY created_at)";
+          ")";
       }
+
+      query += " ORDER BY id DESC";
+      console.log(query);
 
       const [rows] = await dbConnection.promise().query(query, queryParams);
 
+      console.log(rows);
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify(rows));
     } catch (error) {

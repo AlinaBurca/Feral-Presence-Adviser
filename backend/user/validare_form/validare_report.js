@@ -143,7 +143,9 @@ function validateForm() {
   }
 
   formData.append("isValid", "0");
+  let address = formData.get("address");
 
+  console.log("FORM: ", address);
   if (
     isValidPhone &&
     isValidEmail &&
@@ -257,61 +259,4 @@ window.addEventListener("scroll", function () {
   } else {
     navbar.classList.remove("navbar-scroll");
   }
-});
-
-/**********************
- * CITIES
- */
-document.addEventListener("DOMContentLoaded", function () {
-  const cities = [
-    "București",
-    "Cluj-Napoca",
-    "Timișoara",
-    "Iași",
-    "Constanța",
-    "Craiova",
-    "Brașov",
-    "Galați",
-    "Ploiești",
-    "Oradea",
-    "Brăila",
-    "Arad",
-    "Pitești",
-    "Sibiu",
-    "Bacău",
-    "Târgu Mureș",
-    "Baia Mare",
-    "Buzău",
-    "Botoșani",
-    "Satu Mare",
-    "Râmnicu Vâlcea",
-    "Suceava",
-    "Piatra Neamț",
-    "Drobeta-Turnu Severin",
-    "Târgu Jiu",
-    "Tulcea",
-    "Reșița",
-    "Focșani",
-    "Bistrița",
-    "Slatina",
-    "Călărași",
-    "Alba Iulia",
-    "Giurgiu",
-    "Deva",
-    "Hunedoara",
-    "Zalău",
-    "Sfântu Gheorghe",
-    "Bârlad",
-    "Vaslui",
-    "Roman",
-  ];
-
-  const selectElement = document.getElementById("cities");
-
-  cities.forEach(function (city) {
-    const option = document.createElement("option");
-    option.value = city;
-    option.textContent = city;
-    selectElement.appendChild(option);
-  });
 });

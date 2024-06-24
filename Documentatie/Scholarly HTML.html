@@ -1,327 +1,669 @@
 <!DOCTYPE html>
 <html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>FePA Scholarly HTML Report</title>
+    <link
+      rel="stylesheet"
+      href="Scholarly%20HTML_fi%C8%99iere/scholarly.min.css"
+    />
+    <script src="Scholarly%20HTML_fi%C8%99iere/scholarly.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>FePA Scholarly HTML Report</title>
-  <link rel="stylesheet" href="Scholarly%20HTML_fi%C8%99iere/scholarly.min.css">
-  <script src="Scholarly%20HTML_fi%C8%99iere/scholarly.min.js"></script>
-</head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img
+          src="Scholarly%20HTML_fi%C8%99iere/scholarly-html.svg"
+          width="227"
+          height="50"
+          alt="Scholarly HTML logo"
+        />
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>FePA Raport - Scholarly HTML</h1>
+    </header>
 
-<body prefix="schema: http://schema.org">
-  <header>
-    <div class="banner">
-      <img src="Scholarly%20HTML_fi%C8%99iere/scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
-      <div class="status">Community Draft</div>
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          <a href="https://github.com/AlinaBurca" target="_blank">Burcă Alina</a
+          >,
+          <a href="https://github.com/Diana92300" target="_blank"
+            >Balașcă Diana-Loredana</a
+          >
+        </dd>
+      </dl>
     </div>
-    <h1>FePA Raport - Scholarly HTML</h1>
-  </header>
-
-  <div role="contentinfo">
-    <dl>
-      <dt>Authors</dt>
-      <dd>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        Acest document cuprinde aspectele tehnice si interactiunea cu
+        utilizatorul, ale proiectului FePA pentru Tehnologii Web, realizat in
+        coloborare cu
         <a href="https://github.com/AlinaBurca" target="_blank">Burcă Alina</a>,
-        <a href="https://github.com/Diana92300" target="_blank">Balașcă Diana-Loredana</a>
-      </dd>
-    </dl>
-  </div>
-  <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
-    <h2>Abstract</h2>
-    <p>
-      Acest document cuprinde aspectele tehnice si interactiunea cu utilizatorul, ale proiectului FePA pentru
-      Tehnologii Web, realizat in coloborare cu
-      <a href="https://github.com/AlinaBurca" target="_blank">Burcă Alina</a>,
-      <a href="https://github.com/Diana92300" target="_blank">Balașcă Diana-Loredana</a> pentru Tehnologii Web (2024).
-      <br>
-      <br>
-      <i>Universitatea Alexandru Ioan Cuza din Iași, Facultatea de Informatică</i>
-    </p>
-  </section>
-  <section id="introduction" role="doc-introduction">
-    <!-- Introduction -->
-    <h2>Introducere</h2>
-    <section id="purpose">
-
-      <h3>Scop</h3>
-      <p>
-        Aplicația FePA este dedicată raportării animalelor pierdute și găsite pe stradă, facilitând reunirea rapidă și
-        sigură a acestora cu familiile lor, și contribuind la protecția și bunăstarea animalelor in comunitate.
+        <a href="https://github.com/Diana92300" target="_blank"
+          >Balașcă Diana-Loredana</a
+        >
+        pentru Tehnologii Web (2024).
+        <br />
+        <br />
+        <i
+          >Universitatea Alexandru Ioan Cuza din Iași, Facultatea de
+          Informatică</i
+        >
       </p>
     </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- Introduction -->
+      <h2>Introducere</h2>
+      <section id="purpose">
+        <h3>Scop</h3>
+        <p>
+          Aplicația FePA este dedicată raportării animalelor pierdute și găsite
+          pe stradă, facilitând reunirea rapidă și sigură a acestora cu
+          familiile lor, și contribuind la protecția și bunăstarea animalelor in
+          comunitate.
+        </p>
+      </section>
 
-    <section id="intended-audience">
-      <h3>Public țintă</h3>
-      <p>
-        Aplicația noastră este destinată în special stăpânilor de animale, oferindu-le un instrument eficient pentru a
-        raporta și căuta animale pierdute, dar poate fi folosită de oricine găsește un animal pe stradă, asigurându-se
-        că acestea se pot întoarce acasă în siguranță.
-      </p>
+      <section id="intended-audience">
+        <h3>Public țintă</h3>
+        <p>
+          Aplicația noastră este destinată în special stăpânilor de animale,
+          oferindu-le un instrument eficient pentru a raporta și căuta animale
+          pierdute, dar poate fi folosită de oricine găsește un animal pe
+          stradă, asigurându-se că acestea se pot întoarce acasă în siguranță.
+        </p>
+      </section>
+
+      <section id="scope">
+        <h3>Viziune</h3>
+        <p>
+          Aplicația își propune să facă din raportarea și găsirea animalelor
+          pierdute un proces simplu și accesibil pentru toți, sporind astfel
+          șansele de reunire rapidă a animalelor cu familiile lor și reducând
+          numărul celor rătăcite sau abandonate. Prin această aplicație, dorim
+          să încurajăm empatia și acțiunea comunitară pentru a asigura că niciun
+          animal nu rămâne nesupravegheat pe străzi.
+        </p>
+      </section>
     </section>
 
-    <section id="scope">
-      <h3>Viziune</h3>
-      <p>
-        Aplicația își propune să facă din raportarea și găsirea animalelor pierdute un proces simplu și accesibil pentru
-        toți, sporind astfel șansele de reunire rapidă a animalelor cu familiile lor și reducând numărul celor rătăcite
-        sau abandonate. Prin această aplicație, dorim să încurajăm empatia și acțiunea comunitară pentru a asigura că
-        niciun animal nu rămâne nesupravegheat pe străzi.
-      </p>
-    </section>
-  </section>
+    <!-- 2. Description -->
+    <section id="description" role="doc-introduction">
+      <h2>Descriere</h2>
+      <section id="perspective">
+        <h3>Perspectiva</h3>
+        <p>
+          Perspectiva pentru o astfel de aplicație este foarte încurajatoare,
+          reflectând o creștere a interesului societății pentru bunăstarea
+          animalelor. Această aplicație are potențialul de a transforma modul în
+          care comunitățile locale interacționează și răspund la cazurile de
+          animale pierdute sau abandonate. Aceasta ar putea, de asemenea, reduce
+          suprapopularea adăposturilor prin facilitarea reunirii rapide a
+          animalelor cu proprietarii lor. Pe termen lung, adoptarea pe scară
+          largă a acestei aplicații ar putea semnificativ reduce numărul de
+          animale pierdute sau abandonate, schimbând fundamental modul în care
+          comunitățile se implică în protecția animală.
+        </p>
+      </section>
 
-  <!-- 2. Description -->
-  <section id="description" role="doc-introduction">
-    <h2>Descriere</h2>
-    <section id="perspective">
-      <h3>Perspectiva</h3>
-      <p>
-        Perspectiva pentru o astfel de aplicație este foarte încurajatoare, reflectând o creștere a interesului
-        societății pentru bunăstarea animalelor. Această aplicație are potențialul de a transforma modul în care
-        comunitățile locale interacționează și răspund la cazurile de animale pierdute sau abandonate. Aceasta ar putea,
-        de asemenea, reduce suprapopularea adăposturilor prin facilitarea reunirii rapide a animalelor cu proprietarii
-        lor. Pe termen lung, adoptarea pe scară largă a acestei aplicații ar putea semnificativ reduce numărul de
-        animale pierdute sau abandonate, schimbând fundamental modul în care comunitățile se implică în protecția
-        animală.
-      </p>
-    </section>
+      <section id="functions">
+        <h3>Funcțiile Produsului</h3>
+        <p>Mai jos sunt funcționalitățile pe care aplicația FePA le oferă.</p>
+        <ul>
+          <li>Crearea unui cont si inregistrarea unui utilizator</li>
+          <li>Editare profil</li>
+          <li>Raportarea unui animal prin completarea formularului</li>
+          <li>Vizualizarea si stergerea rapoartelor facute</li>
+          <li>
+            Capacitatea de a personaliza și filtra rezultatele căutării
+            animalelor raportate pe pagina de filtrare
+          </li>
+          <li>
+            Vizualizarea unor statistici cu privire la situația animalelor cu
+            posibilitatea descarcarii in diverse formate (CSV, WebP, SVG, HTML,
+            PDF)
+          </li>
+          <li>Vizualizarea anunturilor raportate în aplicație</li>
+          <li>Resetearea parolei in cazul uitarii, prin email</li>
+          <li>Vizualizarea unui flux de stiri actualizat constant</li>
+        </ul>
+      </section>
 
-    <section id="functions">
-      <h3>Funcțiile Produsului</h3>
+      <section id="operating-environment">
+        <h3>Mediul de operare</h3>
+        <p>
+          Este o aplicație web ce poate fi accesată și utilizată prin oricare
+          dintre browserele larg răspândite (Chrome, Opera, Firefox, Microsoft
+          Edge).
+        </p>
+      </section>
+
+      <section id="restrictii-proiectare-implemen">
+        <h3>Restricții de proiectare și implementare</h3>
+        <p>
+          Produsul este supus următoarelor restricții și opțiuni tehnologice:
+        </p>
+        <ul>
+          <li>
+            Se utilizează limbajele de programare JavaScript, HTML și CSS pentru
+            partea de frontend.
+          </li>
+          <li>Se utilizează Node.js pentru dezvoltarea backend-ului.</li>
+          <li>Se utilizează o bază de date MySQL pentru stocarea datelor.</li>
+          <li>
+            Se evită utilizarea framework-urilor atât în partea de frontend, cât
+            și în partea de backend.
+          </li>
+        </ul>
+      </section>
+    </section>
+    <!--3.External Interface Requirements-->
+    <section id="interfaces">
+      <h2>Interfețe externe</h2>
+
+      <!-- review? -->
+      <h3><span>4.1 </span>Interfața pentru utilizator</h3>
       <p>
-        Mai jos sunt funcționalitățile pe care aplicația FePA le oferă.</p>
+        Aplicația dispune de o interfață vizuală modernă și atractivă,
+        proiectată pentru a optimiza experiența utilizatorilor. FePA este
+        adaptabilă și funcționează eficient atât pe dispozitive cu ecrane mari,
+        cât și pe telefoane mobile cu ecrane mai mici, oferind o experiență de
+        utilizare constant plăcută, datorita designului său responsive.
+      </p>
+
+      <div class="interface-page">
+        <p>
+          Pagina Home include un buton intitulat "Report" care, odată apăsat,
+          redirecționează utilizatorul către un formular dedicat raportării.
+          Formularul conține diverse funcții, inclusiv opțiuni de selectare prin
+          butoane radio pentru specificarea tipului de raport. Utilizatorii pot
+          încărca fotografii relevante și pot adăuga taguri care descriu
+          diferitele proprietăți ale animalului raportat. Toate informațiile
+          completate în formular sunt transferate automat în baza de date, fiind
+          înregistrate în tabelul "reports". În plus, pagina conține carduri cu
+          imagini ale animalelor și o scurtă descriere; la clic pe un card,
+          utilizatorul primește o descriere detaliată a animalului respectiv.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend1.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend2.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend3.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de login permite utilizatorilor să se autentifice introducând
+          numele de utilizator și parola, asigurând accesul securizat la contul
+          lor. Dacă nu au un cont, utilizatorii pot crea unul nou prin funcția
+          "Register", completând informațiile necesare. Pentru cei care și-au
+          uitat parola, pagina oferă o funcție de recuperare, permițând
+          resetarea acesteia printr-un email de confirmare. Aceste
+          funcționalități asigură accesibilitatea și securitatea conturilor
+          utilizatorilor.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend4.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de înregistrare solicită utilizatorilor să completeze câmpurile
+          "Username", "Password", "Confirm Password", "Email address", "Phone
+          number" și "Address" pentru a crea un cont nou. După completarea
+          acestor informații, utilizatorii apasă pe butonul "Register" pentru a
+          finaliza procesul.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend5.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de recuperare a parolei solicită utilizatorilor să introducă
+          adresa de email asociată contului lor. După trimiterea adresei de
+          email, utilizatorii sunt redirecționați automat către pagina de login.
+          În scurt timp, primesc un email conținând un link pentru resetarea
+          parolei, permițându-le să-și restabilească accesul la cont.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend6.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de editare a profilului permite utilizatorilor să își
+          actualizeze informațiile personale prin autocompletarea datelor
+          existente. Utilizatorii pot modifica aceste date după preferințe și
+          salva noile informații. Pentru resetarea parolei, sunt necesare
+          introducerea parolei curente și a unei noi parole. Această pagină
+          asigură gestionarea eficientă și securizată a informațiilor de profil
+          ale utilizatorilor.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend7.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de editare a profilului permite utilizatorilor să își
+          actualizeze informațiile personale prin autocompletarea datelor
+          existente. Utilizatorii pot modifica aceste date după preferințe și
+          salva noile informații. Pentru resetarea parolei, sunt necesare
+          introducerea parolei curente și a unei noi parole. Această pagină
+          asigură gestionarea eficientă și securizată a informațiilor de profil
+          ale utilizatorilor.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend8.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de filtrare permite utilizatorilor să filtreze animalele în
+          funcție de specificațiile dorite. Utilizatorii pot selecta criterii
+          precum tipul de animal, oras, nume, pierdut/gasit și alte
+          caracteristici relevante. După aplicarea filtrelor, pagina afișează
+          doar animalele care corespund criteriilor selectate. Această
+          funcționalitate ajută utilizatorii să găsească rapid și eficient
+          animalele care îndeplinesc preferințele lor specifice.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend9.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de statistici oferă utilizatorilor posibilitatea de a vizualiza
+          date statistice detaliate în funcție de perioadă, oraș, specie și
+          nivelul de pericol. Utilizatorii pot analiza aceste statistici pentru
+          a obține informații relevante. De asemenea, pagina permite exportul
+          acestor statistici în diverse formate, precum CSV, WEBP, PDF, HTML și
+          SVG. Această funcționalitate facilitează accesul la date și
+          prezentarea acestora în formatul preferat de utilizator.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend10.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend11.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de "About" descrie misiunea aplicației, evidențiind
+          angajamentul său de a contribui la îmbunătățirea comunității.
+          Aplicația are ca scop facilitarea gestionării și monitorizării
+          animalelor, promovând bunăstarea acestora și sprijinind inițiativele
+          comunitare. Prin oferirea unor instrumente eficiente și accesibile,
+          aplicația ajută la crearea unui mediu mai sigur și mai informat pentru
+          toți membrii comunității.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend12.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina de "Help" oferă diverse informații utile pentru utilizatorii
+          care întâmpină probleme în folosirea aplicației. Aceasta include
+          ghiduri detaliate, întrebări frecvente și soluții pas cu pas pentru
+          rezolvarea celor mai comune probleme.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend13.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+      <div class="interface-page" style="margin-top: 30px">
+        <p>
+          Pagina "Animal Details" oferă informații detaliate despre fiecare
+          animal selectat. Aceasta include numele animalului, statusul curent,
+          locul unde a fost văzut ultima oară, data dispariției și alte detalii
+          relevante. Informațiile suplimentare pot include riscul de turbare,
+          dacă animalul este vaccinat sau nu, și alte specificații esențiale.
+          Această pagină furnizează utilizatorilor toate datele necesare pentru
+          a înțelege situația specifică a fiecărui animal.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="Images/frontend14.png"
+            alt=""
+            style="width: auto; height: 450px"
+          />
+        </div>
+      </div>
+
+      <h3><span>4.2 </span>Interfațe software</h3>
+      <p>
+        Aplicația noastră utilizează o bază de date MySQL pentru a gestiona și
+        stoca datele referitoare la animale și utilizatori. Baza de date este
+        utilizată pentru a păstra evidența detaliată a acestor date și pentru a
+        facilita funcționalități precum autentificarea și stocarea informațiilor
+        relevante.
+      </p>
+
+      <p>
+        Pentru partea de server, aplicația este dezvoltată folosind Node.js,
+        fără utilizarea de framework-uri suplimentare. Alegerea Node.js ne oferă
+        flexibilitate și control sporit în dezvoltarea logicii de server.
+      </p>
+
+      <p>
+        Pentru funcționalități adiționale, aplicația noastră utilizează trei
+        pachete externe:
+      </p>
       <ul>
-        <li>Crearea unui cont si inregistrarea unui utilizator</li>
-        <li>Editare profil</li>
-        <li>Raportarea unui animal prin completarea formularului</li>
-        <li>Capacitatea de a personaliza și filtra rezultatele căutării animalelor raportate pe pagina de filtrare</li>
-        <li>Vizualizarea unor statistici cu privire la situația animalelor.</li>
-        <li>Vizualizarea anunturilor raportate în aplicație.</li>
+        <li>
+          Nodemailer: Este utilizat pentru a permite aplicației să trimită
+          e-mailuri pentru functionalitati precum resetarea parolei.
+        </li>
+        <li>
+          Jsonwebtoken: Este utilizat pentru generarea și verificarea
+          tokenurilor JSON Web Tokens (JWT), care sunt folosite pentru
+          autentificare și autorizare în cadrul aplicației noastre.
+        </li>
       </ul>
 
-    </section>
-
-    <section id="operating-environment">
-      <h3>Mediul de operare</h3>
+      <h3 id="api">4.2.1 Controlere API</h3>
       <p>
-        Fiind o aplicatie web, ea va rula pe orice browser modern. Astfel aplcatia va putea rula
-        pe toate sistemele de operare ce suporta un browser cum ar fi: Android, IOS, Windows, Linux, etc.
+        Aplicația noastră expune un API RESTful dezvoltat utilizând Node.js,
+        care permite interacțiunea cu diverse resurse și funcționalități. Pentru
+        gestionarea resurselor legate de animale și utilizatori, aplicația
+        noastră utilizează mai mulți controleri, care furnizează endpoint-uri
+        pentru a efectua operații specifice asupra resurselor corespunzătoare.
+        Pe lângă aceste funcționalități, aplicația noastră integrează și API-ul
+        Nominatim de la OpenStreetMap pentru a furniza capabilități avansate de
+        căutare și autocompletare a locațiilor. Acest API permite utilizatorilor
+        să introducă locații și să obțină sugestii în timp real, îmbunătățind
+        astfel experiența utilizatorului. Integrarea API-ului Nominatim se
+        realizează prin intermediul Fetch API, asigurând cereri HTTP directe și
+        gestionarea eficientă a răspunsurilor pentru a afișa rezultate precise
+        pe hartă, folosind biblioteca Leaflet pentru vizualizare.
+      </p>
+
+      <h3>4.2.2 Multi Page Application (MPA)</h3>
+      <p>
+        O aplicație multi-page (MPA - Multi Page Application) este un model
+        tradițional de dezvoltare web în care fiecare pagină a site-ului este
+        trimisă de server ca un nou document HTML. Acest lucru duce la
+        reîncărcarea completă a paginii de fiecare dată când este vizitată o
+        nouă pagină.
+      </p>
+      <p>
+        Fiecare pagină poate fi accesată direct prin propriul URL. Într-o MPA,
+        serverul determină ce HTML să trimită înapoi la browser în funcție de
+        cerere. Aceasta se opune modelului de Single Page Application (SPA),
+        unde majoritatea resurselor (HTML/CSS/JS) sunt încărcate o singură dată,
+        iar schimbarea conținutului este gestionată prin JavaScript pe partea de
+        client.
+      </p>
+
+      <h3><span>4.2 </span>Interfață comunicare</h3>
+      <p>
+        În acest proiect, comunicarea este efectuată prin intermediul
+        protocolului HTTP (Hypertext Transfer Protocol), care este un standard
+        pentru transmiterea de informații pe web. Prin utilizarea HTTP,
+        aplicația noastră poate să facă request-uri la server și poate să
+        primească răspunsuri.
+      </p>
+      <p>
+        Comunicarea dintre client și server se realizează printr-o serie de
+        request-uri HTTP, fiecare având asociat un răspuns în format JSON.
       </p>
     </section>
-
-  </section>
-
-  <!--3.External Interface Requirements-->
-  <section id="interfaces">
-    <h2>Interfețe externe</h2>
 
     <!-- review? -->
-    <h3><span>4.1 </span>Interfața pentru utilizator</h3>
-    <p>
-      Aplicația dispune de o interfață vizuală modernă și atractivă, proiectată pentru a optimiza experiența
-      utilizatorilor. FePA este adaptabilă și funcționează eficient atât pe dispozitive cu ecrane mari, cât și pe
-      telefoane mobile cu ecrane mai mici, oferind o experiență de utilizare constant plăcută, datorita designului său
-      responsive.
-    </p>
-
-
-    <!-- review? -->
-    <h3><span>4.2 </span>Interfețe software</h3>
-    <p>
-      Frontend-ul este scris in HTML5, CSS3. Pentru o experianta mai buna aplicatia va folosi diverse ilustrații,
-      fonturi, culori și iconițe.
-
-    </p>
-  </section>
-
-
-  <!-- review? -->
-  <section id="source-code">
-    <h2>Gestionarea Codului</h2>
-    <p>
-      În timpul dezvoltării proiectului nostru, am folosit platforma <a href="https://github.com"
-        target="_blank">GitHub</a> pentru colaborare și coordonare. Am adoptat o metodologie de lucru în care fiecare
-      pagină a site-ului a fost dezvoltată pe un branch dedicat, utilizând Git pentru a efectua commituri regulate.
-      Acest proces ne-a permis să organizăm și să revizuim codul în mod sistematic. După finalizarea și testarea
-      fiecărui branch, am procedat la integrarea schimbărilor prin efectuarea de merge-uri cu branch-ul main,
-      asigurându-ne astfel că toate actualizările sunt colectate centralizat și integrate eficient în proiectul
-      principal.
-    </p>
-    <p>
-      Codul sursa al proiectului va fi disponibil <a href="https://github.com/AlinaBurca/Feral-Presence-Adviser"
-        target="_blank">aici</a>
-      atunci cand va fi facut public.
-    </p>
-  </section>
-
-  <!--4.System Features-->
-  <section id="system-features">
-    <h2>Funcționalități</h2>
-
-    <section id="home_page">
-      <h3>Pagina principală</h3>
+    <section id="source-code">
+      <h2>Gestionarea Codului</h2>
       <p>
-        Pagina principală a aplicației, denumită "Home", este concepută pentru a oferi acces rapid și intuitiv la
-        funcționalitățile cheie ale aplicației. De pe această pagină, utilizatorii pot accesa direct formularul pentru
-        raportarea animalelor pierdute sau găsite. Formularul este simplu de utilizat și solicită informații esențiale,
-        cum daca animalul este pierdut sau găsit, locația unde a fost văzut ultima dată și detaliile de contact ale
-        persoanei care raportează.
-        În plus, pe pagina principală sunt afișate carduri interactive care prezintă diverse raportări de animale,
-        fiecare card conținând o fotografie a animalului, o scurtă descriere,informatii despre statutul animalului(dacă
-        este găsit sau pierdut) și data raportării. Aceste carduri permit utilizatorilor să navigheze rapid prin
-        raportările recente și să interacționeze cu ele, fie pentru a oferi informații suplimentare, fie pentru a
-        semnala o posibilă recunoaștere a animalului.
-        Această organizare a paginii principale facilitează o navigare eficientă și face ca experiența utilizatorului să
-        fie cât mai plăcută și productivă, încurajând implicarea comunității în ajutorarea animalelor.
+        În timpul dezvoltării proiectului nostru, am folosit platforma
+        <a href="https://github.com" target="_blank">GitHub</a> pentru
+        colaborare și coordonare. Am adoptat o metodologie de lucru în care
+        fiecare pagină a site-ului a fost dezvoltată pe un branch dedicat,
+        utilizând Git pentru a efectua commituri regulate. Acest proces ne-a
+        permis să organizăm și să revizuim codul în mod sistematic. După
+        finalizarea și testarea fiecărui branch, am procedat la integrarea
+        schimbărilor prin efectuarea de merge-uri cu branch-ul main,
+        asigurându-ne astfel că toate actualizările sunt colectate centralizat
+        și integrate eficient în proiectul principal.
       </p>
-    </section>
-    <section id="filter_page">
-      <h3>Pagina de filtrare</h3>
       <p>
-        Pagina de filtrare, denumită "Lost/Found Pets", este special proiectată pentru a permite utilizatorilor să
-        vizualizeze rapoarte detaliate ale animalelor pierdute sau găsite într-un mod organizat și eficient. Această
-        pagină include un formular de filtrare care ajută utilizatorii să personalizeze căutarea bazându-se pe criterii
-        specifice, cum ar statusul animalului (pierdut, găsit), numele animalului, locatie și distantă, specie, gen si
-        când a fost raportat.
-        De asemenea pagina mai conține carduri cu animalele raportate si date despre ele si o harta pentru a identifica
-        locația unde sunt localizate animalele
-        Pagina de descriere, intitulată "About Us", este destinată să ofere vizitatorilor o înțelegere profundă a
-        scopului, misiunii și valorilor aplicației. Această secțiune a site-ului este esențială pentru a construi
-        încredere și a stabili un raport cu utilizatorii, explicând clar cum contribuie aplicația la bunăstarea
-        animalelor și la comunitatea lor.
-      </p>
-    </section>
-    <section id="help_page">
-      <h3>Pagina Help</h3>
-      <p>
-        Pagina de ajutor, numită "Help", este proiectată să asiste utilizatorii în utilizarea eficientă a aplicației,
-        oferindu-le informații detaliate despre cum să navigheze prin interfața aplicației și să acceseze diversele
-        funcționalități disponibile.
-        Pe pagina "Help", utilizatorii pot găsi ghiduri pas cu pas care explică cum să completeze și să trimită
-        formularul de raportare a animalelor pierdute sau găsite, cum să folosesti contul de utilizatori și alte
-        functionalotăți necesare pentru navigarea in aplicatie.
-      </p>
-    </section>
-    <section id="statistics_page">
-      <h3>Pagina de statistici</h3>
-      <p>
-        Pagina de statistici, numită "Statistici", este esențială în cadrul aplicației, deoarece oferă o imagine clară
-        și cuprinzătoare a impactului pe care îl are aplicația asupra bunăstării animalelor. Această pagină utilizează
-        datele colectate de la utilizatori pentru a genera statistici detaliate care reflectă diferite aspecte ale
-        situației animalelor pierdute și găsite.
-      </p>
-    </section>
-    <section id="login">
-      <h3>Pagina de logare</h3>
-      <p>Pagina de logare, denumită "Sign In", este punctul de acces pentru utilizatorii care doresc să interacționeze
-        cu funcționalitățile avansate ale aplicației. Această pagină este proiectată pentru a oferi un proces simplu și
-        securizat de autentificare, facilitând accesul rapid și eficient la contul personal al fiecărui utilizator.
-        Pe pagina "Sign In", utilizatorii sunt întâmpinați cu un formular de autentificare care necesită introducerea
-        numelui de utilizator și a parolei.
-      </p>
-    </section>
-    <section id="register">
-      <h3>Pagina de înregistrare</h3>
-      <p>
-        Pagina de înregistrare, denumită "Sign Up", este concepută pentru a permite utilizatorilor noi să își creeze un
-        cont în aplicație, oferindu-le acces complet la toate funcționalitățile disponibile. Această pagină este
-        esențială pentru extinderea bazei de utilizatori și pentru facilitarea unei experiențe personalizate.
-        Procesul de înregistrare pe pagina "Sign Up" este structurat pentru a fi cât mai simplu și intuitiv.
-        Utilizatorii sunt solicitați să introducă informații de bază, cum ar fi numele, parola, adresa de email, numarul
-        de telefon si o adresa.
-      </p>
-    </section>
-    <section id="view_profile">
-      <h3>Pagina de vizualizare a profilului</h3>
-      <p>
-        Pagina de vizualizare a profilului, numită "dashboard", este proiectată pentru a oferi utilizatorilor o vedere
-        generală și centralizată asupra tuturor informațiilor și activităților lor în cadrul aplicației. Aceasta
-        funcționează ca un panou de control personal, unde utilizatorii pot accesa rapid și gestionarea detaliilor
-        contului și a rapoartelor create.
+        Codul sursa al proiectului va fi disponibil
+        <a
+          href="https://github.com/AlinaBurca/Feral-Presence-Adviser"
+          target="_blank"
+          >aici</a
+        >
+        atunci cand va fi facut public.
       </p>
     </section>
 
-    <section id="edit_profile">
-      <h3>Pagina de editare a profilului</h3>
-      <p>
-        Pagina de editare a profilului, denumită "Edit", este creată pentru a permite utilizatorilor să-și acceseze și
-        să-și actualizeze profilul personal și rapoartele asociate contului lor în aplicație.
-        Pe această pagină, utilizatorul dispune de 3 formulare personalizate în funcție de necesitățile sale: de editare
-        a informațiilor generale a profilului, de editare a parolei si unl pentru schimbarea email-ului. Aceasta pagină
-        este necesara pentru a menține datele cât mai actuale și in conformitate cu realitatea.
-      </p>
-    </section>
+    <!--4.System Features-->
+    <section id="system-features">
+      <h2>Funcționalități</h2>
 
-    <section id="card_page">
-      <h3>Pagina de vizualizare a unui card</h3>
-      <p>
-        Pagina de vizualizare a unui anunț, denumită "card", este destinată să ofere utilizatorilor toate detaliile
-        necesare despre un raport specific de animal pierdut sau găsit. Această pagină este esențială pentru furnizarea
-        de informații detaliate și accesibile, facilitând interacțiunea între membrii comunității care doresc să ajute
-        la reunirea animalelor cu proprietarii lor sau la îngrijirea celor găsite.
-      </p>
-    </section>
-    <section id="admin_page">
-      <h3>Pagina de Admin</h3>
-      <p>
-        Pagina de admin, specifică administratorilor aplicației, este concepută pentru a oferi control complet și acces
-        la diverse funcționalități de gestionare și monitorizare a platformei. Această pagină este esențială pentru
-        administrarea eficientă a aplicației, permițând supravegherea activităților, gestionarea utilizatorilor și a
-        conținutului, și ajustarea setărilor sistemului.
-      </p>
-    </section>
-    <section id="acces_functionalitati">
-      <h3>Cum puteți naviga în aplicație</h3>
-      <p>
-        Următoarele pagini pot fi accesate din bara de navigație: pagina principală, cea de filtrare, de vizualizare a
-        statisticilor, de descriere a aplicației și de ajutor. De asemenea pagina de logare și
-        înregistrare pot fi accesate apăsând butoanele aferente aflate în partea dreaptă a bării de navigație.
-      </p>
-      <p>
-        Pagina de vizualizare a profilului poate fi accesată apăsând butonul de LOGIN de pe pagina de logare.
-      </p>
-      <p>
-        Pagina de editare a profilului poate fi accesată din sidebarul din pagina de vizualizare a profilului apăsând pe
-        butonul de User Account.
-      </p>
-      <p>
-        Pagina de vizualizare în detaliu a unui anuț poate fi accesată apăsând pe un card din pagina Home sau butonul de
-        View details de pe pagina de filtrare.
-      </p>
-      <p>
-        Pagina de resetare a parolei poate fi accestă din pagina de logare apasând pe linkul 'Forget password'.
-      </p>
-      <p>
-        Pagina de admin poate fi accestă din pagina de logare apasând pe linkul 'Login as admin'.
-      </p>
-    </section>
-    <section id="user-interface" role="doc-introduction">
-      <h2>Interfață și Motivație</h2>
-      <p>
-        Interfata aplicatitei este simpla si in acelasi timp moderna deoarece contine concepte curente cum ar fi:design
-        responsive, interfață utilizator intuitivă. elemente de navigație fixate, colțuri rotunjite.
-      </p>
-      <p>
-        Aplicația pentru raportarea animalelor pierdute și găsite este esențială deoarece oferă o soluție eficientă
-        pentru localizarea și recuperarea animalelor rătăcite, crescând astfel șansele de reunire cu proprietarii lor
-        într-un mod organizat și securizat. Utilizând această platformă, informațiile despre animalele pierdute sunt
-        răspândite rapid în comunitate, ceea ce minimizează durata de timp în care acestea sunt expuse la pericole. De
-        asemenea, aplicația ajută la eliberarea adăposturilor locale de animale, facilitând gestionarea eficientă a
-        resurselor și îmbunătățind starea de bine a animalelor în cadrul comunității.
-      </p>
-    </section>
-  </section>
+      <section id="login/logout/register">
+        <h3>Login/Logout/Register</h3>
+        <p>
+          Pentru a putea raporta un animal sau a face modificări ale contului,
+          utilizatorii trebuie să fie logați. Totuși, aplicația poate fi
+          utilizată fără autentificare, doar în scop informativ, oferind acces
+          limitat la vizualizarea datelor fără posibilitatea de a efectua
+          acțiuni. Astfel, utilizatorii neautentificați pot explora informațiile
+          disponibile, dar nu pot interacționa activ cu funcționalitățile
+          aplicației.
+        </p>
+      </section>
+      <section id="filter_page">
+        <h3>Forget Password</h3>
+        <p>
+          În cazul în care utilizatorul uită parola și nu mai poate accesa
+          contul, este disponibilă opțiunea de recuperare a parolei.
+          Utilizatorul trebuie să introducă adresa de email asociată contului și
+          va primi un email cu un link la o pagina unde isi va putea actualiza
+          parola.
+        </p>
+      </section>
+      <section id="raport">
+        <h3>Raportare animale</h3>
+        <p>
+          Raportarea animalelor se poate face doar dacă utilizatorul este logat,
+          iar adresa de email introdusă în formularul de raportare trebuie să
+          corespundă cu cea a contului utilizatorului logat. Formularul de
+          raportare solicită introducerea datelor despre animale, având anumite
+          câmpuri obligatorii. Informațiile furnizate variază în funcție de
+          statusul animalului, fie pierdut, fie găsit, și includ nivelul de
+          pericol, locațiile, taguri și informații adiționale. Unele dintre
+          aceste informații sunt utilizate pentru generarea statisticilor
+          relevante.
+        </p>
+      </section>
+      <section id="filtrare">
+        <h3>Filtrare animale</h3>
+        <p>
+          Raportarea animalelor se poate face doar dacă utilizatorul este logat,
+          iar adresa de email introdusă în formularul de raportare trebuie să
+          corespundă cu cea a contului utilizatorului logat. Formularul de
+          raportare solicită introducerea datelor despre animale, având anumite
+          câmpuri obligatorii. Informațiile furnizate variază în funcție de
+          statusul animalului, fie pierdut, fie găsit, și includ nivelul de
+          pericol, locațiile, taguri și informații adiționale. Unele dintre
+          aceste informații sunt utilizate pentru generarea statisticilor
+          relevante. pentru informatii aditionale. Pagina de filtrare oferă
+          posibilitatea de a găsi animale în funcție de interesele pe care le
+          ai. Formularul de filtrare conține mai multe câmpuri, care nu sunt
+          obligatorii de completat, permițându-ți să alegi animalele doar pe
+          baza interesului specific. După aplicarea filtrelor, animalele
+          relevante sunt afișate și poți accesa cardul fiecărui animal pentru
+          informații adiționale. Această funcționalitate facilitează
+          identificarea rapidă a animalelor care corespund preferințelor tale.
+        </p>
+      </section>
+      <section id="animal-details">
+        <h3>Vizualizare detalii despre un animal</h3>
+        <p>
+          Pagina de vizionare a detaliilor despre un animal oferă o gamă variată
+          de informații despre acesta. În funcție de statusul animalului,
+          câmpurile disponibile sunt diferite: în cazul în care animalul este
+          pierdut, sunt afișate numele animalului și poza acestuia; dacă
+          animalul este găsit, numele este setat la "unknown" și câmpul pentru
+          numele animalului devine indisponibil. De asemenea, sunt prezentate
+          taguri informative care includ detalii relevante, cum ar fi fotografia
+          animalului. Această pagină asigură accesul la informațiile necesare
+          pentru a înțelege starea și caracteristicile animalului raportat.
+        </p>
+      </section>
+      <section id="statistics">
+        <h3>Vizualizare statistici</h3>
+        <p>
+          Pagina de statistici permite vizualizarea detaliată a datelor
+          statistice despre rapoartele generate în ultimele luni, grupate în
+          funcție de zone (orașe), specii și nivelul de pericol asociat.
+          Utilizatorii pot analiza și interpreta aceste statistici pentru a
+          înțelege tendințele și distribuția rapoartelor în diverse contexte
+          geografice și specii de animale. Această funcționalitate facilitează
+          luarea deciziilor informate și implementarea de strategii eficiente în
+          gestionarea și monitorizarea situațiilor cu animale.
+        </p>
+      </section>
+      <section id="profile">
+        <h3>Modificare profil</h3>
+        <p>
+          Pagina de modificare a profilului permite utilizatorilor să
+          actualizeze și să modifice informațiile personale, inclusiv numele,
+          adresa de email, adresa fizică, numărul de telefon și parola.
+        </p>
+      </section>
+      <section id="view_profile">
+        <h3>Vizualizare si stergerea de rapoarte facute</h3>
+        <p>
+          Utilizatorii au și posibilitatea de a șterge rapoartele pe care le-au
+          făcut anterior. Această funcționalitate asigură utilizatorilor
+          flexibilitate în gestionarea și actualizarea datelor lor personale,
+          oferindu-le control complet asupra profilului lor în aplicație.
+        </p>
+      </section>
 
-  <section id="other-resources">
-    <h2>Resurse Principale</h2>
-    <ul>
-      <li>https://tehnologii-web.vercel.app/</li>
-      <li>https://edu.info.uaic.ro/web-technologies/</li>
-      <li>https://www.w3schools.com/</li>
-    </ul>
+      <section id="edit_profile">
+        <h3>Flux RSS</h3>
+        <p>
+          Fluxul RSS oferă utilizatorilor posibilitatea de a vizualiza diferite
+          anunțuri recente într-un format simplu și structurat. Acesta permite
+          accesul rapid la informații actualizate despre diverse evenimente,
+          produse sau știri relevante. Utilizatorii pot subscrie la fluxul RSS
+          pentru a fi la curent cu ultimele actualizări fără a fi necesar să
+          viziteze manual fiecare sursă de informații în parte.
+        </p>
+      </section>
 
-  </section>
-</body>
+      <section id="user-interface" role="doc-introduction">
+        <h2>Interfață și Motivație</h2>
+        <p>
+          Interfata aplicatitei este simpla si in acelasi timp moderna deoarece
+          contine concepte curente cum ar fi: design responsive, interfață
+          utilizator intuitivă. elemente de navigație fixate, colțuri rotunjite.
+        </p>
+        <p>
+          Aplicația pentru raportarea animalelor pierdute și găsite este
+          esențială deoarece oferă o soluție eficientă pentru localizarea și
+          recuperarea animalelor rătăcite, crescând astfel șansele de reunire cu
+          proprietarii lor într-un mod organizat și securizat. Utilizând această
+          platformă, informațiile despre animalele pierdute sunt răspândite
+          rapid în comunitate, ceea ce minimizează durata de timp în care
+          acestea sunt expuse la pericole. De asemenea, aplicația ajută la
+          eliberarea adăposturilor locale de animale, facilitând gestionarea
+          eficientă a resurselor și îmbunătățind starea de bine a animalelor în
+          cadrul comunității.
+        </p>
+      </section>
+    </section>
+    <section id="non-functional">
+      <h2>Cerinte non-functionale</h2>
 
+      <section id="cerinte-securitate">
+        <h3>Cerinte de securitate</h3>
+        <ul>
+          <li>
+            Utilizarea bcrypt pentru stocarea parolelor utilizatorilor,
+            asigurând o securitate sporită.
+          </li>
+          <li>
+            Implementarea Forget Password bazată pe JSON Web Tokens (JWT).
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section id="other-resources">
+      <h2>Resurse Principale</h2>
+      <ul>
+        <li>https://tehnologii-web.vercel.app/</li>
+        <li>https://edu.info.uaic.ro/web-technologies/</li>
+        <li>https://www.w3schools.com/</li>
+      </ul>
+    </section>
+  </body>
 </html>

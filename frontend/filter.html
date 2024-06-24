@@ -17,6 +17,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="img.png" />
+
     <title>Lost/Found pets</title>
   </head>
 
@@ -113,18 +115,19 @@
               />
             </div>
             <div class="input-box2">
-              <label class="input-title" for="cities">City:</label>
-              <select class="form-field" name="city" id="cities"></select>
+              <label class="input-title" for="cities">Location:</label>
+              <!-- <select class="form-field" name="city" id="cities"></select> -->
+              <input
+                class="form-field"
+                type="text"
+                placeholder="Enter city, town or area"
+                name="city"
+                required
+              />
             </div>
             <div class="input-box3">
               <span class="input-title">Species:</span>
               <div class="input-box3 types">
-                <div class="type">
-                  <input type="radio" name="petType" id="type1" />
-                  <label for="type1">
-                    <span class="status">All species</span>
-                  </label>
-                </div>
                 <div class="type">
                   <input type="radio" name="petType" id="type2" value="dog" />
                   <label for="type2">
@@ -205,12 +208,6 @@
               <span class="input-title">Gender:</span>
               <div class="types">
                 <div class="type">
-                  <input type="radio" name="gender" id="gender1" />
-                  <label for="gender1">
-                    <span class="status">All</span>
-                  </label>
-                </div>
-                <div class="type">
                   <input
                     type="radio"
                     name="gender"
@@ -229,7 +226,12 @@
                   </label>
                 </div>
                 <div class="type">
-                  <input type="radio" name="gender" id="gender4" />
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender4"
+                    value="unknown"
+                  />
                   <label for="gender4">
                     <span class="status">Unknown</span>
                   </label>
@@ -546,6 +548,15 @@
       function displayReports(reports) {
         const cardSection = document.getElementById("card--section");
         cardSection.innerHTML = "";
+
+        console.log("LENGTH: ", reports.length);
+        if (reports.length === 0) {
+          const noReportsMessage = document.createElement("div");
+          noReportsMessage.className = "no-reports";
+          noReportsMessage.textContent = "No reports found";
+          cardSection.appendChild(noReportsMessage);
+          return;
+        }
 
         reports.forEach((report) => {
           const card = document.createElement("div");
